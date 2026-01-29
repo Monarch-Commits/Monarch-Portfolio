@@ -1,7 +1,7 @@
 'use client';
 
-import { Button } from '@/app/components/ui/button';
-import DockText from '@/app/components/ui/dock-text';
+import { Button } from '@/components/ui/button';
+import DockText from '@/components/ui/dock-text';
 
 export function LayoutTextFlipDemo() {
   return (

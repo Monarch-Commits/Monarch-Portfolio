@@ -11,12 +11,8 @@ import { IoIosLogOut } from 'react-icons/io';
 import { IoCreateOutline } from 'react-icons/io5';
 import asyncUser from '@/app/actions/user/user.action';
 import { pages } from '@/app/constant/Constant';
-import { Button } from '@/app/components/ui/button';
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from '@/app/components/ui/avatar';
+import { Button } from '@/components/ui/button';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 export default async function DesktopNavbar() {
   const { getUser } = getKindeServerSession();

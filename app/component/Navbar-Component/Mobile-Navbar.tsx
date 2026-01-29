@@ -7,8 +7,8 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-} from '@/app/components/ui/dropdown-menu';
-import { Button } from '@/app/components/ui/button';
+} from '@/components/ui/dropdown-menu';
+import { Button } from '@/components/ui/button';
 
 export default function MobileNavbar() {
   return (
