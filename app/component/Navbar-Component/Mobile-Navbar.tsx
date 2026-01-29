@@ -1,13 +1,14 @@
-import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { IoMenuSharp } from 'react-icons/io5';
+
+import { pages } from '@/app/constant/Constant';
 import {
+  DropdownMenuTrigger,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
-import { pages } from '@/app/constant/Constant';
+} from '@/app/components/ui/dropdown-menu';
+import { Button } from '@/app/components/ui/button';
 
 export default function MobileNavbar() {
   return (

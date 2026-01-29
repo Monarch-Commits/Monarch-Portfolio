@@ -1,17 +1,22 @@
-import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ModeToggle } from './Dark-Mode/toggleMode';
 import MobileNavbar from './Mobile-Navbar';
 
 import { LoginLink, LogoutLink } from '@kinde-oss/kinde-auth-nextjs';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 import { IoIosLogOut } from 'react-icons/io';
 
 import { IoCreateOutline } from 'react-icons/io5';
 import asyncUser from '@/app/actions/user/user.action';
 import { pages } from '@/app/constant/Constant';
+import { Button } from '@/app/components/ui/button';
+import {
+  Avatar,
+  AvatarFallback,
+  AvatarImage,
+} from '@/app/components/ui/avatar';
 
 export default async function DesktopNavbar() {
   const { getUser } = getKindeServerSession();

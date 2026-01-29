@@ -1,5 +1,4 @@
 'use client';
-import { Button } from '@/components/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -7,14 +6,15 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from '@/components/ui/dialog';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
+} from '@/app/components/ui/dialog';
 
 import toast from 'react-hot-toast';
 import { useState } from 'react';
 import Image from 'next/image';
 import UpdateProduct from '@/app/actions/post/updateProject.action';
+import { Input } from '@/app/components/ui/input';
+import { Textarea } from '@/app/components/ui/textarea';
+import { Button } from '@/app/components/ui/button';
 
 interface Props {
   id: string;
