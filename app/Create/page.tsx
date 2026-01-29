@@ -1,0 +1,76 @@
+'use client';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import React, { SyntheticEvent, useState } from 'react';
+import toast from 'react-hot-toast';
+import postProject from '../actions/post/createPostProject.action';
+import Project from '../component/Project/Project';
+
+export default function CreatePostProject() {
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
+  const [imageUrl, setImageUrl] = useState<File | null>(null);
+  const [loading, setLoading] = useState(false);
+
+  const handleSubmit = async (e: SyntheticEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!title.trim() || !description.trim() || !imageUrl) {
+      return toast.error('Please put valid data');
+    }
+    setLoading(true);
+    try {
+      const result = await postProject({
+        title,
+        description,
+        imageUrl,
+      });
+
+      if (result?.success) {
+        setTitle('');
+        setDescription('');
+        setImageUrl(null);
+        toast.success('Created Successfully');
+      } else {
+        toast.error('Failed to create product');
+      }
+    } catch (error) {
+      console.error(error);
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+  return (
+    <div className="flex w-full flex-col items-center justify-center px-1">
+      <form
+        onSubmit={handleSubmit}
+        className="mt-30 flex w-full max-w-lg flex-col items-center justify-center gap-3 rounded-md border p-3"
+      >
+        <Input
+          placeholder="Product Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          required
+        />
+        <Textarea
+          placeholder="Description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          required
+        />
+
+        <Input
+          type="file"
+          accept="image/*"
+          onChange={(e) => setImageUrl(e.target.files?.[0] || null)}
+          required
+        />
+
+        <Button type="submit" variant={'outline'} disabled={loading}>
+          {loading ? 'Adding...' : 'Add Product'}
+        </Button>
+      </form>
+    </div>
+  );
+}
