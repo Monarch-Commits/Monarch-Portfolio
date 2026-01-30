@@ -12,3 +12,19 @@ export const pages: { name: string; href: string; icon: IconType }[] = [
   { name: 'About', href: '#', icon: CgProfile },
   { name: 'Contact', href: '#', icon: MdOutlineCall },
 ];
+
+export const AboutMePersonalInfo = [
+  { label: 'Age', value: '20' },
+  { label: 'Location', value: 'Davao' },
+  { label: 'Education', value: 'Information System' },
+  {
+    label: 'Interests',
+    value: 'Web Development, Front-End Development',
+  },
+  {
+    label: 'Email',
+    value: 'monarch5827@gmail.com',
+    break: true,
+  },
+  { label: 'Phone', value: '+63 927 654 5827' },
+];
