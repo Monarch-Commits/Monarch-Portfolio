@@ -1,11 +1,11 @@
+import AboutMe from './component/AboutMe/AboutMe';
 import Dashboard from './component/Dashboard/Dashboard';
 
 export default function Home() {
   return (
-    <>
-      <div className="flex min-h-screen min-w-full flex-col items-center justify-start md:justify-center">
-        <Dashboard />
-      </div>
-    </>
+    <main className="flex max-w-screen flex-col items-center justify-center">
+      <Dashboard />
+      <AboutMe />
+    </main>
   );
 }

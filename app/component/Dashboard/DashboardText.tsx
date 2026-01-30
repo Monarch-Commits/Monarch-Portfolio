@@ -5,7 +5,7 @@ import DockText from '@/components/ui/dock-text';
 
 export function LayoutTextFlipDemo() {
   return (
-    <div className="mt-20 flex w-full items-center justify-center md:mt-0 md:p-6 lg:w-lg">
+    <div className="mt-20 flex w-full items-center p-2 justify-center md:mt-0 md:p-6 lg:w-lg">
       <div className="relative mt-4 flex w-full flex-col items-center gap-1 sm:gap-2 md:items-start md:gap-3">
         {/* Greeting */}
         <p className="text-center tracking-[0.2em] sm:text-center sm:text-lg md:text-start">
