@@ -19,7 +19,7 @@ export default function SecondPageAboutMe() {
       </div>
 
       {/* RIGHT TEXT CARD */}
-      <div className="relative max-w-full overflow-visible rounded-lg bg-[#F6F1E7] p-3 shadow-md md:p-6 dark:text-gray-900">
+      <div className="relative max-w-full overflow-visible rounded-lg bg-orange-50 p-3 shadow-xl md:p-6 dark:bg-orange-100 dark:text-gray-900">
         <h2
           className="mb-4 text-2xl font-bold"
           style={{ fontFamily: "'Momo Signature', cursive" }}
@@ -37,7 +37,7 @@ export default function SecondPageAboutMe() {
               <span className={'text-gray-600'}>{item.value}</span>
             </p>
           ))}
-          <div className="flex flex-wrap items-center gap-3 md:col-span-2">
+          <div className="flex flex-wrap items-center gap-3 text-gray-600 md:col-span-2">
             <span className="">Favorite Stack:</span>
             <TbBrandNextjs className="h-7 w-7" />
             <FaReact className="h-7 w-7" /> <SiPrisma className="h-7 w-7" />

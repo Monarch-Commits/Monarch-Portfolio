@@ -17,7 +17,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 export default async function DesktopNavbar() {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
-  console.log(user);
+  // console.log(user);
   if (user) {
     await asyncUser();
   }
@@ -41,7 +41,7 @@ export default async function DesktopNavbar() {
               <Link key={index} href={p.href}>
                 <Button
                   variant={'ghost'}
-                  className="font-medium transition-transform duration-200 ease-out hover:scale-110 active:scale-95"
+                  className="font-medium transition-transform duration-200 ease-out hover:scale-110 active:scale-95 dark:text-orange-400"
                 >
                   <Icon /> {p.name}
                 </Button>

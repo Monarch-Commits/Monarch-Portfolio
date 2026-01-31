@@ -15,7 +15,7 @@ export default function MobileNavbar() {
     <div className="flex flex-col items-center justify-center gap-3 md:hidden">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="outline">
+          <Button variant="outline" size="icon">
             <IoMenuSharp />
           </Button>
         </DropdownMenuTrigger>

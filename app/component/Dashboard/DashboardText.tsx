@@ -13,21 +13,15 @@ export function LayoutTextFlipDemo() {
         </p>
 
         {/* Name */}
-        <div className="text-center text-3xl leading-tight font-extrabold text-green-600 sm:text-center sm:text-5xl sm:leading-none md:text-start md:text-6xl md:leading-tight">
+        <div className="text-center text-3xl leading-tight font-extrabold text-amber-800 sm:text-center sm:text-5xl sm:leading-none md:text-start md:text-6xl md:leading-tight">
           <DockText text="Monarch" />
         </div>
 
         {/* Main value */}
         <p className="text-center text-lg font-semibold sm:text-center sm:text-xl md:text-start md:text-2xl">
-          I create{' '}
-          <span className="text-green-600 dark:text-green-400">
-            clean, efficient,
-          </span>{' '}
-          and{' '}
-          <span className="text-green-600 dark:text-green-400">
-            visually appealing
-          </span>{' '}
-          web applications.
+          I create <span className="text-amber-700">clean, efficient,</span> and{' '}
+          <span className="text-amber-700">visually appealing</span> web
+          applications.
         </p>
 
         {/* Supporting line */}
@@ -35,9 +29,12 @@ export function LayoutTextFlipDemo() {
           Turning ideas into smooth, functional, and beautiful digital
           experiences that feel fresh, fast, and intuitive.
         </p>
-        <div>
-          <Button variant={'outline'}>Learn More</Button>
-        </div>
+        <Button
+          variant="outline"
+          className="border-orange-300 bg-orange-100 text-orange-900 shadow-sm hover:bg-orange-200 dark:text-orange-300"
+        >
+          Learn More
+        </Button>
       </div>
     </div>
   );

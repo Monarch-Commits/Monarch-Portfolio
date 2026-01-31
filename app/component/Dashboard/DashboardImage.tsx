@@ -18,11 +18,11 @@ export default function DashboardImage() {
           className="border object-cover p-4 pb-8 shadow-2xl"
         />
 
-        <div className="absolute top-0 -right-6 z-10 h-5 w-20 rotate-20 bg-orange-200" />
-        <div className="absolute bottom-0 -left-6 z-10 h-5 w-20 -rotate-40 bg-orange-200" />
+        <div className="absolute top-0 -right-6 z-40 h-5 w-20 rotate-20 bg-orange-200" />
+        <div className="absolute bottom-0 -left-6 z-40 h-5 w-20 -rotate-40 bg-orange-200" />
         <div className="md:right absolute bottom-0 -left-30 z-20 h-50 w-50 overflow-visible sm:h-40 sm:w-40 md:-bottom-5 md:h-60 md:w-60">
           <Image
-            src="https://drive.google.com/uc?export=view&id=13-fc6KVRlOVpQsej03wSqkuq2PdTkxC-"
+            src="https://drive.google.com/uc?export=view&id=1K7IDet6k_0Ur5_xw6c9l931nG5_AVi-0"
             alt="profile"
             fill
             className="scale-x-[-1] rotate-12 object-contain drop-shadow-2xl"
@@ -30,21 +30,9 @@ export default function DashboardImage() {
         </div>
       </div>
 
-      {/* Floating left blob */}
-      <div className="absolute left-4 z-9 h-8 w-8 rounded-[69%_31%_24%_76%/79%_66%_34%_21%] bg-linear-to-br from-emerald-400 via-green-500 to-teal-600 shadow-xl sm:left-8 sm:h-10 sm:w-10 md:left-12 md:h-12 md:w-12 lg:left-20 lg:h-15 lg:w-15">
-        1
-      </div>
-
-      {/* Floating right blob */}
-      <div className="absolute right-4 z-20 h-8 w-8 rounded-[50%_50%_64%_36%/16%_28%_72%_84%] bg-linear-to-tr from-lime-300 via-emerald-300 to-green-400 shadow-xl sm:right-8 sm:h-10 sm:w-10 md:right-12 md:h-14 md:w-14 lg:right-20 lg:h-16 lg:w-16">
-        2
-      </div>
-
-      {/* Floating bottom-left blob */}
-
       {/* Decorative circles */}
-      <div className="absolute top-1/2 right-4 z-10 h-12 w-12 rounded-full border-2 border-orange-200 blur-sm" />
-      <div className="absolute bottom-2 left-10 z-10 h-8 w-8 rounded-full bg-orange-300/50 blur-sm" />
+      <div className="absolute top-1/2 right-4 z-30 h-12 w-12 rounded-full border-2 border-orange-200 blur-sm" />
+      <div className="absolute bottom-2 left-10 z-30 h-8 w-8 rounded-full bg-orange-300/50 blur-sm" />
     </div>
   );
 }
