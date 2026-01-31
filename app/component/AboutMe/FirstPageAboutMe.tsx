@@ -5,7 +5,12 @@ export default function FirstPageAboutMe() {
     <div className="flex min-h-full w-full flex-col items-center justify-center gap-5 p-1 px-6 sm:w-full sm:flex-col md:p-10 lg:flex-row">
       <div className="flex w-full flex-col items-end gap-3 rounded-xl md:p-8 dark:text-gray-900">
         <div className="relative max-w-full rotate-3 overflow-visible rounded-lg bg-orange-50 p-6 shadow-lg md:max-w-lg dark:bg-orange-100">
-          <h2 className="mb-4 text-2xl font-bold">About Me</h2>
+          <h2
+            className="mb-4 text-2xl font-semibold"
+            style={{ fontFamily: "'Momo Signature', cursive" }}
+          >
+            About Me
+          </h2>
 
           <p className="text-gray-600">
             Hello 👋 I’m Monarch, a Front-End Developer passionate about
@@ -23,7 +28,12 @@ export default function FirstPageAboutMe() {
         </div>
 
         <div className="max-w-full rounded-lg bg-orange-50 p-6 shadow-xl dark:bg-orange-100">
-          <h2 className="mb-4 text-2xl font-bold">Project-Focused</h2>
+          <h2
+            className="mb-4 text-2xl font-semibold"
+            style={{ fontFamily: "'Momo Signature', cursive" }}
+          >
+            Project-Focused
+          </h2>
           <p className="text-gray-600">
             “I want to work on projects that challenge me, let me turn creative
             designs into functional apps, and make a positive impact on how

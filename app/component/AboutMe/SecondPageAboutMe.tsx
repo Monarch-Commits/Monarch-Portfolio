@@ -21,7 +21,7 @@ export default function SecondPageAboutMe() {
       {/* RIGHT TEXT CARD */}
       <div className="relative max-w-full overflow-visible rounded-lg bg-orange-50 p-3 shadow-xl md:p-6 dark:bg-orange-100 dark:text-gray-900">
         <h2
-          className="mb-4 text-2xl font-bold"
+          className="mb-4 text-2xl font-semibold"
           style={{ fontFamily: "'Momo Signature', cursive" }}
         >
           Personal Info

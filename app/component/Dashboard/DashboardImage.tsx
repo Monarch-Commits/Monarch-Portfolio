@@ -18,9 +18,9 @@ export default function DashboardImage() {
           className="border object-cover p-4 pb-8 shadow-2xl"
         />
 
-        <div className="absolute top-0 -right-6 z-40 h-5 w-20 rotate-20 bg-orange-200" />
-        <div className="absolute bottom-0 -left-6 z-40 h-5 w-20 -rotate-40 bg-orange-200" />
-        <div className="md:right absolute bottom-0 -left-30 z-20 h-50 w-50 overflow-visible sm:h-40 sm:w-40 md:-bottom-5 md:h-60 md:w-60">
+        <div className="absolute top-0 -right-6 z-10 h-5 w-20 rotate-20 bg-orange-200" />
+        <div className="absolute bottom-0 -left-6 z-10 h-5 w-20 -rotate-40 bg-orange-200" />
+        <div className="absolute -bottom-10 -left-30 z-20 h-50 w-50 overflow-visible sm:h-40 sm:w-40 md:bottom-0 md:-left-30 md:h-60 md:w-60">
           <Image
             src="https://drive.google.com/uc?export=view&id=1K7IDet6k_0Ur5_xw6c9l931nG5_AVi-0"
             alt="profile"

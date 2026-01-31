@@ -13,7 +13,10 @@ export function LayoutTextFlipDemo() {
         </p>
 
         {/* Name */}
-        <div className="text-center text-3xl leading-tight font-extrabold text-amber-800 sm:text-center sm:text-5xl sm:leading-none md:text-start md:text-6xl md:leading-tight">
+        <div
+          className="text-center text-3xl leading-tight font-extrabold text-amber-800 sm:text-center sm:text-5xl sm:leading-none md:text-start md:text-6xl md:leading-tight"
+          style={{ fontFamily: "'Momo Signature', cursive" }}
+        >
           <DockText text="Monarch" />
         </div>
 
