@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 import { IoMenuSharp } from 'react-icons/io5';
 

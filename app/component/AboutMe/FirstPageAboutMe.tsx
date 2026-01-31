@@ -20,8 +20,9 @@ export default function FirstPageAboutMe() {
           <div className="pointer-events-none absolute top-0 right-0 z-10 h-20 w-20 overflow-visible sm:h-20 sm:w-20 md:-top-30 md:-left-36 md:h-50 md:w-50">
             <Image
               src="https://drive.google.com/uc?export=view&id=1cruimvvJdhw4h8k2cbH8GZrcG6qqFlOR"
-              alt="fern"
+              alt="red leaf"
               fill
+              sizes="(max-width: 768px) 80px, 200px"
               className="object-contain drop-shadow-2xl"
             />
           </div>
@@ -49,6 +50,7 @@ export default function FirstPageAboutMe() {
           src="https://drive.google.com/uc?export=view&id=1UtU-4W5bqMbLvXE4KVJ4SU6wScv6d8RN"
           alt="with my Christine"
           fill
+          sizes="(max-width: 768px) 80px, 200px"
           className="object-cover p-4 pb-8"
         />
 

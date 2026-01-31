@@ -15,6 +15,10 @@ export default function DashboardImage() {
           src="https://drive.google.com/uc?export=view&id=1rJxQmm58HTT4n3scn3fqljTABU2vL1_5"
           alt="profile"
           fill
+          sizes="(max-width: 640px) 180px,
+         (max-width: 1024px) 70vw,
+         320px"
+          priority
           className="border object-cover p-4 pb-8 shadow-2xl"
         />
 
@@ -23,8 +27,12 @@ export default function DashboardImage() {
         <div className="absolute -bottom-10 -left-30 z-20 h-50 w-50 overflow-visible sm:h-40 sm:w-40 md:bottom-0 md:-left-30 md:h-60 md:w-60">
           <Image
             src="https://drive.google.com/uc?export=view&id=1K7IDet6k_0Ur5_xw6c9l931nG5_AVi-0"
-            alt="profile"
+            alt="basta bulak na laya"
             fill
+            sizes="(max-width: 640px) 160px,
+         (max-width: 1024px) 240px,
+         320px"
+            priority
             className="scale-x-[-1] rotate-12 object-contain drop-shadow-2xl"
           />
         </div>

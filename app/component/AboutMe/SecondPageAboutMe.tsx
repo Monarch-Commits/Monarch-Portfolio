@@ -12,6 +12,9 @@ export default function SecondPageAboutMe() {
           src="https://drive.google.com/uc?export=view&id=1mymCU0TCih6Ek8To6o6WCT7fl6rx6TT0"
           alt="profile"
           fill
+          sizes="(max-width: 640px) 180px,
+         (max-width: 1024px) 50vw,
+         288px"
           className="object-cover p-4 pb-8"
         />
         <div className="absolute -right-6 bottom-0 h-5 w-20 rotate-140 bg-orange-200" />
@@ -51,6 +54,7 @@ export default function SecondPageAboutMe() {
             src="https://drive.google.com/uc?export=view&id=1mNvKsMya4iH_oEGkgLtXxJ8kdnWJUGGn"
             alt="profile"
             fill
+            sizes="240px"
             className="object-contain drop-shadow-2xl"
           />
         </div>

@@ -7,10 +7,10 @@ import type { IconType } from 'react-icons';
 
 export const pages: { name: string; href: string; icon: IconType }[] = [
   { name: 'Home', href: '/', icon: LuHouse },
-  { name: 'Skills', href: '#', icon: IoCodeSlash },
-  { name: 'Experience', href: '#', icon: GoBriefcase },
-  { name: 'About', href: '#', icon: CgProfile },
-  { name: 'Contact', href: '#', icon: MdOutlineCall },
+  { name: 'Skills', href: '#Skills', icon: IoCodeSlash },
+  { name: 'Experience', href: '#Experience', icon: GoBriefcase },
+  { name: 'About', href: '#About', icon: CgProfile },
+  { name: 'Contact', href: '#Contact', icon: MdOutlineCall },
 ];
 
 export const AboutMePersonalInfo = [

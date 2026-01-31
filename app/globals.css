@@ -5,6 +5,10 @@ body {
   font-family: 'Poppins';
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {

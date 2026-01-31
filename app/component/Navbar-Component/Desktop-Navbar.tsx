@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { ModeToggle } from './Dark-Mode/toggleMode';
-import MobileNavbar from './Mobile-Navbar';
 
 import { LoginLink, LogoutLink } from '@kinde-oss/kinde-auth-nextjs';
 
@@ -50,8 +49,6 @@ export default async function DesktopNavbar() {
           })}
         </div>
         <div className="flex items-center justify-center gap-3">
-          <MobileNavbar />
-
           {user ? (
             <div className="flex flex-row items-center gap-3">
               <>

@@ -3,7 +3,10 @@ import FirstPageAboutMe from './FirstPageAboutMe';
 
 export default function AboutMe() {
   return (
-    <section className="flex min-h-screen w-full flex-col items-center justify-center pt-10 md:pt-2">
+    <section
+      id="About"
+      className="flex min-h-screen w-full flex-col items-center justify-center pt-10 md:pt-2"
+    >
       <FirstPageAboutMe />
       <SecondPageAboutMe />
     </section>
