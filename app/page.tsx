@@ -1,6 +1,7 @@
 import AboutMe from './component/AboutMe/AboutMe';
 import Dashboard from './component/Dashboard/Dashboard';
 import Project from './component/Project/Project';
+// import SkillsSection from './component/Skills/Skills';
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <Dashboard />
       <AboutMe />
       <Project />
+      {/* <SkillsSection /> */}
     </main>
   );
 }

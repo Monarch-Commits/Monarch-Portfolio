@@ -17,8 +17,8 @@ export default function SecondPageAboutMe() {
          288px"
           className="object-cover p-4 pb-8"
         />
-        <div className="absolute -right-6 bottom-0 h-5 w-20 rotate-140 bg-orange-200" />
-        <div className="absolute top-0 -left-6 h-5 w-20 -rotate-12 bg-orange-200" />
+        <div className="absolute -right-6 bottom-0 h-5 w-20 rotate-140 bg-orange-200/50 shadow-sm" />
+        <div className="absolute top-0 -left-6 h-5 w-20 -rotate-12 bg-orange-200/50 shadow-sm" />
       </div>
 
       {/* RIGHT TEXT CARD */}

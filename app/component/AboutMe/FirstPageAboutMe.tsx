@@ -44,7 +44,6 @@ export default function FirstPageAboutMe() {
       </div>
 
       {/* Image */}
-
       <div className="relative flex aspect-square w-[clamp(180px,70vw,320px)] rotate-3 items-end justify-center bg-white shadow-xl">
         <Image
           src="https://drive.google.com/uc?export=view&id=1UtU-4W5bqMbLvXE4KVJ4SU6wScv6d8RN"
@@ -54,8 +53,8 @@ export default function FirstPageAboutMe() {
           className="object-cover p-4 pb-8"
         />
 
-        <div className="absolute top-0 -right-6 z-10 h-5 w-20 rotate-12 bg-orange-200" />
-        <div className="absolute top-0 -left-6 z-10 h-5 w-20 -rotate-12 bg-orange-200" />
+        <div className="absolute top-0 -right-6 z-10 h-5 w-20 rotate-12 bg-orange-200/50 shadow-sm" />
+        <div className="absolute top-0 -left-6 z-10 h-5 w-20 -rotate-12 bg-orange-200/50 shadow-sm" />
       </div>
     </div>
   );
