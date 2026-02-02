@@ -50,7 +50,7 @@ export default function FirstPageAboutMe() {
           src="https://drive.google.com/uc?export=view&id=1UtU-4W5bqMbLvXE4KVJ4SU6wScv6d8RN"
           alt="with my Christine"
           fill
-          sizes="(max-width: 768px) 80px, 200px"
+          sizes="(max-width: 768px) 70vw, 320px"
           className="object-cover p-4 pb-8"
         />
 

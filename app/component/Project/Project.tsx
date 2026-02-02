@@ -11,7 +11,7 @@ export default async function Project() {
   return (
     <section
       id="Projects"
-      className="relative w-full max-w-7xl overflow-hidden px-1 md:px-6"
+      className="w-full max-w-7xl overflow-hidden px-1 md:px-6"
     >
       {/* HEADER */}
       <header className="mb-10">
@@ -23,7 +23,7 @@ export default async function Project() {
         </h1>
 
         {/* TECH STACK */}
-        <div className="flex flex-wrap gap-3">
+        <div className="relative flex flex-wrap gap-3">
           {stack.map((tech) => (
             <Button
               key={tech.name}
@@ -34,6 +34,15 @@ export default async function Project() {
               {tech.name}
             </Button>
           ))}
+          <div
+            style={{ fontFamily: "'Momo Signature', cursive" }}
+            className="absolute right-2 bottom-1 hidden flex-col items-center justify-center font-semibold text-orange-500 md:flex"
+          >
+            <span>More</span>
+            <span>Comming</span>
+            <span>Soon!!</span>
+            <HiArrowTrendingDown className="h-7 w-7" />
+          </div>
         </div>
       </header>
 
@@ -46,7 +55,7 @@ export default async function Project() {
         {project?.data?.map((prod, index) => (
           <article
             key={prod.id}
-            className={`relative mx-0 mb-4 flex break-inside-avoid flex-col gap-4 rounded-md border-2 bg-orange-50 p-4 shadow-sm transition-all hover:shadow-xl md:mx-5 ${
+            className={`relative mx-0 mb-4 flex break-inside-avoid flex-col gap-4 border-2 bg-orange-50 p-4 shadow-sm transition-all hover:shadow-xl md:mx-5 dark:bg-orange-50 ${
               index % 3 === 0
                 ? 'md:rotate-2'
                 : index % 3 === 1
@@ -101,15 +110,6 @@ export default async function Project() {
             </div>
           </article>
         ))}
-        <div
-          style={{ fontFamily: "'Momo Signature', cursive" }}
-          className="absolute right-2 bottom-1 hidden flex-col items-center justify-center font-semibold text-orange-500 md:flex"
-        >
-          <span>More</span>
-          <span>Comming</span>
-          <span>Soon!!</span>
-          <HiArrowTrendingDown className="h-7 w-7" />
-        </div>
       </div>
     </section>
   );

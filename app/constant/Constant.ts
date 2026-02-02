@@ -5,6 +5,7 @@ import { CgProfile } from 'react-icons/cg';
 import { MdOutlineCall } from 'react-icons/md';
 import type { IconType } from 'react-icons';
 
+// data for navigation pages
 export const pages: { name: string; href: string; icon: IconType }[] = [
   { name: 'Home', href: '/', icon: LuHouse },
   { name: 'Skills', href: '#Skills', icon: IoCodeSlash },
@@ -13,6 +14,7 @@ export const pages: { name: string; href: string; icon: IconType }[] = [
   { name: 'Contact', href: '#Contact', icon: MdOutlineCall },
 ];
 
+// data for about me personal info
 export const AboutMePersonalInfo = [
   { label: 'Age', value: '20' },
   { label: 'Location', value: 'Davao' },
