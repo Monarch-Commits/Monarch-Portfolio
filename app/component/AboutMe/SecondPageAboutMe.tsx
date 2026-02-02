@@ -32,16 +32,13 @@ export default function SecondPageAboutMe() {
 
         <div className="z-10 flex max-w-full flex-col items-start justify-center gap-2">
           {AboutMePersonalInfo.map((item, index) => (
-            <p
-              key={index}
-              className={`flex w-full gap-2 ${item.break ? 'w-full' : ''}`}
-            >
-              <span className="font-medium">{item.label}:</span>
-              <span className={'text-gray-600'}>{item.value}</span>
+            <p key={index}>
+              <span className="font-medium">{item.label}: </span>
+              <span className={'text-gray-600'}> {item.value}</span>
             </p>
           ))}
           <div className="flex flex-wrap items-center gap-3 text-gray-600 md:col-span-2">
-            <span className="font-medium">Favorite Stack:</span>
+            <span className="font-medium text-black">Favorite Stack:</span>
             <TbBrandNextjs className="h-7 w-7" />
             <FaReact className="h-7 w-7" /> <SiPrisma className="h-7 w-7" />
             <SiPostgresql className="h-7 w-7" />

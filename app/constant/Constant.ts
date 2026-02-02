@@ -8,8 +8,8 @@ import type { IconType } from 'react-icons';
 export const pages: { name: string; href: string; icon: IconType }[] = [
   { name: 'Home', href: '/', icon: LuHouse },
   { name: 'Skills', href: '#Skills', icon: IoCodeSlash },
-  { name: 'Experience', href: '#Experience', icon: GoBriefcase },
-  { name: 'About', href: '#About', icon: CgProfile },
+  { name: 'About', href: '#About', icon: GoBriefcase },
+  { name: 'Projects', href: '#Projects', icon: CgProfile },
   { name: 'Contact', href: '#Contact', icon: MdOutlineCall },
 ];
 
