@@ -6,7 +6,7 @@ export default function FirstPageAboutMe() {
       <div className="flex w-full flex-col items-end gap-3 rounded-xl md:p-8 dark:text-gray-900">
         <div className="relative max-w-full rotate-3 overflow-visible rounded-lg bg-orange-50 p-6 shadow-lg md:max-w-lg dark:bg-orange-100">
           <h2
-            className="mb-4 text-2xl font-semibold"
+            className="mb-4 text-2xl font-semibold md:text-4xl"
             style={{ fontFamily: "'Momo Signature', cursive" }}
           >
             About Me
@@ -30,7 +30,7 @@ export default function FirstPageAboutMe() {
 
         <div className="max-w-full rounded-lg bg-orange-50 p-6 shadow-xl dark:bg-orange-100">
           <h2
-            className="mb-4 text-2xl font-semibold"
+            className="mb-4 text-2xl font-semibold md:text-4xl"
             style={{ fontFamily: "'Momo Signature', cursive" }}
           >
             Project-Focused

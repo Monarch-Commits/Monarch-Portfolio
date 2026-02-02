@@ -2,10 +2,9 @@
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import React, { SyntheticEvent, useState } from 'react';
+import { SyntheticEvent, useState } from 'react';
 import toast from 'react-hot-toast';
 import postProject from '../actions/post/createPostProject.action';
-import Project from '../component/Project/Project';
 
 export default function CreatePostProject() {
   const [title, setTitle] = useState('');
@@ -51,19 +50,24 @@ export default function CreatePostProject() {
           placeholder="Product Title"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
+          disabled={loading}
           required
         />
         <Textarea
           placeholder="Description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
+          disabled={loading}
           required
         />
 
         <Input
           type="file"
           accept="image/*"
-          onChange={(e) => setImageUrl(e.target.files?.[0] || null)}
+          onChange={(e) =>
+            setImageUrl(e.target.files ? e.target.files[0] : null)
+          }
+          disabled={loading}
           required
         />
 

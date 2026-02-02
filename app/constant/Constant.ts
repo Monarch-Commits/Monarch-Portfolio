@@ -28,3 +28,21 @@ export const AboutMePersonalInfo = [
   },
   { label: 'Phone', value: '+63 927 654 5827' },
 ];
+
+// data for stack used in projects
+export const stack = [
+  {
+    name: 'React',
+  },
+  {
+    name: 'Next.js',
+  },
+  { name: 'TypeScript' },
+  {
+    name: 'Tailwind CSS',
+  },
+  {
+    name: 'Prisma',
+  },
+  { name: 'PostgreSQL' },
+];
