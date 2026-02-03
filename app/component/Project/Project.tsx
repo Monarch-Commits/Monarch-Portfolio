@@ -11,7 +11,7 @@ export default async function Project() {
   return (
     <section
       id="Projects"
-      className="w-full max-w-7xl overflow-hidden px-1 md:px-6"
+      className="mt-2 w-full max-w-7xl overflow-x-visible px-1 md:mt-20 md:px-6"
     >
       {/* HEADER */}
       <header className="mb-10">
@@ -47,7 +47,7 @@ export default async function Project() {
       </header>
 
       {/* MASONRY CONTAINER */}
-      <div className="columns-1 gap-4 [column-fill:balance] sm:columns-2 lg:columns-3">
+      <div className="columns-1 space-y-2 [column-fill:balance] sm:columns-2 md:space-y-4 lg:columns-3">
         {project?.data?.length === 0 && (
           <p className="text-muted-foreground">No Project Found</p>
         )}
@@ -55,7 +55,7 @@ export default async function Project() {
         {project?.data?.map((prod, index) => (
           <article
             key={prod.id}
-            className={`relative mx-0 mb-4 flex break-inside-avoid flex-col gap-4 border-2 bg-orange-50 p-4 shadow-sm transition-all hover:shadow-xl md:mx-2 dark:bg-orange-50 ${
+            className={`relative flex break-inside-avoid flex-col gap-4 overflow-hidden border-2 bg-orange-50 p-4 shadow-sm transition-all hover:shadow-xl md:mx-2 md:overflow-visible dark:bg-orange-50 ${
               index % 3 === 0
                 ? 'md:rotate-2'
                 : index % 3 === 1
