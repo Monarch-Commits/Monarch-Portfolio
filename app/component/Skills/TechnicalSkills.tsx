@@ -4,7 +4,7 @@ import { GiFairyWand } from 'react-icons/gi';
 
 export default function TechnicalSkills() {
   return (
-    <div className="flex max-w-full flex-col gap-6 p-2 md:gap-10">
+    <div className="flex max-w-full flex-col gap-6 p-2 md:gap-10 dark:text-white">
       <div className="w-full">
         <h1
           className="mb-6 text-3xl font-semibold md:text-5xl"
@@ -12,7 +12,7 @@ export default function TechnicalSkills() {
         >
           Skills and Expertise
         </h1>
-        <p>
+        <p className="text-gray-600 dark:text-gray-300">
           The tools and technologies I frequently use to build amazing web
           applications:
         </p>
@@ -28,7 +28,7 @@ export default function TechnicalSkills() {
             return (
               <div
                 key={index}
-                className="flex items-center justify-center gap-2 rounded-md border border-orange-300 bg-orange-50 p-1 px-2 text-orange-900 shadow-sm transition-all hover:scale-105 hover:bg-orange-200 dark:text-orange-300"
+                className="flex items-center justify-center gap-2 rounded-md border border-orange-300 bg-orange-50 p-1 px-2 text-orange-900 shadow-sm transition-all hover:bg-orange-200"
               >
                 <SkillIcon className="h-5 w-5" />
                 <p>{skill.name}</p>
@@ -37,8 +37,8 @@ export default function TechnicalSkills() {
           })}
         </div>
       </div>
-      <div>
-        <p className="flex items-center gap-2 font-semibold md:gap-3">
+      <div className="dark:text-black">
+        <p className="flex items-center gap-2 font-semibold md:gap-3 dark:text-white">
           <GiFairyWand className="h-7 w-7" />
           Development Approach
         </p>
@@ -46,7 +46,7 @@ export default function TechnicalSkills() {
           {creativeProcess.map((process, index) => (
             <div
               key={index}
-              className="flex w-md max-w-full flex-col items-start justify-center gap-2 bg-orange-50 p-2 shadow-sm transition-all hover:scale-105 hover:dark:bg-orange-950 hover:dark:text-orange-300"
+              className="flex w-md max-w-full flex-col items-start justify-center gap-2 rounded-sm bg-orange-50 p-2 shadow-sm transition-all"
             >
               <h3 className="font-bold">{process.title}</h3>
               <p className="text-gray-500">{process.description}</p>
