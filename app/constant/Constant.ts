@@ -54,30 +54,36 @@ export const stack = [
 ];
 
 // data for skills with icons
-export const skills: { name: string; icons: IconType }[] = [
+export const skills: { name: string; icons: IconType; color: string }[] = [
   {
     name: 'React',
     icons: FaReact,
+    color: 'text-cyan-400',
   },
   {
     name: 'Next.js',
     icons: TbBrandNextjs,
+    color: 'text-gray-900',
   },
   {
     name: 'TypeScript',
     icons: TbBrandTypescript,
+    color: 'text-cyan-400',
   },
   {
     name: 'Tailwind CSS',
     icons: RiTailwindCssFill,
+    color: 'text-cyan-500',
   },
   {
     name: 'Prisma',
     icons: SiPrisma,
+    color: 'text-slate-900',
   },
   {
     name: 'PostgreSQL',
     icons: SiPostgresql,
+    color: 'text-blue-800',
   },
 ];
 

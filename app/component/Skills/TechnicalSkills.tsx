@@ -28,9 +28,9 @@ export default function TechnicalSkills() {
             return (
               <div
                 key={index}
-                className="flex items-center justify-center gap-2 rounded-md border border-orange-300 bg-orange-50 p-1 px-2 text-orange-900 shadow-sm transition-all hover:bg-orange-200"
+                className={`flex items-center justify-center gap-2 rounded-md border border-orange-300 bg-orange-50 p-1 px-2 text-orange-900 shadow-sm transition-all hover:bg-orange-200`}
               >
-                <SkillIcon className="h-5 w-5" />
+                <SkillIcon className={`h-5 w-5 ${skill.color}`} />
                 <p>{skill.name}</p>
               </div>
             );
@@ -42,11 +42,11 @@ export default function TechnicalSkills() {
           <GiFairyWand className="h-7 w-7" />
           Development Approach
         </p>
-        <div className="mt-4 flex flex-col items-start justify-start gap-2 md:gap-3">
+        <div className="mt-4 flex flex-col items-center justify-center gap-2 md:items-start md:justify-start md:gap-3">
           {creativeProcess.map((process, index) => (
             <div
               key={index}
-              className="flex w-md max-w-full flex-col items-start justify-center gap-2 rounded-sm bg-orange-50 p-2 shadow-sm transition-all"
+              className="flex w-md max-w-full flex-col items-start justify-center gap-2 rounded-sm bg-orange-100 p-2 shadow-sm transition-all"
             >
               <h3 className="font-bold">{process.title}</h3>
               <p className="text-gray-500">{process.description}</p>

@@ -1,5 +1,6 @@
 import AboutMe from './component/AboutMe/AboutMe';
 import Dashboard from './component/Dashboard/Dashboard';
+// import Experience from './component/Experience/Experience';
 import Project from './component/Project/Project';
 import SkillsSection from './component/Skills/Skills';
 
@@ -10,6 +11,7 @@ export default function Home() {
       <AboutMe />
       <Project />
       <SkillsSection />
+      {/* <Experience /> */}
     </main>
   );
 }

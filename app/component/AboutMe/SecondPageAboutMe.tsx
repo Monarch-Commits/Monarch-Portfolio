@@ -10,7 +10,7 @@ export default function SecondPageAboutMe() {
       <div className="relative z-20 flex aspect-square w-[clamp(180px,50vw,288px)] -rotate-3 items-end justify-center overflow-visible border bg-white shadow-xl">
         <Image
           src="https://drive.google.com/uc?export=view&id=1mymCU0TCih6Ek8To6o6WCT7fl6rx6TT0"
-          alt="profile"
+          alt="with my GF"
           fill
           sizes="(max-width: 640px) 180px,
          (max-width: 1024px) 50vw,

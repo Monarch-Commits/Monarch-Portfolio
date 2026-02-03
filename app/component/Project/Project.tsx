@@ -11,7 +11,7 @@ export default async function Project() {
   return (
     <section
       id="Projects"
-      className="mt-2 w-full max-w-7xl overflow-x-visible px-1 md:mt-20 md:px-6"
+      className="w-full max-w-7xl overflow-x-visible px-1 pt-14 md:px-6 md:pt-28"
     >
       {/* HEADER */}
       <header className="mb-10">

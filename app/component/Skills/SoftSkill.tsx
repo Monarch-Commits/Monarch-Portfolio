@@ -3,14 +3,14 @@ import { BiLeaf } from 'react-icons/bi';
 
 export default function SoftSkill() {
   return (
-    <div className="flex w-xl max-w-full flex-col items-center justify-center overflow-hidden md:overflow-visible dark:text-black">
+    <div className="mt-0 flex w-xl max-w-full flex-col items-center justify-center overflow-hidden md:mt-20 md:overflow-visible dark:text-black">
       <div>
         <p className="flex items-center gap-2 font-semibold md:gap-3 dark:text-white">
           <BiLeaf className="h-7 w-7" />
           Soft Skills
         </p>
       </div>
-      <div className="mt-4 grid grid-cols-1 items-center md:gap-2">
+      <div className="mt-4 grid grid-cols-1 items-center px-2 md:gap-2">
         {SoftSkills.map((skill, index) => (
           <div
             key={index}
