@@ -28,7 +28,7 @@ export default function TechnicalSkills() {
             return (
               <div
                 key={index}
-                className={`flex items-center justify-center gap-2 rounded-md border border-orange-300 bg-orange-50 p-1 px-2 text-orange-900 shadow-sm transition-all hover:bg-orange-200`}
+                className={`flex items-center justify-center gap-2 rounded-md border border-orange-300 bg-orange-50 p-1 px-2 text-orange-900 shadow-sm transition-all hover:scale-105`}
               >
                 <SkillIcon className={`h-5 w-5 ${skill.color}`} />
                 <p>{skill.name}</p>

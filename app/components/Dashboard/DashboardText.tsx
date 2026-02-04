@@ -32,12 +32,20 @@ export function LayoutTextFlipDemo() {
           Turning ideas into smooth, functional, and beautiful digital
           experiences that feel fresh, fast, and intuitive.
         </p>
-        <Button
-          variant="outline"
-          className="border-orange-300 bg-orange-100 text-orange-900 shadow-sm hover:bg-orange-200 dark:text-orange-300"
-        >
-          Learn More
-        </Button>
+        <div className="flex gap-3">
+          <Button
+            variant="outline"
+            className="border-orange-300 bg-orange-100 text-orange-900 shadow-sm transition-all hover:scale-105 hover:bg-orange-200 dark:text-orange-300"
+          >
+            Learn More
+          </Button>
+          <Button
+            variant="outline"
+            className="border-orange-300 text-orange-900 shadow-sm transition-all hover:scale-105 hover:bg-orange-200 dark:text-orange-300"
+          >
+            Download CV
+          </Button>
+        </div>
       </div>
     </div>
   );

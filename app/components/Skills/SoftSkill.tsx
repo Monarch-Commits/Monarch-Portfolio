@@ -25,7 +25,7 @@ export default function SoftSkill() {
             <h3 className="font-bold">{skill.title}</h3>
             <p className="text-gray-700">{skill.description}</p>
             <div
-              className={`absolute -top-3 -left-4 h-4 w-24 -rotate-12 bg-orange-200/50 shadow-sm ${
+              className={`absolute -top-3 -left-4 h-4 w-24 -rotate-12 bg-green-200/40 shadow-sm ${
                 index % 3 === 0
                   ? 'top-0 -right-6'
                   : index % 3 === 1

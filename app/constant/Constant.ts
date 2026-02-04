@@ -9,6 +9,16 @@ import { TbBrandNextjs, TbBrandTypescript } from 'react-icons/tb';
 import { RiTailwindCssFill } from 'react-icons/ri';
 import { SiPostgresql, SiPrisma } from 'react-icons/si';
 
+type ExperienceItem = {
+  title: string;
+  role: string;
+  institution: string;
+  date: string;
+  description: string[];
+  tech: string[];
+  buttons?: string[];
+};
+
 // data for navigation pages
 export const pages: { name: string; href: string; icon: IconType }[] = [
   { name: 'Home', href: '/', icon: LuHouse },
@@ -119,5 +129,37 @@ export const SoftSkills = [
     title: 'Adaptability & Learning',
     description:
       'Quickly learning new tools and adjusting to changing project requirements to maintain high-quality results.',
+  },
+];
+
+// data for experiences
+export const experiences: ExperienceItem[] = [
+  {
+    title: 'On-the-Job Training',
+    role: 'IT Support / System Developer',
+    institution:
+      'University of Southern Mindanao (USM) – Kidapawan City Campus',
+    date: 'Feb 2025 – May 2025',
+    description: [
+      'Provided IT support by troubleshooting and repairing school laptops, printers, and other technical equipment.',
+      'Assisted in setting up fiber internet connections and campus-wide Wi-Fi.',
+      'Maintained computer laboratories and provided technical assistance to students, including ID processing.',
+      'Developed a Student Profiling System to manage personal, academic, and ID information with real-time updates, search functionality, and secure authentication.',
+    ],
+    tech: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
+    buttons: ['View Project', 'Download Certificate'],
+  },
+  {
+    title: 'Capstone Project',
+    role: 'Library Holdings Management System',
+    institution: 'Makilala Institute of Science and Technology',
+    date: 'May 2024 – January 2025',
+    description: [
+      'Developed a centralized system to manage and track library collections, including books and journals.',
+      'Implemented full CRUD operations, report generation, and subject-based monitoring.',
+      'Designed the system to improve organization, reporting efficiency, and long-term monitoring of library resources.',
+    ],
+    tech: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
+    buttons: ['View Project', 'Download Documentation'],
   },
 ];
