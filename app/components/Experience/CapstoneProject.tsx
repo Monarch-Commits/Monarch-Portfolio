@@ -5,7 +5,7 @@ export default function ExperiencePage() {
   return (
     <section className="mx-auto w-full max-w-4xl px-1 py-5 md:px-6 md:py-16">
       {/* Experience List */}
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-col gap-4 md:gap-10">
         {experiences.map((item, index) => (
           <article
             key={index}
