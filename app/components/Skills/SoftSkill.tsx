@@ -14,7 +14,7 @@ export default function SoftSkill() {
         {SoftSkills.map((skill, index) => (
           <div
             key={index}
-            className={`relative mb-4 flex w-sm max-w-full flex-col items-start justify-center gap-2 bg-orange-100 p-3 px-3 shadow-2xl transition-all hover:shadow-xl ${
+            className={`relative mb-4 flex w-sm max-w-full flex-col items-start justify-center gap-2 bg-orange-100 p-3 px-3 shadow-md transition-all hover:shadow-xl ${
               index % 3 === 0
                 ? 'md:rotate-2'
                 : index % 3 === 1

@@ -1,8 +1,8 @@
-import AboutMe from './component/AboutMe/AboutMe';
-import Dashboard from './component/Dashboard/Dashboard';
-// import Experience from './component/Experience/Experience';
-import Project from './component/Project/Project';
-import SkillsSection from './component/Skills/Skills';
+import AboutMe from './components/AboutMe/AboutMe';
+import Dashboard from './components/Dashboard/Dashboard';
+import Experience from './components/Experience/Experience';
+import Project from './components/Project/Project';
+import SkillsSection from './components/Skills/Skills';
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <AboutMe />
       <Project />
       <SkillsSection />
-      {/* <Experience /> */}
+      <Experience />
     </main>
   );
 }

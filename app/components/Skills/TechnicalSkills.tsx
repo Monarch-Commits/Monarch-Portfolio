@@ -46,7 +46,7 @@ export default function TechnicalSkills() {
           {creativeProcess.map((process, index) => (
             <div
               key={index}
-              className="flex w-md max-w-full flex-col items-start justify-center gap-2 rounded-sm bg-orange-100 p-2 shadow-sm transition-all"
+              className={`flex w-md max-w-full flex-col items-start justify-center gap-2 rounded-sm bg-orange-100 p-2 shadow-sm transition-all ${index % 2 === 1 ? 'md:ml-20' : 'md:-rotate-2'} ${index % 3 === 0 ? 'md:rotate-2' : 'md:-rotate-2'}`}
             >
               <h3 className="font-bold">{process.title}</h3>
               <p className="text-gray-500">{process.description}</p>

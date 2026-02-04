@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import { AuthProvider } from './AuthProvider';
-import { Navigation } from './component/Navbar-Component/Navigation';
-import { ThemeProvider } from './component/Navbar-Component/Dark-Mode/theme-provider';
+import { Navigation } from './components/Navbar-Component/Navigation';
+import { ThemeProvider } from './components/Navbar-Component/Dark-Mode/theme-provider';
 import { Toaster } from 'react-hot-toast';
 
 const poppins = Poppins({
