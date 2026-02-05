@@ -5,48 +5,55 @@ import DockText from '@/components/ui/dock-text';
 
 export function LayoutTextFlipDemo() {
   return (
-    <div className="mt-20 flex w-full items-center justify-center p-2 md:mt-0 md:p-6 lg:w-lg">
-      <div className="relative mt-4 flex w-full flex-col items-center gap-1 sm:gap-2 md:items-start md:gap-3">
-        {/* Greeting */}
-        <p className="text-center tracking-[0.2em] sm:text-center sm:text-lg md:text-start">
-          Hi, I’m
-        </p>
+    <section className="mt-20 flex w-full items-center justify-center p-2 md:mt-0 md:p-6 lg:w-lg">
+      <div className="w-full max-w-2xl">
+        <div className="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
+          {/* Greeting */}
+          <p className="text-muted-foreground text-xs font-medium tracking-[0.3em] sm:text-sm">
+            HI, I’M
+          </p>
 
-        {/* Name */}
-        <div
-          className="text-center text-3xl leading-tight font-extrabold text-amber-800 sm:text-center sm:text-5xl sm:leading-none md:text-start md:text-6xl md:leading-tight"
-          style={{ fontFamily: "'Momo Signature', cursive" }}
-        >
-          <DockText text="Monarch" />
-        </div>
-
-        {/* Main value */}
-        <p className="text-center text-lg font-semibold sm:text-center sm:text-xl md:text-start md:text-2xl">
-          I create <span className="text-amber-700">clean, efficient,</span> and{' '}
-          <span className="text-amber-700">visually appealing</span> web
-          applications.
-        </p>
-
-        {/* Supporting line */}
-        <p className="max-w-md text-center text-sm leading-relaxed text-gray-600 sm:text-center md:text-start">
-          Turning ideas into smooth, functional, and beautiful digital
-          experiences that feel fresh, fast, and intuitive.
-        </p>
-        <div className="flex gap-3">
-          <Button
-            variant="outline"
-            className="border-orange-300 bg-orange-100 text-orange-900 shadow-sm transition-all hover:scale-105 hover:bg-orange-200 dark:text-orange-300"
+          {/* Name */}
+          <div
+            className="text-4xl leading-tight font-extrabold text-amber-800 sm:text-5xl md:text-6xl"
+            style={{ fontFamily: "'Momo Signature', cursive" }}
           >
-            Learn More
-          </Button>
-          <Button
-            variant="outline"
-            className="border-orange-300 text-orange-900 shadow-sm transition-all hover:scale-105 hover:bg-orange-200 dark:text-orange-300"
-          >
-            Download CV
-          </Button>
+            <DockText text="Monarch" />
+          </div>
+
+          {/* Main value proposition */}
+          <p className="text-foreground max-w-xl text-lg font-semibold sm:text-xl md:text-2xl">
+            I create <span className="text-amber-700">clean, efficient</span>,
+            and <span className="text-amber-700">visually refined</span> web
+            applications.
+          </p>
+
+          {/* Supporting description */}
+          <p className="text-muted-foreground max-w-md text-sm leading-relaxed sm:text-base">
+            Turning ideas into smooth, functional, and elegant digital
+            experiences that feel fast, intuitive, and thoughtfully crafted.
+          </p>
+
+          {/* Actions */}
+          <div className="mt-2 flex flex-wrap gap-3 md:mt-4">
+            <Button
+              variant="outline"
+              size={'sm'}
+              className="border-amber-300 bg-amber-50 text-amber-900 transition-all hover:bg-amber-100 focus-visible:ring-amber-400"
+            >
+              Learn More
+            </Button>
+
+            <Button
+              size={'sm'}
+              variant="outline"
+              className="border-amber-300 text-amber-900 transition-all hover:bg-amber-100 focus-visible:ring-amber-400"
+            >
+              Download CV
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

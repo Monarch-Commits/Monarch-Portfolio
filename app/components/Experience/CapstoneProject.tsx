@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 
 export default function ExperiencePage() {
   return (
-    <section className="mx-auto w-full max-w-4xl px-1 py-5 md:px-6 md:py-16">
+    <section className="mx-auto w-full max-w-4xl pt-2 md:pt-10">
       {/* Experience List */}
       <div className="flex flex-col gap-4 md:gap-10">
         {experiences.map((item, index) => (

@@ -1,14 +1,12 @@
 import { SoftSkills } from '@/app/constant/Constant';
-import { BiLeaf } from 'react-icons/bi';
+import { LiaHeartbeatSolid } from 'react-icons/lia';
 
 export default function SoftSkill() {
   return (
-    <div className="mt-0 flex w-xl max-w-full flex-col items-center justify-center overflow-hidden md:mt-20 md:overflow-visible dark:text-black">
-      <div>
-        <p className="flex items-center gap-2 font-semibold md:gap-3 dark:text-white">
-          <BiLeaf className="h-7 w-7" />
-          Soft Skills
-        </p>
+    <div className="mt-0 flex w-full flex-col items-center justify-center overflow-hidden md:mt-20 md:overflow-visible dark:text-black">
+      <div className="flex w-full flex-row justify-start pt-4 md:items-center md:justify-center">
+        <LiaHeartbeatSolid className="h-7 w-7" />
+        <p className="font-semibold dark:text-white">Soft Skills</p>
       </div>
       <div className="mt-4 grid grid-cols-1 items-center px-2 md:gap-2">
         {SoftSkills.map((skill, index) => (
