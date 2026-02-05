@@ -45,11 +45,18 @@ export function LayoutTextFlipDemo() {
             </Button>
 
             <Button
+              asChild
               size={'sm'}
               variant="outline"
               className="border-amber-300 text-amber-900 transition-all hover:bg-amber-100 focus-visible:ring-amber-400"
             >
-              Download CV
+              <a
+                href="https://drive.google.com/uc?export=download&id=1GBSKZdTOhEmwu4BdJOmC-TifN3rxF69y"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Download CV
+              </a>
             </Button>
           </div>
         </div>

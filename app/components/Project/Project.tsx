@@ -5,7 +5,7 @@ export default async function Project() {
   return (
     <section
       id="Projects"
-      className="w-full max-w-7xl overflow-x-hidden overflow-y-visible px-1 pt-14 md:px-6 md:pt-28"
+      className="w-full max-w-7xl overflow-x-hidden px-1 pt-14 md:overflow-x-visible md:px-6 md:pt-28"
     >
       <ProjectHeader />
       <AllProject />

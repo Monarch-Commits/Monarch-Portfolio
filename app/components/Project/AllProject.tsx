@@ -14,7 +14,7 @@ export default async function AllProject() {
       {project?.data?.map((prod, index) => (
         <article
           key={prod.id}
-          className={`relative flex break-inside-avoid flex-col gap-4 overflow-visible border-2 bg-orange-50 p-4 shadow-sm transition-all hover:shadow-xl md:mx-2 dark:bg-orange-50 ${
+          className={`relative z-0 flex break-inside-avoid flex-col gap-4 border-2 bg-orange-50 p-4 shadow-sm transition-all hover:shadow-xl md:mx-2 dark:bg-orange-50 ${
             index % 3 === 0
               ? 'md:rotate-2'
               : index % 3 === 1
@@ -24,7 +24,7 @@ export default async function AllProject() {
         >
           {/* TAPE EFFECT */}
           <span
-            className={`absolute h-5 w-20 rotate-12 bg-green-200/40 shadow-sm ${
+            className={`absolute z-50 h-5 w-20 rotate-12 bg-green-200/40 shadow-sm ${
               index % 3 === 0
                 ? 'top-0 -right-6'
                 : index % 3 === 1
@@ -32,7 +32,7 @@ export default async function AllProject() {
                   : 'top-0 -right-6 rotate-60'
             } `}
           />
-          <span className="absolute top-0 -left-6 h-5 w-20 -rotate-12 bg-orange-200/50 shadow-sm" />
+          <span className="absolute top-0 -left-6 z-50 h-5 w-20 -rotate-12 bg-orange-200/50 shadow-sm" />
 
           {/* USER */}
           <div className="flex items-center gap-2">
