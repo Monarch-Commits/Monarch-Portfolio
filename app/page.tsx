@@ -4,6 +4,7 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Experience from './components/Experience/Experience';
 import Project from './components/Project/Project';
 import SkillsSection from './components/Skills/Skills';
+// import Test from './components/Test/Text';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <SkillsSection />
       <Experience />
       <Contact />
+      {/* <Test /> */}
     </main>
   );
 }

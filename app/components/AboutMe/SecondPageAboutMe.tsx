@@ -5,7 +5,7 @@ import { SiPostgresql, SiPrisma } from 'react-icons/si';
 import { AboutMePersonalInfo } from '@/app/constant/Constant';
 export default function SecondPageAboutMe() {
   return (
-    <div className="flex min-h-full w-full flex-col-reverse items-center justify-center gap-5 p-6 md:flex-col lg:flex-row">
+    <div className="flex min-h-full w-full flex-col-reverse items-center justify-center gap-5 pt-6 md:flex-col lg:flex-row">
       {/* LEFT POLAROID IMAGE */}
       <div className="relative z-20 flex aspect-square w-[clamp(180px,50vw,288px)] -rotate-3 items-end justify-center overflow-visible border bg-white shadow-xl">
         <Image

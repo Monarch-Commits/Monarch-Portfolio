@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function FirstPageAboutMe() {
   return (
-    <div className="flex min-h-full w-full flex-col items-center justify-center gap-5 p-1 px-6 sm:w-full sm:flex-col md:p-10 lg:flex-row">
+    <div className="flex w-full max-w-7xl flex-col items-center justify-center gap-5 p-1 px-6 sm:w-full sm:flex-col md:p-10 lg:flex-row">
       <div className="flex w-full flex-col items-end gap-3 rounded-xl md:p-8 dark:text-gray-900">
         <div className="relative max-w-full rotate-3 overflow-visible rounded-lg bg-orange-50 p-6 shadow-lg md:max-w-lg dark:bg-orange-100">
           <h2

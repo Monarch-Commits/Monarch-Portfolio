@@ -14,7 +14,7 @@ export default async function Project() {
       className="w-full max-w-7xl overflow-x-visible px-1 pt-14 md:px-6 md:pt-28"
     >
       {/* HEADER */}
-      <header className="mb-10">
+      <header className="mb-10 p-2">
         <h1
           className="mb-6 text-3xl font-semibold md:text-5xl"
           style={{ fontFamily: "'Momo Signature', cursive" }}
@@ -97,6 +97,22 @@ export default async function Project() {
             <p className="text-muted-foreground line-clamp-4 text-sm">
               {prod.description}
             </p>
+            <div className="flex gap-4">
+              <Button
+                variant="outline"
+                size={'sm'}
+                className="border-orange-300 bg-orange-100 text-orange-900 shadow-sm hover:bg-orange-200 dark:text-orange-300"
+              >
+                View Project
+              </Button>
+              <Button
+                size={'sm'}
+                variant="outline"
+                className="border-orange-300 bg-orange-100 text-orange-900 shadow-sm hover:bg-orange-200 dark:text-orange-300"
+              >
+                Source Code
+              </Button>
+            </div>
 
             {/* IMAGE */}
             <div className="w-full overflow-hidden rounded-md shadow-lg">
