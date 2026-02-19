@@ -1,9 +1,9 @@
 'use server';
 import prisma from '@/app/lib/prisma';
-import { getDbUserPublic } from '../user/user.action';
+import { getDbUser } from '../user/user.action';
 
 export default async function getProject() {
-  const user = await getDbUserPublic();
+  const user = await getDbUser();
 
   try {
     const project = await prisma.project.findMany({
@@ -11,7 +11,7 @@ export default async function getProject() {
       include: {
         user: {
           select: {
-            products: true,
+            projects: true,
             imageUrl: true,
             email: true,
             name: true,

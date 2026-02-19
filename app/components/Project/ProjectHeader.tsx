@@ -1,5 +1,3 @@
-import { stack } from '@/app/constant/Constant';
-import { Button } from '@/components/ui/button';
 import { HiArrowTrendingDown } from 'react-icons/hi2';
 
 export default function ProjectHeader() {
@@ -14,16 +12,11 @@ export default function ProjectHeader() {
 
       {/* TECH STACK */}
       <div className="relative flex flex-wrap gap-3">
-        {stack.map((tech) => (
-          <Button
-            key={tech.name}
-            variant="outline"
-            size="sm"
-            className="border-orange-300 bg-orange-100 text-orange-900 shadow-sm hover:bg-orange-200 dark:text-orange-300"
-          >
-            {tech.name}
-          </Button>
-        ))}
+        <p className="text-gray-500">
+          Selected projects showcasing my work in building efficient,
+          responsive, and innovative web applications.
+        </p>
+
         <div
           style={{ fontFamily: "'Momo Signature', cursive" }}
           className="absolute right-2 bottom-1 hidden flex-col items-center justify-center font-semibold text-orange-500 md:flex"

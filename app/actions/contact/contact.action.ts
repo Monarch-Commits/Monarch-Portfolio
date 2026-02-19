@@ -39,7 +39,8 @@ export default async function sendContact(formData: FormData) {
     padding: 10px;
     border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.2);
-  ">${message}</p>
+
+  " >${message}</p>
       <footer style="margin-top: 20px; font-size: 12px; color: #6b7280;">
         Sent from your Portfolio Contact Form
       </footer>

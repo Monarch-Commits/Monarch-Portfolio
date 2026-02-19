@@ -10,11 +10,19 @@ export default function CreatePostProject() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [imageUrl, setImageUrl] = useState<File | null>(null);
+  const [liveUrl, setLiveUrl] = useState('');
+  const [repoUrl, setRepoUrl] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!title.trim() || !description.trim() || !imageUrl) {
+    if (
+      !title.trim() ||
+      !description.trim() ||
+      !imageUrl ||
+      !liveUrl.trim() ||
+      !repoUrl.trim()
+    ) {
       return toast.error('Please put valid data');
     }
     setLoading(true);
@@ -23,12 +31,16 @@ export default function CreatePostProject() {
         title,
         description,
         imageUrl,
+        liveUrl,
+        repoUrl,
       });
 
       if (result?.success) {
         setTitle('');
         setDescription('');
         setImageUrl(null);
+        setLiveUrl('');
+        setRepoUrl('');
         toast.success('Created Successfully');
       } else {
         toast.error('Failed to create product');
@@ -67,6 +79,20 @@ export default function CreatePostProject() {
           onChange={(e) =>
             setImageUrl(e.target.files ? e.target.files[0] : null)
           }
+          disabled={loading}
+          required
+        />
+        <Input
+          placeholder="Live URL"
+          value={liveUrl}
+          onChange={(e) => setLiveUrl(e.target.value)}
+          disabled={loading}
+          required
+        />
+        <Input
+          placeholder="Repository URL"
+          value={repoUrl}
+          onChange={(e) => setRepoUrl(e.target.value)}
           disabled={loading}
           required
         />

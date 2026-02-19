@@ -10,6 +10,8 @@ interface AddProductParams {
   title: string;
   description: string;
   imageUrl: File;
+  liveUrl: string;
+  repoUrl: string;
 }
 
 interface CloudinaryUploadResult {
@@ -21,6 +23,8 @@ export default async function createPost({
   description,
   title,
   imageUrl,
+  liveUrl,
+  repoUrl,
 }: AddProductParams) {
   try {
     const userId = await getDbUser();
@@ -63,6 +67,8 @@ export default async function createPost({
         title,
         description,
         imageUrl: uploadResult.secure_url,
+        liveUrl,
+        repoUrl,
       },
     });
     revalidatePath('/Create');

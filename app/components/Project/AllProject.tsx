@@ -2,6 +2,7 @@ import getProject from '@/app/actions/post/getProject.action';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default async function AllProject() {
   const project = await getProject();
@@ -57,20 +58,25 @@ export default async function AllProject() {
             {prod.description}
           </p>
           <div className="flex gap-4">
-            <Button
-              variant="outline"
-              size={'sm'}
-              className="border-orange-300 bg-orange-100 text-orange-900 shadow-sm hover:bg-orange-200 dark:text-orange-300"
-            >
-              View Project
-            </Button>
-            <Button
-              size={'sm'}
-              variant="outline"
-              className="border-orange-300 bg-orange-100 text-orange-900 shadow-sm hover:bg-orange-200 dark:text-orange-300"
-            >
-              Source Code
-            </Button>
+            <Link href={prod.liveUrl || ''}>
+              <Button
+                variant="outline"
+                size={'sm'}
+                className="border-orange-300 bg-orange-100 text-orange-900 shadow-sm hover:bg-orange-200 dark:text-orange-300"
+              >
+                View Project
+              </Button>
+            </Link>
+
+            <Link href={prod.repoUrl || ''}>
+              <Button
+                size={'sm'}
+                variant="outline"
+                className="border-orange-300 bg-orange-100 text-orange-900 shadow-sm hover:bg-orange-200 dark:text-orange-300"
+              >
+                Source Code
+              </Button>
+            </Link>
           </div>
 
           {/* IMAGE */}

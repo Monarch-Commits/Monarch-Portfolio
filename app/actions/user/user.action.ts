@@ -44,7 +44,7 @@ export async function getUserByKindeId(kindeId: string) {
       include: {
         _count: {
           select: {
-            products: true,
+            projects: true,
           },
         },
       },
