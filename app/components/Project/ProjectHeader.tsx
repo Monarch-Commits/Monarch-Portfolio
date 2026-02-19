@@ -14,7 +14,7 @@ export default function ProjectHeader() {
       <div className="relative flex flex-wrap gap-3">
         <p className="text-gray-500">
           Selected projects showcasing my work in building efficient,
-          responsive, and innovative web applications.
+          responsive, and innovative web applications
         </p>
 
         <div
