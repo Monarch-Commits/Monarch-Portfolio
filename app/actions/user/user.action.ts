@@ -10,7 +10,9 @@ export default async function asyncUser() {
     const { getUser } = getKindeServerSession();
     const user = await getUser();
 
-    if (!user?.id) return;
+    if (!user?.id) {
+      throw new Error('Unauthorized: No Kinde user found');
+    }
 
     const existingUser = await prisma.user.findUnique({
       where: {
@@ -51,7 +53,7 @@ export async function getUserByKindeId(kindeId: string) {
     });
     return user;
   } catch (error) {
-    console.log('Error fetching user by Clerk ID:', error);
+    console.log('Error fetching user by Kinde ID:', error);
   }
 }
 
@@ -59,7 +61,7 @@ export async function getDbUser() {
   const { getUser } = getKindeServerSession();
   const kindeUser = await getUser();
   if (!kindeUser?.id) {
-    redirect('/api/auth/login');
+    redirect('/');
   }
 
   const user = await getUserByKindeId(kindeUser.id);

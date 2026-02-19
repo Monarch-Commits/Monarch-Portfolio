@@ -10,7 +10,6 @@ export default function ProjectHeader() {
         My Creative Works
       </h1>
 
-      {/* TECH STACK */}
       <div className="relative flex flex-wrap gap-3">
         <p className="text-gray-500">
           Selected projects showcasing my work in building efficient,
