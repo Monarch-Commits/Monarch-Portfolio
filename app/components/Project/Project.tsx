@@ -1,7 +1,7 @@
-import AllProject from './AllProject';
+import AllProject from './BestProject/AllProject';
 import ProjectHeader from './ProjectHeader';
 
-export default async function Project() {
+export default function Project() {
   return (
     <section
       id="Projects"

@@ -1,4 +1,5 @@
 import getProject from '@/app/actions/post/getProject.action';
+import { stacksByProject, techIcons } from '@/app/constant/Constant';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
@@ -88,6 +89,20 @@ export default async function AllProject() {
               height={600}
               className="h-auto w-full object-cover"
             />
+          </div>
+          {/* STACK ICONS */}
+          <div className="mt-2 flex flex-wrap gap-2">
+            {stacksByProject[index % stacksByProject.length].map((tech) => {
+              const TechIcon = techIcons[tech].icon;
+              return (
+                <div
+                  key={tech}
+                  className="flex items-center justify-center rounded-full p-2 text-orange-800 transition-transform hover:scale-110"
+                >
+                  <TechIcon className={`${techIcons[tech].color} h-5 w-5`} />
+                </div>
+              );
+            })}
           </div>
         </article>
       ))}

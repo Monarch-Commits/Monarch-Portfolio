@@ -3,8 +3,6 @@
 import prisma from '@/app/lib/prisma';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
 
-import { redirect } from 'next/navigation';
-
 export default async function asyncUser() {
   try {
     const { getUser } = getKindeServerSession();
@@ -60,9 +58,7 @@ export async function getUserByKindeId(kindeId: string) {
 export async function getDbUser() {
   const { getUser } = getKindeServerSession();
   const kindeUser = await getUser();
-  if (!kindeUser?.id) {
-    redirect('/');
-  }
+  if (!kindeUser?.id) return;
 
   const user = await getUserByKindeId(kindeUser.id);
   if (!user) throw new Error('User not found in database');

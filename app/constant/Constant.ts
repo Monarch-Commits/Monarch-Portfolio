@@ -8,6 +8,13 @@ import { FaReact } from 'react-icons/fa';
 import { TbBrandNextjs, TbBrandTypescript } from 'react-icons/tb';
 import { RiTailwindCssFill } from 'react-icons/ri';
 import { SiPostgresql, SiPrisma } from 'react-icons/si';
+import {
+  SiJavascript,
+  SiTailwindcss,
+  SiFirebase,
+  SiNextdotjs,
+  SiChakraui,
+} from 'react-icons/si';
 
 type ExperienceItem = {
   title: string;
@@ -95,6 +102,11 @@ export const skills: { name: string; icons: IconType; color: string }[] = [
     icons: SiPostgresql,
     color: 'text-blue-800',
   },
+  {
+    name: 'Firebase',
+    icons: SiFirebase,
+    color: 'text-orange-500',
+  },
 ];
 
 export const creativeProcess = [
@@ -162,4 +174,20 @@ export const experiences: ExperienceItem[] = [
     tech: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
     buttons: ['View Project', 'Download Documentation'],
   },
+];
+
+// Mapping tech name → icon + color
+export const techIcons: Record<string, { icon: IconType; color: string }> = {
+  Javascript: { icon: SiJavascript, color: 'text-yellow-400' },
+  Tailwind: { icon: SiTailwindcss, color: 'text-teal-400' },
+  Firebase: { icon: SiFirebase, color: 'text-orange-500' },
+  Nextjs: { icon: SiNextdotjs, color: 'text-gray-900' },
+  'Chakra UI': { icon: SiChakraui, color: 'text-cyan-400' },
+};
+
+// Tech stacks per project
+export const stacksByProject = [
+  ['Javascript', 'Firebase', 'Tailwind'], //  0
+  ['Javascript', 'Firebase', 'Tailwind'], //  1
+  ['Nextjs', 'Chakra UI'], //  2
 ];
