@@ -55,9 +55,17 @@ export default async function AllProject() {
           </h2>
 
           {/* DESCRIPTION */}
-          <p className="text-muted-foreground line-clamp-4 text-sm">
-            {prod.description}
-          </p>
+          <div className="group relative">
+            <p className="text-muted-foreground line-clamp-4 text-sm transition-all duration-500 group-hover:opacity-10 group-hover:blur-[1px]">
+              {prod.description}
+            </p>
+
+            <div className="pointer-events-none absolute -inset-2 z-10 translate-y-2 scale-95 rotate-1 opacity-0 transition-all duration-300 ease-out group-hover:pointer-events-auto group-hover:translate-y-0 group-hover:scale-100 group-hover:rotate-0 group-hover:opacity-100">
+              <div className="relative rounded-sm bg-orange-50 p-4 text-sm text-gray-700 shadow-2xl ring-1 ring-black/5">
+                <p className="leading-relaxed">{prod.description}</p>
+              </div>
+            </div>
+          </div>
           <div className="flex gap-4">
             <Link href={prod.liveUrl || ''}>
               <Button
