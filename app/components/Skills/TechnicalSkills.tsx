@@ -1,6 +1,6 @@
 import { creativeProcess, skills } from '@/app/constant/Constant';
 import { HiOutlineCommandLine } from 'react-icons/hi2';
-import { GiFairyWand } from 'react-icons/gi';
+import { GitCommitHorizontal } from 'lucide-react';
 
 export default function TechnicalSkills() {
   return (
@@ -39,7 +39,7 @@ export default function TechnicalSkills() {
       </div>
       <div className="dark:text-black">
         <p className="flex items-center gap-2 font-semibold md:gap-3 dark:text-white">
-          <GiFairyWand className="h-7 w-7" />
+          <GitCommitHorizontal className="h-7 w-7" />
           Development Approach
         </p>
         <div className="mt-4 flex flex-col items-center justify-center gap-2 md:items-start md:justify-start md:gap-3">
