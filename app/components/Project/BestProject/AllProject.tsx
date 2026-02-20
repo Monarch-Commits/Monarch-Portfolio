@@ -67,7 +67,11 @@ export default async function AllProject() {
             </div>
           </div>
           <div className="flex gap-4">
-            <Link href={prod.liveUrl || ''}>
+            <Link
+              href={prod.liveUrl || ''}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button
                 variant="outline"
                 size={'sm'}
@@ -77,7 +81,11 @@ export default async function AllProject() {
               </Button>
             </Link>
 
-            <Link href={prod.repoUrl || ''}>
+            <Link
+              href={prod.repoUrl || ''}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button
                 size={'sm'}
                 variant="outline"
@@ -92,9 +100,10 @@ export default async function AllProject() {
           <div className="w-full overflow-hidden rounded-md shadow-lg">
             <Image
               src={prod.imageUrl}
-              alt={prod.title}
+              alt={prod.title || 'Project Image'}
               width={800}
               height={600}
+              priority
               className="h-auto w-full object-cover"
             />
           </div>
