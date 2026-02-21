@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { pages } from '@/app/constant/Constant';
 import { Button } from '@/components/ui/button';
+import { MdOutlineCall } from 'react-icons/md';
 
 export default function DesktopNavbar() {
   const [activeSection, setActiveSection] = useState('');
@@ -58,7 +59,7 @@ export default function DesktopNavbar() {
                 variant="ghost"
                 className={`font-medium transition-all duration-300 ${
                   isActive
-                    ? 'scale-105 bg-orange-500 text-white'
+                    ? 'scale-105 bg-orange-700 text-white'
                     : 'text-gray-500 hover:text-orange-400'
                 }`}
               >
@@ -69,8 +70,13 @@ export default function DesktopNavbar() {
         })}
       </div>
 
-      <Link href="#Projects">
-        <Button variant="secondary">View Projects</Button>
+      <Link href="#Contact">
+        <Button
+          variant="outline"
+          className="border-orange-300 text-orange-700 hover:bg-orange-100"
+        >
+          <MdOutlineCall /> Contact Me
+        </Button>
       </Link>
     </div>
   );

@@ -30,19 +30,14 @@ export function LayoutTextFlipDemo() {
           </p>
 
           <div className="mt-2 flex flex-wrap gap-3 md:mt-4">
-            <Button
-              variant="outline"
-              size={'sm'}
-              className="border-amber-300 bg-amber-50 text-amber-900 transition-all hover:bg-amber-100 focus-visible:ring-amber-400"
-            >
+            <Button className="bg-orange-700 text-white shadow-md hover:bg-orange-600">
               Learn More
             </Button>
 
             <Button
               asChild
-              size={'sm'}
               variant="outline"
-              className="border-amber-300 text-amber-900 transition-all hover:bg-amber-100 focus-visible:ring-amber-400"
+              className="border-orange-300 text-orange-700 hover:bg-orange-100"
             >
               <a
                 href="https://drive.google.com/uc?export=download&id=1GBSKZdTOhEmwu4BdJOmC-TifN3rxF69y"
