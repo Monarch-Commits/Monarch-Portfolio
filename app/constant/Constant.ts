@@ -15,7 +15,10 @@ import {
   SiNextdotjs,
   SiChakraui,
 } from 'react-icons/si';
-
+type ExperienceButton = {
+  name: string;
+  href: string;
+};
 type ExperienceItem = {
   title: string;
   role: string;
@@ -23,12 +26,18 @@ type ExperienceItem = {
   date: string;
   description: string[];
   tech: string[];
-  buttons?: string[];
+  buttons?: ExperienceButton[];
 };
 
 // data for navigation pages
-export const pages: { name: string; href: string; icon: IconType }[] = [
-  { name: 'Home', href: '/', icon: LuHouse },
+export interface PageItem {
+  name: string;
+  href: string;
+  icon: IconType;
+}
+
+export const pages: PageItem[] = [
+  { name: 'Home', href: '#Home', icon: LuHouse },
   { name: 'About', href: '#About', icon: GoBriefcase },
   { name: 'Projects', href: '#Projects', icon: CgProfile },
   { name: 'Skills', href: '#Skills', icon: IoCodeSlash },
@@ -159,7 +168,16 @@ export const experiences: ExperienceItem[] = [
       'Developed a Student Profiling System to manage personal, academic, and ID information with real-time updates, search functionality, and secure authentication.',
     ],
     tech: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
-    buttons: ['View Project', 'Download Certificate'],
+    buttons: [
+      {
+        name: 'View Project',
+        href: 'https://student-recording-system-snowy.vercel.app/',
+      },
+      {
+        name: 'View Certificate',
+        href: 'https://drive.google.com/file/d/10w7-9CENdC5l5fpOgAj6tTaTqgj6DUGQ/preview',
+      },
+    ],
   },
   {
     title: 'Capstone Project',
@@ -172,7 +190,16 @@ export const experiences: ExperienceItem[] = [
       'Designed the system to improve organization, reporting efficiency, and long-term monitoring of library resources.',
     ],
     tech: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
-    buttons: ['View Project', 'Download Documentation'],
+    buttons: [
+      {
+        name: 'View Project',
+        href: 'https://refined-library-holding.vercel.app/',
+      },
+      {
+        name: 'View Documentation',
+        href: 'https://drive.google.com/file/d/11FKfn6ILRg7Nry9gOfNd0HCFw-6y6GsK/preview',
+      },
+    ],
   },
 ];
 

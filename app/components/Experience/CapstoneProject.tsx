@@ -1,5 +1,6 @@
 import { experiences } from '@/app/constant/Constant';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function ExperiencePage() {
   return (
@@ -48,14 +49,24 @@ export default function ExperiencePage() {
             {item.buttons && (
               <div className="mt-6 flex flex-wrap gap-2">
                 {item.buttons.map((button, i) => (
-                  <Button
+                  <Link
                     key={i}
-                    variant={i === 0 ? 'outline' : 'secondary'}
-                    size="sm"
-                    className="border-orange-200 text-orange-700 shadow-sm hover:bg-orange-100 hover:text-orange-800"
+                    href={button.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
-                    {button}
-                  </Button>
+                    <Button
+                      size="sm"
+                      variant={i === 0 ? 'outline' : 'secondary'}
+                      className={`shadow-sm ${
+                        i === 0
+                          ? 'border-orange-200 bg-orange-700 text-white hover:bg-orange-600 hover:text-white'
+                          : 'border-orange-200 bg-orange-100 text-orange-800 hover:bg-orange-200 hover:text-orange-900'
+                      }`}
+                    >
+                      {button.name}
+                    </Button>
+                  </Link>
                 ))}
               </div>
             )}

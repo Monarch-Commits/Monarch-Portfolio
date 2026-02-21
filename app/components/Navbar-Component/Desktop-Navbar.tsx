@@ -1,27 +1,43 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-
-import { LoginLink, LogoutLink } from '@kinde-oss/kinde-auth-nextjs';
-
-import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
-import { IoIosLogOut } from 'react-icons/io';
-
-import { IoCreateOutline } from 'react-icons/io5';
-import asyncUser from '@/app/actions/user/user.action';
 import { pages } from '@/app/constant/Constant';
 import { Button } from '@/components/ui/button';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
-export default async function DesktopNavbar() {
-  const { getUser } = getKindeServerSession();
-  const user = await getUser();
-  if (user) {
-    await asyncUser();
-  }
+export default function DesktopNavbar() {
+  const [activeSection, setActiveSection] = useState('');
+
+  useEffect(() => {
+    const sections = pages.map((p) =>
+      document.getElementById(p.href.replace('#', '')),
+    );
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(`#${entry.target.id}`);
+          }
+        });
+      },
+      {
+        threshold: 0.6,
+      },
+    );
+
+    sections.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div className="relative flex w-full items-center justify-between">
       <div>
-        <Link href={'/'}>
+        <Link href="/">
           <Image
             src="https://drive.google.com/uc?export=view&id=1czPtHOnb06NAo-awhCgsOgO_uHXNEUVU"
             width={40}
@@ -30,54 +46,32 @@ export default async function DesktopNavbar() {
           />
         </Link>
       </div>
-      <div className="flex items-center justify-center gap-5">
-        <div className="hidden items-center justify-center gap-3 md:flex">
-          {pages.map((p, index) => {
-            const Icon = p.icon;
-            return (
-              <Link key={index} href={p.href}>
-                <Button
-                  variant={'ghost'}
-                  className="font-medium transition-transform duration-200 ease-out hover:scale-110 active:scale-95 dark:text-orange-400"
-                >
-                  <Icon /> {p.name}
-                </Button>
-              </Link>
-            );
-          })}
-        </div>
-        <div className="flex items-center justify-center gap-3">
-          {user ? (
-            <div className="flex flex-row items-center gap-3">
-              <>
-                <Link href="/Create">
-                  <Button
-                    variant="ghost"
-                    className="h-12.5 w-12.5 rounded-full"
-                    size="sm"
-                  >
-                    <IoCreateOutline />
-                  </Button>
-                </Link>
 
-                <Button variant="ghost">
-                  <LogoutLink>
-                    <IoIosLogOut />
-                  </LogoutLink>
-                </Button>
-                <Avatar>
-                  <AvatarImage src={user?.picture || ''} />
-                  <AvatarFallback>{user?.given_name?.charAt(0)}</AvatarFallback>
-                </Avatar>
-              </>
-            </div>
-          ) : (
-            <Button variant={'destructive'}>
-              <LoginLink>Sign in</LoginLink>
-            </Button>
-          )}
-        </div>
+      <div className="hidden items-center gap-3 md:flex">
+        {pages.map((p, index) => {
+          const Icon = p.icon;
+          const isActive = activeSection === p.href;
+
+          return (
+            <Link key={index} href={p.href}>
+              <Button
+                variant="ghost"
+                className={`font-medium transition-all duration-300 ${
+                  isActive
+                    ? 'scale-105 bg-orange-500 text-white'
+                    : 'text-gray-500 hover:text-orange-400'
+                }`}
+              >
+                <Icon /> {p.name}
+              </Button>
+            </Link>
+          );
+        })}
       </div>
+
+      <Link href="#Projects">
+        <Button variant="secondary">View Projects</Button>
+      </Link>
     </div>
   );
 }

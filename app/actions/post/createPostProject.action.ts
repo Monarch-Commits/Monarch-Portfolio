@@ -5,6 +5,7 @@ import { getDbUser } from '../user/user.action';
 import prisma from '@/app/lib/prisma';
 import { UploadApiErrorResponse, UploadApiResponse } from 'cloudinary';
 import cloudinary from '@/app/lib/cloudinary';
+import { redirect } from 'next/navigation';
 
 interface AddProductParams {
   title: string;
@@ -30,7 +31,7 @@ export default async function createPost({
     const userId = await getDbUser();
 
     if (!userId) {
-      throw new Error('You must be logged in to add a product');
+      redirect('/api/auth/login');
     }
 
     if (!imageUrl || imageUrl.size === 0) {

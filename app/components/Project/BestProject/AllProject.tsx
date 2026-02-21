@@ -66,55 +66,59 @@ export default async function AllProject() {
               </div>
             </div>
           </div>
-          <div className="flex gap-4">
-            <Link
-              href={prod.liveUrl || ''}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                variant="outline"
-                size={'sm'}
-                className="border-orange-300 bg-orange-100 text-orange-900 shadow-sm hover:bg-orange-200 dark:text-orange-300"
+          <div className="flex gap-3">
+            {prod.liveUrl && (
+              <Link
+                href={prod.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                View Project
-              </Button>
-            </Link>
+                <Button
+                  size="sm"
+                  className="bg-orange-700 text-white shadow-md hover:bg-orange-600"
+                >
+                  View Project
+                </Button>
+              </Link>
+            )}
 
-            <Link
-              href={prod.repoUrl || ''}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button
-                size={'sm'}
-                variant="outline"
-                className="border-orange-300 bg-orange-100 text-orange-900 shadow-sm hover:bg-orange-200 dark:text-orange-300"
+            {prod.repoUrl && (
+              <Link
+                href={prod.repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Source Code
-              </Button>
-            </Link>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="border-orange-300 text-orange-700 hover:bg-orange-100"
+                >
+                  Source Code
+                </Button>
+              </Link>
+            )}
           </div>
 
           {/* IMAGE */}
-          <div className="w-full overflow-hidden rounded-md shadow-lg">
+          <div className="group/image w-full overflow-hidden rounded-xl shadow-lg">
             <Image
               src={prod.imageUrl}
               alt={prod.title || 'Project Image'}
               width={800}
               height={600}
               priority
-              className="h-auto w-full object-cover"
+              className="h-auto w-full object-cover transition-transform duration-500 group-hover/image:scale-105"
             />
           </div>
           {/* STACK ICONS */}
           <div className="mt-2 flex flex-wrap gap-2">
             {stacksByProject[index % stacksByProject.length].map((tech) => {
               const TechIcon = techIcons[tech].icon;
+
               return (
                 <div
                   key={tech}
-                  className="flex items-center justify-center rounded-full p-2 text-orange-800 transition-transform hover:scale-110"
+                  className="flex items-center justify-center rounded-full bg-white/70 p-2 shadow-sm backdrop-blur-sm transition-all hover:scale-110 hover:shadow-md"
                 >
                   <TechIcon className={`${techIcons[tech].color} h-5 w-5`} />
                 </div>
