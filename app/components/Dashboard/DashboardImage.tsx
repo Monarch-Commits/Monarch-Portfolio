@@ -5,7 +5,7 @@ export default function DashboardImage() {
     <div className="relative flex w-full max-w-md items-center justify-center p-6 md:max-w-md lg:max-w-lg">
       <div className="relative flex aspect-square w-[clamp(180px,70vw,320px)] rotate-3 items-end justify-center border bg-white shadow-xl">
         <Image
-          src="https://drive.google.com/uc?export=view&id=1rJxQmm58HTT4n3scn3fqljTABU2vL1_5"
+          src="https://res.cloudinary.com/db2x3itfk/image/upload/f_auto,q_auto/v1771628562/Gemini_Generated_Image_llpwv6llpwv6llpw_kbfel6.png"
           alt="profile"
           fill
           sizes="(max-width: 640px) 180px,
