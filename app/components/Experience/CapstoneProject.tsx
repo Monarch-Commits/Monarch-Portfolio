@@ -9,22 +9,26 @@ export default function ExperiencePage() {
         {experiences.map((item, index) => (
           <article
             key={index}
-            className="rounded-2xl border bg-orange-50 p-6 shadow-sm transition hover:shadow-md sm:p-8 dark:bg-orange-100 dark:text-black"
+            className="rounded-2xl border border-orange-100 bg-orange-50/50 p-6 shadow-sm transition hover:shadow-md sm:p-8"
           >
             {/* Top */}
             <div className="mb-4 flex flex-col gap-1">
-              <span className="text-xs font-medium tracking-wide text-gray-500 uppercase">
+              <span className="text-xs font-semibold tracking-wide text-orange-600 uppercase">
                 {item.title}
               </span>
-              <h2 className="text-xl font-semibold">{item.role}</h2>
-              <p className="text-sm text-gray-600">{item.institution}</p>
-              <p className="text-xs text-gray-600">{item.date}</p>
+              <h2 className="text-xl font-bold text-gray-900">{item.role}</h2>
+              <p className="text-sm font-medium text-gray-700">
+                {item.institution}
+              </p>
+              <p className="text-xs text-gray-500">{item.date}</p>
             </div>
 
             {/* Description */}
             <ul className="mb-5 list-disc space-y-2 pl-5 text-xs leading-relaxed text-gray-600 md:text-sm">
               {item.description.map((desc, i) => (
-                <li key={i}>{desc}</li>
+                <li key={i} className="marker:text-orange-400">
+                  {desc}
+                </li>
               ))}
             </ul>
 
@@ -33,21 +37,22 @@ export default function ExperiencePage() {
               {item.tech.map((tech, i) => (
                 <span
                   key={i}
-                  className="rounded-full bg-white px-3 py-1 text-xs font-medium text-orange-800 shadow-sm"
+                  className="rounded-full border border-orange-100 bg-white px-3 py-1 text-xs font-medium text-orange-700 shadow-sm"
                 >
                   {tech}
                 </span>
               ))}
             </div>
+
             {/* Buttons */}
             {item.buttons && (
-              <div className="mt-4 flex flex-wrap gap-2">
+              <div className="mt-6 flex flex-wrap gap-2">
                 {item.buttons.map((button, i) => (
                   <Button
                     key={i}
-                    variant="outline"
+                    variant={i === 0 ? 'outline' : 'secondary'}
                     size="sm"
-                    className="border-orange-300 bg-orange-100 text-orange-900 shadow-sm hover:bg-orange-200 dark:text-orange-300"
+                    className="border-orange-200 text-orange-700 shadow-sm hover:bg-orange-100 hover:text-orange-800"
                   >
                     {button}
                   </Button>

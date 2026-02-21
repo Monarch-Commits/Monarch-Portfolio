@@ -19,7 +19,7 @@ export default function ProjectSkeleton() {
                 : 'md:rotate-3'
           } `}
         >
-          {/* TAPE EFFECT */}
+          {/* TAPE */}
           <span
             className={`absolute z-50 h-5 w-20 rotate-12 bg-green-200/40 shadow-sm ${
               index % 3 === 0

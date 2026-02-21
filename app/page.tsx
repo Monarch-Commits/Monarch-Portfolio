@@ -4,13 +4,11 @@ import Dashboard from './components/Dashboard/Dashboard';
 import Experience from './components/Experience/Experience';
 import Project from './components/Project/Project';
 import SkillsSection from './components/Skills/Skills';
-// import Test from './components/Test/Test';
 
 export default function Home() {
   return (
     <main className="flex max-w-screen flex-col items-center justify-center pb-10">
       <Dashboard />
-      {/* <Test /> */}
       <AboutMe />
       <Project />
       <SkillsSection />

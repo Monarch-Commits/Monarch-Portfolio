@@ -29,9 +29,9 @@ type ExperienceItem = {
 // data for navigation pages
 export const pages: { name: string; href: string; icon: IconType }[] = [
   { name: 'Home', href: '/', icon: LuHouse },
-  { name: 'Skills', href: '#Skills', icon: IoCodeSlash },
   { name: 'About', href: '#About', icon: GoBriefcase },
   { name: 'Projects', href: '#Projects', icon: CgProfile },
+  { name: 'Skills', href: '#Skills', icon: IoCodeSlash },
   { name: 'Contact', href: '#Contact', icon: MdOutlineCall },
 ];
 

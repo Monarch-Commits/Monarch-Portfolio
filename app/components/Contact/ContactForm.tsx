@@ -28,11 +28,9 @@ export default function ContactForm() {
 
   return (
     <div className="relative w-full max-w-2xl px-1 md:px-4">
-      {/* Decorative Tape - Top Left (Hidden on mobile to keep it clean) */}
-      <div className="absolute -top-4 -left-2 z-10 hidden h-8 w-24 -rotate-12 bg-green-200/50 shadow-sm md:block" />
+      <div className="absolute -top-4 -left-2 z-10 hidden h-8 w-24 rotate-0 bg-green-200/50 shadow-sm md:block md:-rotate-12" />
 
       <motion.div
-        // Sa mobile (initial rotate: 0), sa md pataas (rotate: 2)
         initial={{ rotate: 0, opacity: 0, y: 20 }}
         whileInView={{
           rotate:
@@ -95,11 +93,9 @@ export default function ContactForm() {
           </Button>
         </form>
 
-        {/* Decorative Tape - Bottom Right (Hidden on mobile) */}
         <div className="absolute -right-4 -bottom-4 z-10 hidden h-8 w-28 rotate-12 bg-orange-200/40 shadow-sm md:block" />
       </motion.div>
 
-      {/* Floating Note Tag - Adjusted for better visibility on small desktops */}
       <div className="absolute top-20 -right-4 hidden rotate-12 border border-yellow-200 bg-yellow-100 p-2 text-xs shadow-sm lg:block">
         📍 Available for Freelance
       </div>

@@ -43,7 +43,7 @@ export default function SecondPageAboutMe() {
       variants={containerVariants}
       className="relative flex min-h-full w-full flex-col-reverse items-center justify-center gap-10 overflow-hidden p-6 pt-12 lg:flex-row"
     >
-      {/* DECORATIVE BRANCH - Floating Animation */}
+      {/* DECORATIVE BRANCH */}
       <div className="pointer-events-none absolute z-0 hidden h-40 w-40 md:-left-28 md:flex md:h-52 md:w-52">
         <motion.div
           animate={{
@@ -66,7 +66,6 @@ export default function SecondPageAboutMe() {
         </motion.div>
       </div>
 
-      {/* LEFT POLAROID IMAGE */}
       <motion.div
         whileHover={{
           scale: 1.02,
@@ -84,12 +83,11 @@ export default function SecondPageAboutMe() {
           sizes="(max-width: 768px) 250px, 320px"
           className="object-cover p-1 pb-12"
         />
-        {/* Tapes with subtle hover reaction */}
+
         <div className="absolute -right-8 bottom-4 h-6 w-24 rotate-140 bg-orange-200/40 shadow-sm backdrop-blur-sm" />
         <div className="absolute -top-4 -left-8 h-6 w-24 -rotate-12 bg-orange-200/40 shadow-sm backdrop-blur-sm" />
       </motion.div>
 
-      {/* RIGHT TEXT CARD */}
       <motion.div
         variants={itemVariants}
         whileHover={{ y: -8 }}

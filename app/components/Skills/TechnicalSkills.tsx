@@ -18,8 +18,8 @@ export default function TechnicalSkills() {
         </p>
       </div>
       <div>
-        <p className="flex items-center gap-2 font-semibold md:gap-3">
-          <HiOutlineCommandLine className="h-7 w-7" />
+        <p className="flex items-center gap-2 text-xl font-bold uppercase md:gap-3">
+          <HiOutlineCommandLine className="h-7 w-7 fill-orange-200 text-orange-500" />
           Technical Stack
         </p>
         <div className="mt-4 flex flex-wrap items-start justify-start gap-2 md:gap-3">
@@ -37,21 +37,33 @@ export default function TechnicalSkills() {
           })}
         </div>
       </div>
-      <div className="dark:text-black">
-        <p className="flex items-center gap-2 font-semibold md:gap-3 dark:text-white">
-          <GitCommitHorizontal className="h-7 w-7" />
+      <div className="w-full">
+        {/* Header Section */}
+        <p className="flex items-center gap-2 text-xl font-bold tracking-wider uppercase md:gap-3">
+          <GitCommitHorizontal className="h-7 w-7 text-orange-500" />
           Development Approach
         </p>
-        <div className="mt-4 flex flex-col items-center justify-center gap-2 md:items-start md:justify-start md:gap-3">
-          {creativeProcess.map((process, index) => (
-            <div
-              key={index}
-              className={`flex w-md max-w-full flex-col items-start justify-center gap-2 rounded-sm bg-orange-100 p-2 shadow-sm transition-all ${index % 2 === 1 ? 'md:ml-20' : 'md:-rotate-2'} ${index % 3 === 0 ? 'md:rotate-2' : 'md:-rotate-2'}`}
-            >
-              <h3 className="font-bold">{process.title}</h3>
-              <p className="text-gray-500">{process.description}</p>
-            </div>
-          ))}
+
+        <div className="mt-6 flex flex-col items-center gap-4 md:items-start md:gap-3">
+          {creativeProcess.map((process, index) => {
+            const isEven = index % 2 === 0;
+            const rotation = isEven ? 'md:rotate-2' : 'md:-rotate-2';
+            const offset = !isEven ? 'md:ml-20' : 'md:ml-0';
+
+            return (
+              <div
+                key={index}
+                className={`flex w-full max-w-md flex-col items-start justify-center gap-2 rounded-md bg-orange-100 p-4 shadow-sm transition-all hover:scale-[1.02] hover:shadow-md dark:border dark:border-zinc-800 dark:bg-zinc-900 ${rotation} ${offset} `}
+              >
+                <h3 className="font-bold text-orange-900 dark:text-orange-400">
+                  {process.title}
+                </h3>
+                <p className="text-sm leading-relaxed text-gray-700 dark:text-zinc-400">
+                  {process.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>

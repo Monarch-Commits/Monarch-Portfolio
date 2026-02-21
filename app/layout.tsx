@@ -3,7 +3,6 @@ import { Poppins } from 'next/font/google';
 import './globals.css';
 import { AuthProvider } from './AuthProvider';
 import { Navigation } from './components/Navbar-Component/Navigation';
-import { ThemeProvider } from './components/Navbar-Component/Dark-Mode/theme-provider';
 import { Toaster } from 'react-hot-toast';
 
 const poppins = Poppins({
@@ -29,16 +28,9 @@ export default function RootLayout({
     <AuthProvider>
       <html lang="en" suppressHydrationWarning>
         <body className={` ${poppins.variable} antialiased`}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
-            <Navigation />
-            {children}
-            <Toaster position="top-center" reverseOrder={false} />
-          </ThemeProvider>
+          <Navigation />
+          {children}
+          <Toaster position="top-center" reverseOrder={false} />
         </body>
       </html>
     </AuthProvider>

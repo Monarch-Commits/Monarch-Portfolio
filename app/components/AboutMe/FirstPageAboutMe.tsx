@@ -59,7 +59,6 @@ export default function FirstPageAboutMe() {
         </div>
       </div>
 
-      {/* POLAROID IMAGE */}
       <div className="group relative mt-10 flex aspect-square w-[clamp(250px,80vw,350px)] rotate-3 cursor-pointer items-end justify-center bg-white p-4 pb-12 shadow-xl transition-transform duration-300 hover:-translate-y-1 hover:scale-105 lg:mt-0">
         <div className="relative h-full w-full overflow-hidden">
           <Image

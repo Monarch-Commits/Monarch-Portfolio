@@ -23,16 +23,17 @@ export default function MobileNavbar() {
         <DropdownMenuContent>
           <DropdownMenuItem>
             <div className="flex flex-col items-start justify-start gap-3 md:hidden">
-              {pages.map((p, index) => {
-                const Icon = p.icon;
-                return (
-                  <Link key={index} href={p.href}>
-                    <Button variant={'ghost'} className="font-semibold">
-                      <Icon /> {p.name}
-                    </Button>
+              {pages.map((p, index) => (
+                <DropdownMenuItem key={index} asChild>
+                  <Link
+                    href={p.href}
+                    className="flex w-full cursor-pointer items-center gap-2"
+                  >
+                    <p.icon />
+                    <span>{p.name}</span>
                   </Link>
-                );
-              })}
+                </DropdownMenuItem>
+              ))}
             </div>
           </DropdownMenuItem>
         </DropdownMenuContent>

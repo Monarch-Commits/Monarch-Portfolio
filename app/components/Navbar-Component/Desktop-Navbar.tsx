@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { ModeToggle } from './Dark-Mode/toggleMode';
 
 import { LoginLink, LogoutLink } from '@kinde-oss/kinde-auth-nextjs';
 
@@ -16,7 +15,6 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 export default async function DesktopNavbar() {
   const { getUser } = getKindeServerSession();
   const user = await getUser();
-  // console.log(user);
   if (user) {
     await asyncUser();
   }
@@ -79,8 +77,6 @@ export default async function DesktopNavbar() {
             </Button>
           )}
         </div>
-
-        <ModeToggle />
       </div>
     </div>
   );
