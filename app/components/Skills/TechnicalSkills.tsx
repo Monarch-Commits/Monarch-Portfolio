@@ -4,7 +4,7 @@ import { GitCommitHorizontal } from 'lucide-react';
 
 export default function TechnicalSkills() {
   return (
-    <div className="flex max-w-full flex-col gap-6 p-2 md:gap-10 dark:text-white">
+    <div className="flex max-w-full flex-col items-center gap-6 p-2 sm:items-start md:gap-10 dark:text-white">
       <div className="w-full">
         <h1
           className="mb-6 text-3xl font-semibold md:text-5xl"

@@ -5,15 +5,13 @@ export default function SoftSkill() {
   return (
     <div className="mt-10 flex w-full flex-col items-center justify-center overflow-visible px-4 md:mt-20">
       {/* Title Section */}
-      <div className="mb-8 flex w-full items-center justify-start gap-2 md:justify-center">
+      <p className="flex items-center gap-2 text-xl font-bold tracking-wider uppercase md:gap-3">
         <Egg className="h-7 w-7 fill-orange-200 text-orange-500" />
-        <h2 className="text-xl font-bold tracking-tighter uppercase">
-          Soft Skills
-        </h2>
-      </div>
+        Soft Skills
+      </p>
 
       {/* Skills Grid */}
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {SoftSkills.map((skill, index) => {
           const rotations = ['md:rotate-2', 'md:-rotate-3', 'md:rotate-1'];
 

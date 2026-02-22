@@ -7,7 +7,7 @@ export function LayoutTextFlipDemo() {
     <section className="mt-20 flex w-full items-center justify-center p-2 md:mt-0 md:p-6 lg:w-lg">
       <div className="w-full max-w-2xl">
         <div className="flex flex-col items-center gap-4 text-center md:items-start md:text-left">
-          <p className="text-muted-foreground text-xs font-medium tracking-[0.3em] sm:text-sm">
+          <p className="text-muted-foreground relative text-xs font-medium tracking-[0.3em] sm:text-sm">
             HI, I’M
           </p>
 
