@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
 import './globals.css';
 import { AuthProvider } from './AuthProvider';
-import { Navigation } from './components/Navbar-Component/Navigation';
 import { Toaster } from 'react-hot-toast';
 
 const poppins = Poppins({
@@ -26,9 +25,8 @@ export default function RootLayout({
 }>) {
   return (
     <AuthProvider>
-      <html lang="en" suppressHydrationWarning>
+      <html lang="en">
         <body className={` ${poppins.variable} antialiased`}>
-          <Navigation />
           {children}
           <Toaster position="top-center" reverseOrder={false} />
         </body>

@@ -21,12 +21,16 @@ interface Props {
   title: string;
   imageUrl: string;
   description: string;
+  liveUrl: string | null;
+  repoUrl: string | null;
 }
 
-export default function UpdateProductForm({ product }: { product: Props }) {
+export default function UpdateProjectForm({ product }: { product: Props }) {
   const [title, setTitle] = useState(product.title);
   const [imageUrl, setImageUrl] = useState(product.imageUrl);
   const [description, setDescription] = useState(product.description);
+  const [liveUrl, setLiveUrl] = useState(product.liveUrl || '');
+  const [repoUrl, setRepoUrl] = useState(product.repoUrl || '');
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -37,17 +41,14 @@ export default function UpdateProductForm({ product }: { product: Props }) {
       const result = await UpdateProduct({
         id: product.id,
         title,
-
         imageUrl,
         description,
+        liveUrl,
+        repoUrl,
       });
 
       if (result?.success) {
         toast.success('Product updated successfully!');
-        setDescription('');
-        setImageUrl('');
-        setTitle('');
-
         setIsOpen(false);
       } else {
         toast.error('May error sa pag update ni dire par');
@@ -96,6 +97,21 @@ export default function UpdateProductForm({ product }: { product: Props }) {
                 value={imageUrl}
                 onChange={(e) => setImageUrl(e.target.value)}
                 placeholder="Image URL"
+                required
+              />
+
+              <Input
+                placeholder="Live URL"
+                value={liveUrl}
+                onChange={(e) => setLiveUrl(e.target.value)}
+                disabled={loading}
+                required
+              />
+              <Input
+                placeholder="Repository URL"
+                value={repoUrl}
+                onChange={(e) => setRepoUrl(e.target.value)}
+                disabled={loading}
                 required
               />
 

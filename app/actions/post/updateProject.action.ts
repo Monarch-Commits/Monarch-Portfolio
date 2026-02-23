@@ -7,6 +7,8 @@ interface AddProductParams {
   title: string;
   description: string;
   imageUrl: string;
+  liveUrl: string;
+  repoUrl: string;
   id: string;
 }
 
@@ -14,12 +16,14 @@ export default async function UpdateProduct({
   title,
   imageUrl,
   description,
+  liveUrl,
+  repoUrl,
   id,
 }: AddProductParams) {
   try {
     const update = await prisma.project.update({
       where: { id },
-      data: { title, imageUrl, description },
+      data: { title, imageUrl, description, liveUrl, repoUrl },
     });
     revalidatePath('/Create');
     return { success: true, data: update };
