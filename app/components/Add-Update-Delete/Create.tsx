@@ -1,11 +1,5 @@
 'use client';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { SyntheticEvent, useState } from 'react';
-import toast from 'react-hot-toast';
-import postProject from '../../actions/post/createPostProject.action';
-import Image from 'next/image';
+
 import {
   Dialog,
   DialogContent,
@@ -14,122 +8,208 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import { Label } from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+import { Separator } from '@/components/ui/separator';
+
+import { SyntheticEvent, useState, useEffect } from 'react';
+import toast from 'react-hot-toast';
+import Image from 'next/image';
+import postProject from '../../actions/post/createPostProject.action';
+import { Loader2, PlusCircle, Image as ImageIcon } from 'lucide-react';
 
 export default function Create() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
-  const [imageUrl, setImageUrl] = useState<File | null>(null);
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [liveUrl, setLiveUrl] = useState('');
   const [repoUrl, setRepoUrl] = useState('');
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
+  // Handle Image Preview cleanup para iwas memory leak
+  useEffect(() => {
+    if (imageFile) {
+      const url = URL.createObjectURL(imageFile);
+      setPreviewUrl(url);
+      return () => URL.revokeObjectURL(url);
+    }
+    setPreviewUrl(null);
+  }, [imageFile]);
+
   const handleSubmit = async (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (
-      !title.trim() ||
-      !description.trim() ||
-      !imageUrl ||
-      !liveUrl.trim() ||
-      !repoUrl.trim()
-    ) {
-      return toast.error('Please put valid data');
+
+    if (!title.trim() || !description.trim() || !imageFile) {
+      return toast.error(
+        'Please fill in all required fields and upload an image.',
+      );
     }
+
     setLoading(true);
     try {
       const result = await postProject({
         title,
         description,
-        imageUrl,
+        imageUrl: imageFile, // Siguraduhin na ang Server Action mo ay tumatanggap ng File/FormData
         liveUrl,
         repoUrl,
       });
 
       if (result?.success) {
+        toast.success('Project created successfully!');
+        // Reset Form
         setTitle('');
         setDescription('');
-        setImageUrl(null);
+        setImageFile(null);
         setLiveUrl('');
         setRepoUrl('');
-        toast.success('Created Successfully');
+        setIsOpen(false);
       } else {
-        toast.error('Failed to create product');
+        toast.error('Failed to create project.');
       }
     } catch (error) {
       console.error(error);
-      console.log(error);
+      toast.error('Something went wrong.');
     } finally {
       setLoading(false);
     }
   };
+
   return (
-    <>
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogTrigger asChild>
-          <Button variant={'default'}>Create Project</Button>
-        </DialogTrigger>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <DialogTrigger asChild>
+        <Button variant="default" className="gap-2">
+          <PlusCircle className="h-4 w-4" /> Create Project
+        </Button>
+      </DialogTrigger>
 
-        <DialogContent>
-          <DialogHeader>
-            <DialogTitle>Are you absolutely sure?</DialogTitle>
-            <DialogDescription>Create Project</DialogDescription>
-            <Image
-              src={imageUrl ? URL.createObjectURL(imageUrl) : '/Default.jpg'}
-              alt={title}
-              width={190}
-              height={190}
+      <DialogContent className="max-h-[95vh] overflow-y-auto sm:max-w-lg">
+        <DialogHeader>
+          <DialogTitle className="text-xl font-bold tracking-tight">
+            New Project
+          </DialogTitle>
+          <DialogDescription>
+            Showcase your hard work. Fill out the details below to add a new
+            project.
+          </DialogDescription>
+        </DialogHeader>
+
+        {/* Image Preview Area */}
+        <div className="bg-muted/30 flex flex-col items-center justify-center rounded-lg border border-dashed py-6">
+          {previewUrl ? (
+            <div className="bg-background relative h-40 w-full max-w-70 overflow-hidden rounded-md border shadow-sm">
+              <Image
+                src={previewUrl}
+                alt="Preview"
+                fill
+                className="object-cover"
+              />
+            </div>
+          ) : (
+            <div className="text-muted-foreground flex flex-col items-center">
+              <ImageIcon className="h-10 w-10 opacity-20" />
+              <p className="mt-2 text-xs font-medium italic">
+                No image selected
+              </p>
+            </div>
+          )}
+          <p className="text-muted-foreground mt-3 text-[10px] font-bold tracking-widest uppercase">
+            Image Preview
+          </p>
+        </div>
+
+        <Separator />
+
+        <form onSubmit={handleSubmit} className="space-y-4 py-2">
+          <div className="grid gap-2">
+            <Label htmlFor="title">Project Title</Label>
+            <Input
+              id="title"
+              placeholder="e.g. E-commerce Dashboard"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+              disabled={loading}
+              required
             />
+          </div>
 
-            <form
-              onSubmit={handleSubmit}
-              className="mt-30 flex w-full max-w-lg flex-col items-center justify-center gap-3 rounded-md border p-3"
-            >
-              <Input
-                placeholder="Product Title"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
-                disabled={loading}
-                required
-              />
-              <Textarea
-                placeholder="Description"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                disabled={loading}
-                required
-              />
+          <div className="grid gap-2">
+            <Label htmlFor="description">Description</Label>
+            <Textarea
+              id="description"
+              placeholder="What makes this project special?"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              disabled={loading}
+              className="min-h-25 resize-none"
+              required
+            />
+          </div>
 
+          <div className="grid gap-2">
+            <Label htmlFor="image">Thumbnail Image</Label>
+            <Input
+              id="image"
+              type="file"
+              accept="image/*"
+              onChange={(e) =>
+                setImageFile(e.target.files ? e.target.files[0] : null)
+              }
+              disabled={loading}
+              className="cursor-pointer"
+              required
+            />
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="grid gap-2">
+              <Label htmlFor="liveUrl">Live Demo URL</Label>
               <Input
-                type="file"
-                accept="image/*"
-                onChange={(e) =>
-                  setImageUrl(e.target.files ? e.target.files[0] : null)
-                }
-                disabled={loading}
-                required
-              />
-              <Input
-                placeholder="Live URL"
+                id="liveUrl"
+                placeholder="https://..."
                 value={liveUrl}
                 onChange={(e) => setLiveUrl(e.target.value)}
                 disabled={loading}
-                required
               />
+            </div>
+            <div className="grid gap-2">
+              <Label htmlFor="repoUrl">Repository Link</Label>
               <Input
-                placeholder="Repository URL"
+                id="repoUrl"
+                placeholder="GitHub/GitLab"
                 value={repoUrl}
                 onChange={(e) => setRepoUrl(e.target.value)}
                 disabled={loading}
-                required
               />
+            </div>
+          </div>
 
-              <Button type="submit" variant={'outline'} disabled={loading}>
-                {loading ? 'Adding...' : 'Add Product'}
-              </Button>
-            </form>
-          </DialogHeader>
-        </DialogContent>
-      </Dialog>
-    </>
+          <div className="flex justify-end gap-3 pt-6">
+            <Button
+              type="button"
+              variant="ghost"
+              onClick={() => setIsOpen(false)}
+              disabled={loading}
+            >
+              Cancel
+            </Button>
+            <Button type="submit" disabled={loading} className="min-w-30">
+              {loading ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Creating...
+                </>
+              ) : (
+                'Create Project'
+              )}
+            </Button>
+          </div>
+        </form>
+      </DialogContent>
+    </Dialog>
   );
 }

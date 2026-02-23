@@ -5,7 +5,7 @@ import { getDbUserPublic } from '../user/user.action';
 export default async function getProject() {
   const user = await getDbUserPublic();
 
-  if (!user) return { success: true, data: [] }; // early return for public users
+  if (!user) return { success: true, data: [] };
 
   try {
     const projects = await prisma.project.findMany({
@@ -19,7 +19,7 @@ export default async function getProject() {
           },
         },
       },
-      orderBy: { createdAt: 'desc' }, // optional: latest first
+      orderBy: { createdAt: 'desc' },
     });
 
     return { success: true, data: projects };

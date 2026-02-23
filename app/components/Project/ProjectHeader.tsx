@@ -1,3 +1,4 @@
+'use client';
 import { HiArrowTrendingDown } from 'react-icons/hi2';
 
 export default function ProjectHeader() {

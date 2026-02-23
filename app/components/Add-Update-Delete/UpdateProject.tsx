@@ -134,25 +134,23 @@ export default function UpdateProjectForm({ product }: { product: Props }) {
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="grid gap-2">
-              <Label htmlFor="liveUrl">Live Demo</Label>
-              <Input
-                id="liveUrl"
-                value={liveUrl}
-                onChange={(e) => setLiveUrl(e.target.value)}
-                placeholder="https://site.com"
-              />
-            </div>
-            <div className="grid gap-2">
-              <Label htmlFor="repoUrl">Repository</Label>
-              <Input
-                id="repoUrl"
-                value={repoUrl}
-                onChange={(e) => setRepoUrl(e.target.value)}
-                placeholder="GitHub Link"
-              />
-            </div>
+          <div className="grid gap-2">
+            <Label htmlFor="liveUrl">Live Demo</Label>
+            <Input
+              id="liveUrl"
+              value={liveUrl}
+              onChange={(e) => setLiveUrl(e.target.value)}
+              placeholder="https://site.com"
+            />
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="repoUrl">Repository</Label>
+            <Input
+              id="repoUrl"
+              value={repoUrl}
+              onChange={(e) => setRepoUrl(e.target.value)}
+              placeholder="GitHub Link"
+            />
           </div>
 
           <div className="flex justify-end gap-3 pt-4">
