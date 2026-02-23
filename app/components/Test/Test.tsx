@@ -3,9 +3,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 
-// --------------------
-// Types
-// --------------------
 interface FireflyData {
   id: number;
   color: string;
@@ -17,9 +14,6 @@ interface FireflyData {
 
 type Mode = 'mouse' | 'wander' | 'target';
 
-// --------------------
-// Individual Firefly Component
-// --------------------
 const Firefly = ({
   data,
   mouseX,
@@ -36,7 +30,6 @@ const Firefly = ({
   const x = useMotionValue(0);
   const y = useMotionValue(0);
 
-  // Mas smooth na movement config
   const springConfig = {
     damping: 25,
     stiffness: mode === 'wander' ? 30 : 80,
@@ -54,7 +47,6 @@ const Firefly = ({
     const animate = () => {
       const time = (Date.now() + offset) / 1000;
 
-      // Pulsing glow effect
       const pulse = 0.5 + Math.abs(Math.sin(time * data.pulseSpeed)) * 0.5;
       setOpacity(pulse);
 
@@ -102,7 +94,6 @@ const Firefly = ({
         opacity: opacity,
         scale: 0.9 + opacity * 0.3,
         zIndex: 50,
-        // Inalis ang screen blend mode para lumitaw sa Light background
       }}
     >
       <div
@@ -110,23 +101,20 @@ const Firefly = ({
           width: data.size,
           height: data.size,
           borderRadius: '50%',
-          // Mas solid na core para sa visibility
+
           backgroundColor: data.color,
           boxShadow: `
             0 0 ${data.size * 2}px ${data.color},
             0 0 ${data.size * 5}px ${data.color}88,
             0 0 ${data.size * 10}px ${data.color}44
           `,
-          border: '1px solid rgba(255, 255, 255, 0.4)', // Subtle border para sa contrast
+          border: '1px solid rgba(255, 255, 255, 0.4)',
         }}
       />
     </motion.div>
   );
 };
 
-// --------------------
-// Main Swarm Component
-// --------------------
 export function FireflySwarm() {
   const [mouseX, setMouseX] = useState(0);
   const [mouseY, setMouseY] = useState(0);
@@ -135,7 +123,6 @@ export function FireflySwarm() {
   const idleTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   const [fireflies] = useState<FireflyData[]>(() => {
-    // Matitingkad na kulay (Vibrant/Darker shades) para sa light mode
     const colors = [
       '#EAB308', // Amber/Yellow
       '#10B981', // Emerald

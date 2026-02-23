@@ -167,27 +167,25 @@ export default function Create() {
             />
           </div>
 
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <div className="grid gap-2">
-              <Label htmlFor="liveUrl">Live Demo URL</Label>
-              <Input
-                id="liveUrl"
-                placeholder="https://..."
-                value={liveUrl}
-                onChange={(e) => setLiveUrl(e.target.value)}
-                disabled={loading}
-              />
-            </div>
-            <div className="grid gap-2">
-              <Label htmlFor="repoUrl">Repository Link</Label>
-              <Input
-                id="repoUrl"
-                placeholder="GitHub/GitLab"
-                value={repoUrl}
-                onChange={(e) => setRepoUrl(e.target.value)}
-                disabled={loading}
-              />
-            </div>
+          <div className="grid gap-2">
+            <Label htmlFor="liveUrl">Live Demo URL</Label>
+            <Input
+              id="liveUrl"
+              placeholder="https://..."
+              value={liveUrl}
+              onChange={(e) => setLiveUrl(e.target.value)}
+              disabled={loading}
+            />
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="repoUrl">Repository Link</Label>
+            <Input
+              id="repoUrl"
+              placeholder="GitHub/GitLab"
+              value={repoUrl}
+              onChange={(e) => setRepoUrl(e.target.value)}
+              disabled={loading}
+            />
           </div>
 
           <div className="flex justify-end gap-3 pt-6">
