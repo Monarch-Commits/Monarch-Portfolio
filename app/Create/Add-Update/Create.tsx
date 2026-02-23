@@ -53,7 +53,7 @@ export default function Create() {
     }
   };
   return (
-    <div className="flex w-full flex-col items-center justify-center px-1">
+    <div className="flex w-full flex-col items-center justify-center px-10">
       <form
         onSubmit={handleSubmit}
         className="mt-30 flex w-full max-w-lg flex-col items-center justify-center gap-3 rounded-md border p-3"
