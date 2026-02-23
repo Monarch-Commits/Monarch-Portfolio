@@ -74,9 +74,7 @@ export default function Create() {
             <DialogTitle>Are you absolutely sure?</DialogTitle>
             <DialogDescription>Create Project</DialogDescription>
             <Image
-              src={
-                imageUrl ? URL.createObjectURL(imageUrl) : '/placeholder.png'
-              }
+              src={imageUrl ? URL.createObjectURL(imageUrl) : '/Default.jpg'}
               alt={title}
               width={190}
               height={190}

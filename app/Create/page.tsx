@@ -1,6 +1,8 @@
 export const dynamic = 'force-dynamic';
+import { Suspense } from 'react';
 import Create from '../components/Add-Update-Delete/Create';
-import Project from '../components/Add-Update-Delete/Project';
+import Project from '../components/Add-Update-Delete/GetProject/Project';
+import ProjectSkeleton from '../components/Project/BestProject/Loading';
 
 export default function Page() {
   return (
@@ -14,7 +16,10 @@ export default function Page() {
 
       <section>
         <h2 className="mb-4 text-2xl font-bold">My Projects</h2>
-        <Project />
+
+        <Suspense fallback={<ProjectSkeleton />}>
+          <Project />
+        </Suspense>
       </section>
     </main>
   );

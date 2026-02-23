@@ -46,6 +46,7 @@ export default function DesktopNavbar() {
             alt="Logo"
           />
         </Link>
+        <Link href={'../../Create'}>Create</Link>
       </div>
 
       <div className="hidden items-center gap-3 md:flex">

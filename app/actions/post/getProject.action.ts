@@ -1,26 +1,30 @@
 'use server';
 import prisma from '@/app/lib/prisma';
-import { getDbUser } from '../user/user.action';
+import { getDbUserPublic } from '../user/user.action';
 
 export default async function getProject() {
-  const user = await getDbUser();
+  const user = await getDbUserPublic();
+
+  if (!user) return { success: true, data: [] }; // early return for public users
 
   try {
-    const project = await prisma.project.findMany({
-      where: { userId: user?.id },
+    const projects = await prisma.project.findMany({
+      where: { userId: user.id },
       include: {
         user: {
           select: {
-            projects: true,
             imageUrl: true,
             email: true,
             name: true,
           },
         },
       },
+      orderBy: { createdAt: 'desc' }, // optional: latest first
     });
-    return { success: true, data: project };
+
+    return { success: true, data: projects };
   } catch (error) {
-    console.error(error);
+    console.error('Error fetching projects:', error);
+    return { success: false, data: [] };
   }
 }
