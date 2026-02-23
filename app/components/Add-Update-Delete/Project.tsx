@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
 import UpdateProjectForm from './UpdateProject';
+import DeleteButton from './DeleteButton';
 
 export default async function Project() {
   const project = await getProject();
@@ -112,7 +113,11 @@ export default async function Project() {
                 className="h-auto w-full object-cover transition-transform duration-500 group-hover/image:scale-105"
               />
             </div>
-            <UpdateProjectForm product={prod} />
+            <div className="flex items-center justify-between">
+              <UpdateProjectForm product={prod} />
+              <DeleteButton id={prod.id} />
+            </div>
+
             {/* STACK ICONS */}
             <div className="mt-2 flex flex-wrap gap-2">
               {stacksByProject[index % stacksByProject.length].map((tech) => {

@@ -1,5 +1,5 @@
-import Create from './Add-Update/Create';
-import Project from './Add-Update/Project';
+import Create from '../components/Add-Update-Delete/Create';
+import Project from '../components/Add-Update-Delete/Project';
 
 export default function Page() {
   return (

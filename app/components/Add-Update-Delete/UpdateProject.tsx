@@ -63,7 +63,7 @@ export default function UpdateProjectForm({ product }: { product: Props }) {
     <>
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogTrigger asChild>
-          <Button variant={'default'}> Update </Button>
+          <Button variant={'default'}>Update</Button>
         </DialogTrigger>
 
         <DialogContent>
