@@ -101,12 +101,14 @@ export default function Create() {
         {/* Image Preview Area */}
         <div className="bg-muted/30 flex flex-col items-center justify-center rounded-lg border border-dashed py-6">
           {previewUrl ? (
-            <div className="bg-background relative h-40 w-full max-w-70 overflow-hidden rounded-md border shadow-sm">
+            <div className="group/image w-full overflow-hidden rounded-xl shadow-lg">
               <Image
                 src={previewUrl}
                 alt="Preview"
-                fill
-                className="object-cover"
+                width={800}
+                height={600}
+                priority
+                className="h-auto w-full object-cover transition-transform duration-500 group-hover/image:scale-105"
               />
             </div>
           ) : (

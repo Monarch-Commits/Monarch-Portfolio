@@ -84,12 +84,14 @@ export default function UpdateProjectForm({ product }: { product: Props }) {
         </DialogHeader>
 
         <div className="bg-muted/30 flex flex-col items-center justify-center rounded-lg border border-dashed py-4">
-          <div className="bg-background relative h-32 w-48 overflow-hidden rounded-md border shadow-sm">
+          <div className="group/image w-full overflow-hidden rounded-xl shadow-lg">
             <Image
               src={imageUrl || product.imageUrl}
               alt="Preview"
-              fill
-              className="object-cover"
+              width={800}
+              height={600}
+              priority
+              className="h-auto w-full object-cover transition-transform duration-500 group-hover/image:scale-105"
             />
           </div>
           <p className="text-muted-foreground mt-2 text-[10px] font-semibold tracking-widest uppercase">
