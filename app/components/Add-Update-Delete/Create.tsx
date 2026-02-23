@@ -5,6 +5,15 @@ import { Textarea } from '@/components/ui/textarea';
 import { SyntheticEvent, useState } from 'react';
 import toast from 'react-hot-toast';
 import postProject from '../../actions/post/createPostProject.action';
+import Image from 'next/image';
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from '@/components/ui/dialog';
 
 export default function Create() {
   const [title, setTitle] = useState('');
@@ -13,6 +22,7 @@ export default function Create() {
   const [liveUrl, setLiveUrl] = useState('');
   const [repoUrl, setRepoUrl] = useState('');
   const [loading, setLoading] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleSubmit = async (e: SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -53,54 +63,75 @@ export default function Create() {
     }
   };
   return (
-    <div className="flex w-full flex-col items-center justify-center px-10">
-      <form
-        onSubmit={handleSubmit}
-        className="mt-30 flex w-full max-w-lg flex-col items-center justify-center gap-3 rounded-md border p-3"
-      >
-        <Input
-          placeholder="Product Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          disabled={loading}
-          required
-        />
-        <Textarea
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-          disabled={loading}
-          required
-        />
+    <>
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+        <DialogTrigger asChild>
+          <Button variant={'default'}>Create Project</Button>
+        </DialogTrigger>
 
-        <Input
-          type="file"
-          accept="image/*"
-          onChange={(e) =>
-            setImageUrl(e.target.files ? e.target.files[0] : null)
-          }
-          disabled={loading}
-          required
-        />
-        <Input
-          placeholder="Live URL"
-          value={liveUrl}
-          onChange={(e) => setLiveUrl(e.target.value)}
-          disabled={loading}
-          required
-        />
-        <Input
-          placeholder="Repository URL"
-          value={repoUrl}
-          onChange={(e) => setRepoUrl(e.target.value)}
-          disabled={loading}
-          required
-        />
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Are you absolutely sure?</DialogTitle>
+            <DialogDescription>Create Project</DialogDescription>
+            <Image
+              src={
+                imageUrl ? URL.createObjectURL(imageUrl) : '/placeholder.png'
+              }
+              alt={title}
+              width={190}
+              height={190}
+            />
 
-        <Button type="submit" variant={'outline'} disabled={loading}>
-          {loading ? 'Adding...' : 'Add Product'}
-        </Button>
-      </form>
-    </div>
+            <form
+              onSubmit={handleSubmit}
+              className="mt-30 flex w-full max-w-lg flex-col items-center justify-center gap-3 rounded-md border p-3"
+            >
+              <Input
+                placeholder="Product Title"
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                disabled={loading}
+                required
+              />
+              <Textarea
+                placeholder="Description"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                disabled={loading}
+                required
+              />
+
+              <Input
+                type="file"
+                accept="image/*"
+                onChange={(e) =>
+                  setImageUrl(e.target.files ? e.target.files[0] : null)
+                }
+                disabled={loading}
+                required
+              />
+              <Input
+                placeholder="Live URL"
+                value={liveUrl}
+                onChange={(e) => setLiveUrl(e.target.value)}
+                disabled={loading}
+                required
+              />
+              <Input
+                placeholder="Repository URL"
+                value={repoUrl}
+                onChange={(e) => setRepoUrl(e.target.value)}
+                disabled={loading}
+                required
+              />
+
+              <Button type="submit" variant={'outline'} disabled={loading}>
+                {loading ? 'Adding...' : 'Add Product'}
+              </Button>
+            </form>
+          </DialogHeader>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 }

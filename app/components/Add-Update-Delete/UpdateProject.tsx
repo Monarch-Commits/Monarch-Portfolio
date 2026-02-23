@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/dialog';
 
 import toast from 'react-hot-toast';
-import { useState } from 'react';
+import { SyntheticEvent, useState } from 'react';
 import Image from 'next/image';
 import UpdateProduct from '@/app/actions/post/updateProject.action';
 import { Input } from '@/components/ui/input';
@@ -34,7 +34,7 @@ export default function UpdateProjectForm({ product }: { product: Props }) {
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
     try {

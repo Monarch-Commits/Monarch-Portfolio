@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import Create from '../components/Add-Update-Delete/Create';
 import Project from '../components/Add-Update-Delete/Project';
 
