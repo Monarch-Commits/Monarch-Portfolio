@@ -1,7 +1,6 @@
 import { LuHouse } from 'react-icons/lu';
-import { IoCodeSlash } from 'react-icons/io5';
+import { IoBriefcaseOutline, IoCodeSlash } from 'react-icons/io5';
 import { GoBriefcase } from 'react-icons/go';
-import { CgProfile } from 'react-icons/cg';
 import type { IconType } from 'react-icons';
 import { FaReact } from 'react-icons/fa';
 import { TbBrandNextjs, TbBrandTypescript } from 'react-icons/tb';
@@ -38,8 +37,8 @@ export interface PageItem {
 export const pages: PageItem[] = [
   { name: 'Home', href: '#Home', icon: LuHouse },
   { name: 'About', href: '#About', icon: GoBriefcase },
-  { name: 'Projects', href: '#Projects', icon: CgProfile },
   { name: 'Skills', href: '#Skills', icon: IoCodeSlash },
+  { name: 'Experience', href: '#Experience', icon: IoBriefcaseOutline },
 ];
 
 // data for about me personal info

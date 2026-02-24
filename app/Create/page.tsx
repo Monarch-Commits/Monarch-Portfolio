@@ -20,7 +20,7 @@ export default async function Page() {
   return (
     <main className="container mx-auto w-screen space-y-10 p-6">
       {/* Header Section */}
-      <section className="flex w-full items-center justify-between space-y-6">
+      <section className="flex w-full flex-col items-start justify-between space-y-6 sm:flex-row">
         {user ? (
           <div className="flex max-w-md flex-col gap-4">
             <h1 className="text-2xl font-bold">Add New Project</h1>
@@ -37,7 +37,7 @@ export default async function Page() {
               </Avatar>
 
               <LogoutLink>
-                <Button variant="outline">Log out</Button>
+                <Button variant="outline">Logout</Button>
               </LogoutLink>
             </div>
           </div>

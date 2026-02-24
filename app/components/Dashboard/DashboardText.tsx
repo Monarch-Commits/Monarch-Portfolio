@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export function LayoutTextFlipDemo() {
   return (
@@ -30,9 +31,11 @@ export function LayoutTextFlipDemo() {
           </p>
 
           <div className="mt-2 flex flex-wrap gap-3 md:mt-4">
-            <Button className="bg-orange-700 text-white shadow-md hover:bg-orange-600">
-              Learn More
-            </Button>
+            <Link href="#Projects">
+              <Button className="bg-orange-700 text-white shadow-md hover:bg-orange-600">
+                View My Work
+              </Button>
+            </Link>
 
             <Button
               asChild

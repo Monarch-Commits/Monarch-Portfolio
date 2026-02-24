@@ -2,10 +2,10 @@ import AboutMe from './components/AboutMe/AboutMe';
 import Contact from './components/Contact/Contact';
 import Dashboard from './components/Dashboard/Dashboard';
 import Experience from './components/Experience/Experience';
+import { FireflySwarm } from './components/FireflyAnimation/FireflySwarm';
 import { Navigation } from './components/Navbar-Component/Navigation';
 import Project from './components/Project/Project';
 import SkillsSection from './components/Skills/Skills';
-import { FireflySwarm } from './components/Test/Test';
 
 export default function Home() {
   return (
