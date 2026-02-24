@@ -56,7 +56,7 @@ export default async function AllProject() {
 
           {/* DESCRIPTION */}
           <div className="group relative">
-            <p className="text-muted-foreground line-clamp-4 text-sm transition-all duration-500 group-hover:opacity-10 group-hover:blur-[1px]">
+            <p className="text-muted-foreground line-clamp-none text-sm transition-all duration-500 group-hover:opacity-10 group-hover:blur-[1px] sm:line-clamp-4">
               {prod.description}
             </p>
 

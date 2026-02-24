@@ -1,7 +1,7 @@
-import getProject from '@/app/actions/post/getProject.action';
+import { getPrivateProject } from '@/app/actions/post/getProject.action';
 import ProjectChild from './ProjectChild';
 export default async function Project() {
-  const project = await getProject();
+  const project = await getPrivateProject();
   return (
     <div className="columns-1 space-y-4 sm:columns-2 lg:columns-3">
       {project?.data.map((p, index) => (

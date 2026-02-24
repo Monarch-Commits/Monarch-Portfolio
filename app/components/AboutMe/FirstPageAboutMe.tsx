@@ -10,7 +10,7 @@ export default function FirstPageAboutMe() {
         {/* FIRST CARD */}
         <div className="relative w-full max-w-lg cursor-default rounded-xl bg-orange-50 p-6 shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:scale-102 hover:shadow-xl dark:bg-orange-100">
           {/* FLOATING LEAF */}
-          <div className="pointer-events-none absolute -top-10 -left-6 z-50 h-24 w-24 md:-top-12 md:-left-12 md:h-32 md:w-32">
+          <div className="pointer-events-none absolute -top-10 -left-6 z-10 h-24 w-24 md:-top-12 md:-left-12 md:h-32 md:w-32">
             <Image
               src="https://res.cloudinary.com/db2x3itfk/image/upload/f_auto,q_auto/v1771628562/Gemini_Generated_Image_yc7ay7yc7ay7yc7a_1_mqvtnn.png"
               alt="red leaf"

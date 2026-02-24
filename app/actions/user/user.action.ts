@@ -2,41 +2,6 @@
 
 import prisma from '@/app/lib/prisma';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
-import { redirect } from 'next/navigation';
-
-export default async function asyncUser() {
-  try {
-    const { getUser } = getKindeServerSession();
-    const user = await getUser();
-
-    if (!user?.id) {
-      throw new Error('Unauthorized: No Kinde user found');
-    }
-
-    const existingUser = await prisma.user.findUnique({
-      where: {
-        kindeId: user.id,
-      },
-    });
-
-    if (existingUser) {
-      return existingUser;
-    }
-
-    const createUser = await prisma.user.create({
-      data: {
-        kindeId: user.id,
-        name: `${user?.given_name ?? 'User'} ${user?.family_name ?? ''}`.trim(),
-        email: user?.email || '',
-        imageUrl: user?.picture,
-      },
-    });
-    return createUser;
-  } catch (error) {
-    console.error('Error creating or fetching user:', error);
-    throw error;
-  }
-}
 
 export async function getUserByKindeId(kindeId: string) {
   try {
@@ -44,34 +9,51 @@ export async function getUserByKindeId(kindeId: string) {
       where: { kindeId },
       include: {
         _count: {
-          select: {
-            projects: true,
-          },
+          select: { projects: true },
         },
       },
     });
     return user;
   } catch (error) {
-    console.log('Error fetching user by Kinde ID:', error);
+    console.error('Error fetching user by Kinde ID:', error);
+    return null;
   }
 }
 
 export async function getDbUser() {
   const { getUser } = getKindeServerSession();
   const kindeUser = await getUser();
-  if (!kindeUser?.id) redirect('/api/auth/login');
 
-  const user = await getUserByKindeId(kindeUser.id);
-  if (!user) throw new Error('User not found in database');
-  return user;
+  if (!kindeUser?.id) {
+    throw new Error('Unauthorized: No Kinde user found');
+  }
+
+  let dbUser = await getUserByKindeId(kindeUser.id);
+
+  if (!dbUser) {
+    await prisma.user.create({
+      data: {
+        kindeId: kindeUser.id,
+        name: `${kindeUser.given_name ?? 'User'} ${kindeUser.family_name ?? ''}`.trim(),
+
+        imageUrl: kindeUser.picture ?? undefined,
+      },
+    });
+
+    dbUser = await getUserByKindeId(kindeUser.id);
+
+    if (!dbUser) {
+      throw new Error('Failed to create or fetch user after creation');
+    }
+  }
+
+  return dbUser;
 }
 
 export async function getDbUserPublic() {
   const { getUser } = getKindeServerSession();
   const kindeUser = await getUser();
-  if (!kindeUser?.id) return;
+  if (!kindeUser?.id) return null;
 
-  const user = await getUserByKindeId(kindeUser.id);
-  if (!user) throw new Error('User not found in database');
-  return user;
+  return getUserByKindeId(kindeUser.id);
 }
