@@ -66,6 +66,7 @@ export default function FirstPageAboutMe() {
             alt="with my Christine"
             fill
             sizes="(max-width: 768px) 80vw, 350px"
+            loading="eager"
             className="object-cover transition-transform duration-500 ease-out group-hover:scale-110"
           />
         </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState, useCallback } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
 
 interface FireflyData {
@@ -20,23 +20,28 @@ const Firefly = ({
   mouseY,
   targetRect,
   mode,
+  windowWidth,
+  windowHeight,
 }: {
   data: FireflyData;
   mouseX: number;
   mouseY: number;
   targetRect: DOMRect | null;
   mode: Mode;
+  windowWidth: number;
+  windowHeight: number;
 }) => {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
+  const x = useMotionValue(windowWidth / 2);
+  const y = useMotionValue(windowHeight / 2);
 
-  const springConfig = {
+  const smoothX = useSpring(x, {
     damping: 25,
     stiffness: mode === 'wander' ? 30 : 80,
-  };
-
-  const smoothX = useSpring(x, springConfig);
-  const smoothY = useSpring(y, springConfig);
+  });
+  const smoothY = useSpring(y, {
+    damping: 25,
+    stiffness: mode === 'wander' ? 30 : 80,
+  });
 
   const [opacity, setOpacity] = useState(0.8);
 
@@ -46,7 +51,6 @@ const Firefly = ({
 
     const animate = () => {
       const time = (Date.now() + offset) / 1000;
-
       const pulse = 0.5 + Math.abs(Math.sin(time * data.pulseSpeed)) * 0.5;
       setOpacity(pulse);
 
@@ -61,17 +65,13 @@ const Firefly = ({
         x.set(targetX + Math.cos(angle) * (targetRect.width * 0.5));
         y.set(targetY + Math.sin(angle * 1.2) * (targetRect.height * 0.5));
       } else {
-        // Wander mode logic
+        // Wander mode
         const wanderX =
-          Math.sin(time * 0.3 + data.id) *
-            (typeof window !== 'undefined' ? window.innerWidth * 0.3 : 200) +
-          (typeof window !== 'undefined' ? window.innerWidth / 2 : 500);
-
+          Math.sin(time * 0.3 + data.id) * (windowWidth * 0.3) +
+          windowWidth / 2;
         const wanderY =
-          Math.cos(time * 0.2 + data.id) *
-            (typeof window !== 'undefined' ? window.innerHeight * 0.3 : 200) +
-          (typeof window !== 'undefined' ? window.innerHeight / 2 : 400);
-
+          Math.cos(time * 0.2 + data.id) * (windowHeight * 0.3) +
+          windowHeight / 2;
         x.set(wanderX);
         y.set(wanderY);
       }
@@ -81,7 +81,7 @@ const Firefly = ({
 
     animate();
     return () => cancelAnimationFrame(animationId);
-  }, [mouseX, mouseY, mode, targetRect, data, x, y]);
+  }, [mouseX, mouseY, mode, targetRect, data, x, y, windowWidth, windowHeight]);
 
   return (
     <motion.div
@@ -101,7 +101,6 @@ const Firefly = ({
           width: data.size,
           height: data.size,
           borderRadius: '50%',
-
           backgroundColor: data.color,
           boxShadow: `
             0 0 ${data.size * 2}px ${data.color},
@@ -116,30 +115,35 @@ const Firefly = ({
 };
 
 export function FireflySwarm() {
+  const [mounted, setMounted] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(0);
+
+  const [fireflies, setFireflies] = useState<FireflyData[]>([]);
   const [mouseX, setMouseX] = useState(0);
   const [mouseY, setMouseY] = useState(0);
   const [mode, setMode] = useState<Mode>('wander');
   const [targetRect, setTargetRect] = useState<DOMRect | null>(null);
   const idleTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  const [fireflies] = useState<FireflyData[]>(() => {
-    const colors = [
-      '#EAB308', // Amber/Yellow
-      '#10B981', // Emerald
-      '#3B82F6', // Blue
-      '#F43F5E', // Rose
-      '#8B5CF6', // Violet
-    ];
+  useEffect(() => {
+    setTimeout(() => {
+      setMounted(true);
+      setWindowWidth(window.innerWidth);
+      setWindowHeight(window.innerHeight);
 
-    return Array.from({ length: 18 }).map((_, i) => ({
-      id: i,
-      color: colors[i % colors.length],
-      size: Math.random() * 4 + 4, // Bahagyang mas malaki
-      pulseSpeed: 1.2 + Math.random() * 1.8,
-      orbitRadius: 50 + Math.random() * 60,
-      speedMultiplier: 0.8 + Math.random() * 0.7,
-    }));
-  });
+      const colors = ['#EAB308', '#10B981', '#3B82F6', '#F43F5E', '#8B5CF6'];
+      const f = Array.from({ length: 18 }).map((_, i) => ({
+        id: i,
+        color: colors[i % colors.length],
+        size: Math.random() * 4 + 4,
+        pulseSpeed: 1.2 + Math.random() * 1.8,
+        orbitRadius: 50 + Math.random() * 60,
+        speedMultiplier: 0.8 + Math.random() * 0.7,
+      }));
+      setFireflies(f);
+    }, 0);
+  }, []);
 
   const findClosestImage = useCallback((x: number, y: number) => {
     const images = Array.from(document.querySelectorAll('img')).filter(
@@ -161,7 +165,7 @@ export function FireflySwarm() {
       const r = img.getBoundingClientRect();
       const imgX = r.left + r.width / 2;
       const imgY = r.top + r.height / 2;
-      const d = Math.sqrt(Math.pow(x - imgX, 2) + Math.pow(y - imgY, 2));
+      const d = Math.hypot(x - imgX, y - imgY);
 
       if (d < minDistance) {
         minDistance = d;
@@ -174,25 +178,27 @@ export function FireflySwarm() {
   }, []);
 
   useEffect(() => {
+    if (!mounted) return;
+
     const handleMove = (e: MouseEvent) => {
       setMouseX(e.clientX);
       setMouseY(e.clientY);
       setMode('mouse');
 
       if (idleTimerRef.current) clearTimeout(idleTimerRef.current);
-
       idleTimerRef.current = setTimeout(() => {
         findClosestImage(e.clientX, e.clientY);
       }, 1500);
     };
 
     window.addEventListener('mousemove', handleMove);
-
     return () => {
       window.removeEventListener('mousemove', handleMove);
       if (idleTimerRef.current) clearTimeout(idleTimerRef.current);
     };
-  }, [findClosestImage]);
+  }, [findClosestImage, mounted]);
+
+  if (!mounted || fireflies.length === 0) return null;
 
   return (
     <div
@@ -208,6 +214,8 @@ export function FireflySwarm() {
           mouseY={mouseY}
           targetRect={targetRect}
           mode={mode}
+          windowWidth={windowWidth}
+          windowHeight={windowHeight}
         />
       ))}
     </div>

@@ -59,9 +59,10 @@ export default function SecondPageAboutMe() {
           <Image
             src="https://res.cloudinary.com/db2x3itfk/image/upload/f_auto,q_auto/v1771629103/Gemini_Generated_Image_d2h12wd2h12wd2h1-removebg-preview_kqk8h2.png"
             alt="branch"
-            width={200}
-            height={200}
+            fill
             className="object-contain opacity-80 drop-shadow-2xl"
+            style={{ objectFit: 'contain' }}
+            sizes="(max-width: 768px) 250px, 320px"
           />
         </motion.div>
       </div>
