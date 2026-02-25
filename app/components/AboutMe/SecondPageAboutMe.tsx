@@ -75,7 +75,7 @@ export default function SecondPageAboutMe() {
         }}
         whileTap={{ scale: 0.98 }}
         transition={smoothSpring}
-        className="border-12px relative z-20 flex aspect-square w-[clamp(250px,50vw,320px)] cursor-pointer items-end justify-center border-white bg-white shadow-md sm:shadow-2xl"
+        className="border-12px relative z-50 flex aspect-square w-[clamp(250px,50vw,320px)] cursor-pointer items-end justify-center border-white bg-white shadow-md sm:shadow-lg"
       >
         <Image
           src="https://res.cloudinary.com/db2x3itfk/image/upload/f_auto,q_auto/v1771628561/WITH_SOMEONE_S_WEDDING_PICTURIAL_zsd7tp.jpg"

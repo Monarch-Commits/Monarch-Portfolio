@@ -7,7 +7,7 @@ export default function UltraModernAbstractBackground() {
 
   useEffect(() => {
     const checkScreen = () => {
-      setIsDesktop(window.innerWidth >= 768);
+      setIsDesktop(window.innerWidth >= 500);
     };
 
     checkScreen();

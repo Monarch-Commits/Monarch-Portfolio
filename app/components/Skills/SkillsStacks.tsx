@@ -3,14 +3,14 @@ import { HiOutlineCommandLine } from 'react-icons/hi2';
 
 export default function SkillsStacks() {
   return (
-    <div className="flex w-full flex-col items-center justify-center py-8">
+    <div className="flex w-full flex-col items-center justify-center pb-8">
       {/* Header Section - Centered */}
       <div className="mb-8 flex items-center gap-3">
         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 shadow-sm dark:bg-zinc-800">
           <HiOutlineCommandLine className="h-5 w-5 text-orange-600 dark:text-orange-400" />
         </div>
 
-        <h2 className="text-2xl font-bold tracking-wide text-gray-800">
+        <h2 className="text-xl font-bold text-gray-800 sm:text-2xl">
           Technical Stack
         </h2>
       </div>

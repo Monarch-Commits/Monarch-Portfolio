@@ -9,7 +9,7 @@ export default function SoftSkill() {
           <Egg className="h-5 w-5 text-orange-600 dark:text-orange-400" />
         </div>
 
-        <h2 className="text-2xl font-bold tracking-wide text-gray-800">
+        <h2 className="text-xl font-bold text-gray-800 sm:text-2xl">
           Soft Skills
         </h2>
       </div>

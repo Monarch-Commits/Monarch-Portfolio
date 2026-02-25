@@ -12,7 +12,9 @@ export default function Home() {
   return (
     <main className="flex max-w-screen flex-col items-center justify-center pb-10">
       <Navigation />
-      <FireflySwarm />
+      <div className="hidden sm:block">
+        <FireflySwarm />
+      </div>
       <BackgroundArt />
       <Dashboard />
       <AboutMe />

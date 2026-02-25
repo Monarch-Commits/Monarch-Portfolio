@@ -9,7 +9,7 @@ export default function TechnicalSkills() {
           <GitCommitHorizontal className="h-5 w-5 text-orange-600 dark:text-orange-400" />
         </div>
 
-        <h2 className="text-2xl font-bold tracking-wide text-gray-800 dark:text-white">
+        <h2 className="text-xl font-bold text-gray-800 sm:text-2xl dark:text-white">
           Development Approach
         </h2>
       </div>

@@ -8,7 +8,7 @@ import Link from 'next/link';
 export default async function AllProject() {
   const project = await getProject();
   return (
-    <div className="columns-1 space-y-2 [column-fill:balance] sm:columns-2 md:space-y-4 lg:columns-3">
+    <div className="columns-1 space-y-2 [column-fill:balance] sm:columns-2 md:space-y-4 md:pt-10 lg:columns-3">
       {project?.data?.length === 0 && (
         <p className="text-muted-foreground">No Project Found</p>
       )}

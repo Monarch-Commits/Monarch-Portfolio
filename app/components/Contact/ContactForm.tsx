@@ -121,7 +121,7 @@ export default function ContactForm() {
                       rows={5}
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
-                      placeholder="Tell me about your project..."
+                      placeholder="How can I help you today?"
                       className={`${inputStyles} resize-none`}
                       required
                       autoComplete="off"
