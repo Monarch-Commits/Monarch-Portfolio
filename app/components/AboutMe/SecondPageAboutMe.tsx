@@ -43,30 +43,6 @@ export default function SecondPageAboutMe() {
       variants={containerVariants}
       className="relative flex min-h-full w-full flex-col-reverse items-center justify-center gap-10 overflow-hidden p-6 pt-12 lg:flex-row"
     >
-      {/* DECORATIVE BRANCH */}
-      <div className="pointer-events-none absolute z-0 hidden h-40 w-40 md:-left-28 md:flex md:h-52 md:w-52">
-        <motion.div
-          animate={{
-            y: [0, -15, 0],
-            rotate: [0, 5, 0],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        >
-          <Image
-            src="https://res.cloudinary.com/db2x3itfk/image/upload/f_auto,q_auto/v1771629103/Gemini_Generated_Image_d2h12wd2h12wd2h1-removebg-preview_kqk8h2.png"
-            alt="branch"
-            fill
-            className="object-contain opacity-80 drop-shadow-2xl"
-            style={{ objectFit: 'contain' }}
-            sizes="(max-width: 768px) 250px, 320px"
-          />
-        </motion.div>
-      </div>
-
       <motion.div
         whileHover={{
           scale: 1.02,
@@ -75,7 +51,7 @@ export default function SecondPageAboutMe() {
         }}
         whileTap={{ scale: 0.98 }}
         transition={smoothSpring}
-        className="border-12px relative z-50 flex aspect-square w-[clamp(250px,50vw,320px)] cursor-pointer items-end justify-center border-white bg-white shadow-md sm:shadow-lg"
+        className="border-12px relative z-10 flex aspect-square w-[clamp(250px,50vw,320px)] cursor-pointer items-end justify-center border-white bg-white shadow-md sm:shadow-lg"
       >
         <Image
           src="https://res.cloudinary.com/db2x3itfk/image/upload/f_auto,q_auto/v1771628561/WITH_SOMEONE_S_WEDDING_PICTURIAL_zsd7tp.jpg"

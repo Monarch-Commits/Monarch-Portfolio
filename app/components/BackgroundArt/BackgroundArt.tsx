@@ -1,43 +1,18 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-
 export default function UltraModernAbstractBackground() {
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  useEffect(() => {
-    const checkScreen = () => {
-      setIsDesktop(window.innerWidth >= 500);
-    };
-
-    checkScreen();
-    window.addEventListener('resize', checkScreen);
-    return () => window.removeEventListener('resize', checkScreen);
-  }, []);
-
-  if (!isDesktop) return null;
-
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden bg-[#fdfefe]">
-      <div className="absolute -top-20 -left-20 h-120 w-120 rounded-[63%_37%_54%_46%/55%_48%_52%_45%] bg-purple-300/30 blur-2xl" />
+      <div className="pointer-events-none absolute -right-[20%] -bottom-[35%] h-128 w-3xl rounded-[50%] bg-[radial-gradient(circle_at_60%_40%,rgba(251,113,133,0.35),rgba(253,186,200,0.15),transparent_70%)] blur-[80px] will-change-transform" />
 
-      <div className="absolute right-[-10%] bottom-[-30%] h-112 w-md rounded-[45%_55%_70%_30%/60%_30%_70%_40%] bg-rose-200/40 blur-2xl" />
+      <div className="pointer-events-none absolute top-[10%] -left-[10%] h-56 w-80 rotate-[5deg] rounded-[32px] bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.55),rgba(240,248,255,0.2))] shadow-xl backdrop-blur-sm will-change-transform" />
 
-      <div className="absolute top-[18%] -left-[10%] h-56 w-80 rotate-6 rounded-[72%_28%_38%_62%/45%_60%_40%_55%] border border-indigo-300/40 bg-indigo-200/40 shadow-lg" />
+      <div className="pointer-events-none absolute top-[50%] right-[14%] h-44 w-64 -rotate-[8deg] rounded-[28px] bg-[radial-gradient(circle_at_50%_50%,rgba(175,255,215,0.35),rgba(200,255,230,0.15))] shadow-lg backdrop-blur-sm will-change-transform" />
 
-      <div className="absolute top-[50%] right-[15%] h-40 w-64 -rotate-12 rounded-[30%_70%_60%_40%/50%_40%_60%_50%] border border-teal-300/40 bg-teal-200/40 shadow-md" />
+      <div className="pointer-events-none absolute top-[30%] left-[20%] h-56 w-56 rounded-full border border-slate-300/40" />
+      <div className="pointer-events-none absolute top-[12%] right-[8%] h-20 w-20 rotate-6 rounded-lg border border-pink-300/30 bg-[radial-gradient(circle_at_center,rgba(251,113,133,0.25),rgba(253,186,200,0.1))]" />
 
-      <div className="absolute bottom-[5%] left-[30%] h-24 w-72 rotate-12 rounded-[80%_20%_50%_50%/50%_50%_50%_50%] border border-gray-300/60 bg-white/40 shadow-md" />
+      <div className="pointer-events-none absolute right-[38%] bottom-[20%] h-5 w-5 rounded-sm bg-[radial-gradient(circle_at_center,rgba(20,184,166,0.3),rgba(167,255,235,0.15))]" />
 
-      <div className="absolute top-[35%] left-[55%] h-52 w-52 rounded-[40%_60%_55%_45%/50%_40%_60%_50%] border-2 border-slate-300/50" />
-
-      <div className="absolute top-[15%] left-[40%] h-8 w-8 rotate-45 rounded-[40%_60%_60%_40%] bg-blue-400/40" />
-
-      <div className="absolute bottom-[35%] left-[15%] h-10 w-6 rotate-12 rounded-[60%_40%_70%_30%] bg-gray-200/40" />
-
-      <div className="absolute top-[12%] right-[28%] h-6 w-20 rotate-6 rounded-[70%_30%_50%_50%] bg-pink-300/30" />
-
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(255,255,255,0.25)_100%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.45)_0%,transparent_65%)]" />
     </div>
   );
 }
