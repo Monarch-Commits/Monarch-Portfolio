@@ -25,7 +25,7 @@ export function LayoutTextFlipDemo() {
             applications.
           </p>
 
-          <p className="text-muted-foreground max-w-md text-sm leading-relaxed sm:text-base">
+          <p className="max-w-md text-sm leading-relaxed text-gray-700 sm:text-base">
             Turning ideas into smooth, functional, and elegant digital
             experiences that feel fast, intuitive, and thoughtfully crafted.
           </p>
