@@ -96,13 +96,11 @@ export default function SecondPageAboutMe() {
         className="relative w-full max-w-lg rounded-2xl bg-white/90 p-8 shadow-lg backdrop-blur-md dark:bg-orange-50/90 dark:text-gray-900"
       >
         <div className="relative z-10">
-          <motion.h2
-            variants={itemVariants}
-            className="mb-6 text-4xl font-bold tracking-tight text-orange-950"
-            style={{ fontFamily: "'Momo Signature', cursive" }}
-          >
-            Personal Info
-          </motion.h2>
+          <div className="mb-4 flex items-center gap-2">
+            <motion.h2 className="text-2xl font-semibold text-gray-900 md:text-4xl">
+              Personal Info
+            </motion.h2>
+          </div>
 
           <div className="flex flex-col gap-3">
             {AboutMePersonalInfo.map((item, index) => (

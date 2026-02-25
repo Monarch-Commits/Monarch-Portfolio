@@ -22,10 +22,7 @@ export default function FirstPageAboutMe() {
 
           <div className="mb-4 flex items-center gap-2">
             <User className="text-orange-600" size={24} />
-            <h2
-              className="text-2xl font-semibold text-gray-900 md:text-4xl"
-              style={{ fontFamily: "'Momo Signature', cursive" }}
-            >
+            <h2 className="text-2xl font-semibold text-gray-900 md:text-4xl">
               About Me
             </h2>
           </div>
@@ -41,10 +38,7 @@ export default function FirstPageAboutMe() {
         <div className="w-full max-w-lg cursor-default self-center rounded-xl bg-orange-50 p-6 shadow-xl transition-transform duration-300 hover:-translate-y-2 hover:scale-102 hover:shadow-xl md:self-end dark:bg-orange-100">
           <div className="mb-4 flex items-center gap-2">
             <Target className="text-orange-600" size={24} />
-            <h2
-              className="text-2xl font-semibold text-gray-900 md:text-4xl"
-              style={{ fontFamily: "'Momo Signature', cursive" }}
-            >
+            <h2 className="text-2xl font-semibold text-gray-900 md:text-4xl">
               Project-Focused
             </h2>
           </div>

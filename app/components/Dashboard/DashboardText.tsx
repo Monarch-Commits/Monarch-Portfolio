@@ -13,8 +13,8 @@ export function LayoutTextFlipDemo() {
           </p>
 
           <div
-            className="text-4xl leading-tight font-extrabold text-amber-800 sm:text-5xl md:text-6xl"
-            style={{ fontFamily: "'Momo Signature', cursive" }}
+            className="bg-linear-to-r from-orange-500 to-orange-600 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent sm:text-5xl"
+            style={{ fontFamily: 'var(--font-rounded), sans-serif' }}
           >
             Monarch
           </div>

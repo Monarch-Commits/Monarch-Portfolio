@@ -1,65 +1,46 @@
-import { creativeProcess, skills } from '@/app/constant/Constant';
-import { HiOutlineCommandLine } from 'react-icons/hi2';
+import { creativeProcess } from '@/app/constant/Constant';
 import { GitCommitHorizontal } from 'lucide-react';
 
 export default function TechnicalSkills() {
   return (
-    <div className="flex max-w-full flex-col items-center gap-6 p-2 sm:items-start md:gap-10 dark:text-white">
-      <div className="w-full">
-        <h1
-          className="mb-6 text-3xl font-semibold md:text-5xl"
-          style={{ fontFamily: "'Momo Signature', cursive" }}
-        >
-          Skills and Expertise
-        </h1>
-        <p className="text-gray-600 dark:text-gray-300">
-          The tools and technologies I frequently use to build amazing web
-          applications:
-        </p>
-      </div>
-      <div>
-        <p className="flex items-center gap-2 text-xl font-bold uppercase md:gap-3">
-          <HiOutlineCommandLine className="h-7 w-7 fill-orange-200 text-orange-500" />
-          Technical Stack
-        </p>
-        <div className="mt-4 flex flex-wrap items-start justify-start gap-2 md:gap-3">
-          {skills.map((skill, index) => {
-            const SkillIcon = skill.icons;
-            return (
-              <div
-                key={index}
-                className={`flex items-center justify-center gap-2 rounded-md border border-orange-300 bg-orange-50 p-1 px-2 text-orange-900 shadow-sm transition-all hover:scale-105`}
-              >
-                <SkillIcon className={`h-5 w-5 ${skill.color}`} />
-                <p>{skill.name}</p>
-              </div>
-            );
-          })}
+    <div className="flex max-w-full flex-col items-center justify-center gap-6 p-4 md:gap-10">
+      <div className="flex items-center gap-3">
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-orange-100 shadow-sm dark:bg-zinc-800">
+          <GitCommitHorizontal className="h-5 w-5 text-orange-600 dark:text-orange-400" />
         </div>
+
+        <h2 className="text-2xl font-bold tracking-wide text-gray-800 dark:text-white">
+          Development Approach
+        </h2>
       </div>
       <div className="w-full">
-        {/* Header Section */}
-        <p className="flex items-center gap-2 text-xl font-bold tracking-wider uppercase md:gap-3">
-          <GitCommitHorizontal className="h-7 w-7 text-orange-500" />
-          Development Approach
-        </p>
+        <div className="mt-6 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {creativeProcess.map((skill, index) => {
+            const rotations = ['md:rotate-2', 'md:-rotate-3', 'md:rotate-1'];
 
-        <div className="mt-6 flex flex-col items-center gap-4 md:items-start md:gap-3">
-          {creativeProcess.map((process, index) => {
-            const isEven = index % 2 === 0;
-            const rotation = isEven ? 'md:rotate-2' : 'md:-rotate-2';
-            const offset = !isEven ? 'md:ml-20' : 'md:ml-0';
+            const tapeStyles = [
+              '-top-2 left-10 -rotate-10',
+              '-top-3 left-15 rotate-0',
+              '-top-3 left-15 -rotate-12',
+            ];
 
             return (
               <div
                 key={index}
-                className={`flex w-full max-w-md flex-col items-start justify-center gap-2 rounded-md bg-orange-100 p-4 shadow-sm transition-all hover:scale-[1.02] hover:shadow-md dark:border dark:border-zinc-800 dark:bg-zinc-900 ${rotation} ${offset} `}
+                className={`relative flex w-full max-w-[320px] flex-col items-start justify-center gap-2 bg-orange-100 p-6 shadow-md transition-all hover:z-10 hover:scale-105 hover:rotate-0 hover:shadow-xl dark:border dark:border-zinc-800 dark:bg-zinc-900 ${
+                  rotations[index % rotations.length]
+                }`}
               >
-                <h3 className="font-bold text-orange-900 dark:text-orange-400">
-                  {process.title}
+                {/* Tape */}
+                <div
+                  className={`absolute h-5 w-24 border-x border-white/20 bg-green-300/40 backdrop-blur-[1px] ${tapeStyles[index % tapeStyles.length]}`}
+                />
+
+                <h3 className="text-lg font-bold text-orange-900 dark:text-orange-400">
+                  {skill.title}
                 </h3>
                 <p className="text-sm leading-relaxed text-gray-700 dark:text-zinc-400">
-                  {process.description}
+                  {skill.description}
                 </p>
               </div>
             );

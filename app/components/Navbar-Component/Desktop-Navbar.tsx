@@ -60,7 +60,7 @@ export default function DesktopNavbar() {
                 className={`font-medium transition-all duration-300 ${
                   isActive
                     ? 'scale-105 bg-orange-700 text-white'
-                    : 'text-gray-500 hover:text-orange-400'
+                    : 'text-gray-700 hover:text-orange-400'
                 }`}
               >
                 <Icon /> {p.name}
