@@ -27,7 +27,7 @@ export default function SkillsStacks() {
               <SkillIcon
                 className={`h-5 w-5 transition-transform group-hover:rotate-6 ${skill.color}`}
               />
-              <p className="font-medium">{skill.name}</p>
+              <p className="text-sm font-medium sm:text-base">{skill.name}</p>
             </div>
           );
         })}
