@@ -6,16 +6,22 @@ import Project from '../components/Add-Update-Delete/GetProject/Project';
 import ProjectSkeleton from '../components/Project/BestProject/Loading';
 import { LuHouse } from 'react-icons/lu';
 import {
-  getKindeServerSession,
   LoginLink,
   LogoutLink,
   RegisterLink,
 } from '@kinde-oss/kinde-auth-nextjs/server';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { getDbUser } from '../actions/user/user.action';
+import { redirect } from 'next/navigation';
 
 export default async function Page() {
-  const { getUser } = getKindeServerSession();
-  const user = await getUser();
+  let user;
+
+  try {
+    user = await getDbUser();
+  } catch {
+    redirect('/Create');
+  }
 
   return (
     <main className="container mx-auto w-screen space-y-10 p-6">
@@ -30,10 +36,8 @@ export default async function Page() {
               <Create />
 
               <Avatar>
-                <AvatarImage src={user?.picture ?? ''} />
-                <AvatarFallback>
-                  {user?.given_name?.charAt(0) ?? 'U'}
-                </AvatarFallback>
+                <AvatarImage src={user.imageUrl || ''} />
+                <AvatarFallback>{user.name}</AvatarFallback>
               </Avatar>
 
               <LogoutLink>
