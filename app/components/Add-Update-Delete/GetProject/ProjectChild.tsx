@@ -1,5 +1,5 @@
 import { stacksByProject, techIcons } from '@/app/constant/Constant';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -54,7 +54,14 @@ export default function ProjectChild({
       {/* USER */}
       <div className="flex items-center gap-2">
         <Avatar className="h-8 w-8">
-          <AvatarImage src={p.user?.imageUrl || ''} />
+          <Image
+            src={p.user?.imageUrl || '/default-avatar.png'}
+            alt={p.user?.name ? `${p.user.name}'s avatar` : 'User avatar'}
+            width={32}
+            height={32}
+            className="rounded-full"
+            priority={false} // optional, for LCP, set true only for above-the-fold
+          />
           <AvatarFallback>
             {p.user?.name?.charAt(0).toUpperCase()}
           </AvatarFallback>
@@ -105,13 +112,14 @@ export default function ProjectChild({
       </div>
 
       {/* IMAGE */}
-      <div className="group/image w-full overflow-hidden rounded-xl shadow-lg">
+      <div className="group/image w-full overflow-hidden rounded-md shadow-lg">
         <Image
           src={p.imageUrl}
           alt={p.title || 'Project Image'}
           width={800}
           height={600}
           priority
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
           className="h-auto w-full object-cover transition-transform duration-500 group-hover/image:scale-105"
         />
       </div>

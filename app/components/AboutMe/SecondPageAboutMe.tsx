@@ -44,11 +44,7 @@ export default function SecondPageAboutMe() {
       className="relative flex min-h-full w-full flex-col-reverse items-center justify-center gap-10 overflow-hidden p-6 pt-12 lg:flex-row"
     >
       <motion.div
-        whileHover={{
-          scale: 1.02,
-          rotate: -1,
-          y: -10,
-        }}
+        whileHover={{ scale: 1.02, rotate: -1, y: -10 }}
         whileTap={{ scale: 0.98 }}
         transition={smoothSpring}
         className="border-12px relative z-10 flex aspect-square w-[clamp(250px,50vw,320px)] cursor-pointer items-end justify-center border-white bg-white shadow-md sm:shadow-lg"
@@ -57,8 +53,9 @@ export default function SecondPageAboutMe() {
           src="https://res.cloudinary.com/db2x3itfk/image/upload/f_auto,q_auto/v1771628561/WITH_SOMEONE_S_WEDDING_PICTURIAL_zsd7tp.jpg"
           alt="with my GF"
           fill
-          sizes="(max-width: 768px) 250px, 320px"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
           className="object-cover p-1 pb-12"
+          priority={false} // lazy load by default
         />
 
         <div className="absolute -right-8 bottom-4 h-6 w-24 rotate-140 bg-orange-200/40 shadow-sm backdrop-blur-sm" />
