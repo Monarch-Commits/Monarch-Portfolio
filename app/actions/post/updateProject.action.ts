@@ -9,8 +9,6 @@ interface AddProductParams {
   imageUrl: string;
   liveUrl: string;
   repoUrl: string;
-  demoUsername: string;
-  demoPassword: string;
   id: string;
 }
 
@@ -20,8 +18,6 @@ export default async function UpdateProduct({
   description,
   liveUrl,
   repoUrl,
-  demoUsername,
-  demoPassword,
   id,
 }: AddProductParams) {
   try {
@@ -33,8 +29,6 @@ export default async function UpdateProduct({
         description,
         liveUrl,
         repoUrl,
-        demoUsername,
-        demoPassword,
       },
     });
     revalidatePath('/Create');

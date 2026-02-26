@@ -2,10 +2,8 @@ import getProject from '@/app/actions/post/getProject.action';
 import { stacksByProject, techIcons } from '@/app/constant/Constant';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
-import { Lock, User } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { IoKeyOutline } from 'react-icons/io5';
 
 export default async function AllProject() {
   const project = await getProject();
@@ -79,68 +77,40 @@ export default async function AllProject() {
               </div>
             </div>
           </div>
-          <div className="flex items-center justify-between">
-            <div className="flex gap-3">
-              {prod.liveUrl && (
-                <Link
-                  href={prod.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+
+          <div className="flex gap-3">
+            {prod.liveUrl && (
+              <Link
+                href={prod.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  size="sm"
+                  className="bg-orange-700 text-white shadow-md hover:bg-orange-600"
                 >
-                  <Button
-                    size="sm"
-                    className="bg-orange-700 text-white shadow-md hover:bg-orange-600"
-                  >
-                    View Project
-                  </Button>
-                </Link>
-              )}
+                  View Project
+                </Button>
+              </Link>
+            )}
 
-              {prod.repoUrl && (
-                <Link
-                  href={prod.repoUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+            {prod.repoUrl && (
+              <Link
+                href={prod.repoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="border-orange-300 text-orange-700 hover:bg-orange-100"
                 >
-                  <Button
-                    size="sm"
-                    variant="outline"
-                    className="border-orange-300 text-orange-700 hover:bg-orange-100"
-                  >
-                    Source Code
-                  </Button>
-                </Link>
-              )}
-            </div>
-
-            <div className="group relative flex items-center justify-center">
-              {/* Pinatibay ang background color para mas makita */}
-              <div className="flex cursor-pointer items-center justify-center rounded-full bg-orange-200 p-2 shadow-md backdrop-blur-sm transition-all hover:scale-110 hover:bg-orange-300 dark:bg-orange-800/50">
-                <IoKeyOutline className="h-5 w-5 text-orange-700 dark:text-orange-300" />
-              </div>
-
-              {/* Tooltip - Tiniyak na mataas ang z-index */}
-
-              <div className="pointer-events-none absolute bottom-full left-1/2 z-100 mb-3 flex -translate-x-1/2 flex-col items-center opacity-0 transition-all duration-300 group-hover:-translate-y-2.5 group-hover:opacity-100">
-                <div className="flex flex-col gap-1.5 rounded-lg bg-gray-900 px-3 py-2 text-[11px] whitespace-nowrap text-white shadow-2xl ring-1 ring-white/20">
-                  {/* Username */}
-                  <div className="flex items-center gap-2 border-b border-white/10 pb-1">
-                    <User className="h-3.5 w-3.5 text-orange-400" />
-                    <span className="font-medium">{prod.demoUsername}</span>
-                  </div>
-
-                  {/* Password */}
-                  <div className="flex items-center gap-2">
-                    <Lock className="h-3.5 w-3.5 text-orange-400" />
-                    <span className="font-medium">{prod.demoPassword}</span>
-                  </div>
-                </div>
-
-                {/* Arrow */}
-                <div className="ring-r ring-b -mt-1.5 h-3 w-3 rotate-45 bg-gray-900 ring-white/10"></div>
-              </div>
-            </div>
+                  Source Code
+                </Button>
+              </Link>
+            )}
           </div>
+
           {/* IMAGE */}
           <div className="group/image w-full overflow-hidden rounded-md shadow-lg">
             <Image

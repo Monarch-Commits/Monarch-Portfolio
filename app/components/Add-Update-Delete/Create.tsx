@@ -27,8 +27,6 @@ export default function Create() {
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [liveUrl, setLiveUrl] = useState('');
   const [repoUrl, setRepoUrl] = useState('');
-  const [demoUsername, setdemoUsername] = useState('');
-  const [demoPassword, setdemoPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -56,11 +54,9 @@ export default function Create() {
       const result = await postProject({
         title,
         description,
-        imageUrl: imageFile, // Siguraduhin na ang Server Action mo ay tumatanggap ng File/FormData
+        imageUrl: imageFile,
         liveUrl,
         repoUrl,
-        demoUsername,
-        demoPassword,
       });
 
       if (result?.success) {
@@ -71,8 +67,6 @@ export default function Create() {
         setImageFile(null);
         setLiveUrl('');
         setRepoUrl('');
-        setdemoUsername('');
-        setdemoPassword('');
         setIsOpen(false);
       } else {
         toast.error('Failed to create project.');
@@ -190,26 +184,6 @@ export default function Create() {
               placeholder="GitHub/GitLab"
               value={repoUrl}
               onChange={(e) => setRepoUrl(e.target.value)}
-              disabled={loading}
-            />
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="demoUsername">Demo Username</Label>
-            <Input
-              id="demoUsername"
-              placeholder="Username"
-              value={demoUsername}
-              onChange={(e) => setdemoUsername(e.target.value)}
-              disabled={loading}
-            />
-          </div>
-          <div className="grid gap-2">
-            <Label htmlFor="demoPassword">Demo Username</Label>
-            <Input
-              id="demoPassword"
-              placeholder="Password"
-              value={demoPassword}
-              onChange={(e) => setdemoPassword(e.target.value)}
               disabled={loading}
             />
           </div>
