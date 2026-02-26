@@ -55,7 +55,7 @@ export default function SecondPageAboutMe() {
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
           className="object-cover p-1 pb-12"
-          priority={false} // lazy load by default
+          priority={false}
         />
 
         <div className="absolute -right-8 bottom-4 h-6 w-24 rotate-140 bg-orange-200/40 shadow-sm backdrop-blur-sm" />
