@@ -20,7 +20,7 @@ export default async function Page() {
   try {
     user = await getDbUser();
   } catch {
-    redirect('/Create');
+    redirect('/');
   }
 
   return (
