@@ -65,7 +65,6 @@ const Firefly = ({
         x.set(targetX + Math.cos(angle) * (targetRect.width * 0.5));
         y.set(targetY + Math.sin(angle * 1.2) * (targetRect.height * 0.5));
       } else {
-        // Wander mode
         const wanderX =
           Math.sin(time * 0.3 + data.id) * (windowWidth * 0.3) +
           windowWidth / 2;
@@ -114,11 +113,10 @@ const Firefly = ({
   );
 };
 
-export function FireflySwarm() {
+export default function FireflySwarm() {
   const [mounted, setMounted] = useState(false);
   const [windowWidth, setWindowWidth] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
-
   const [fireflies, setFireflies] = useState<FireflyData[]>([]);
   const [mouseX, setMouseX] = useState(0);
   const [mouseY, setMouseY] = useState(0);
@@ -127,7 +125,7 @@ export function FireflySwarm() {
   const idleTimerRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timer = setTimeout(() => {
       setMounted(true);
       setWindowWidth(window.innerWidth);
       setWindowHeight(window.innerHeight);
@@ -143,6 +141,8 @@ export function FireflySwarm() {
       }));
       setFireflies(f);
     }, 0);
+
+    return () => clearTimeout(timer);
   }, []);
 
   const findClosestImage = useCallback((x: number, y: number) => {
