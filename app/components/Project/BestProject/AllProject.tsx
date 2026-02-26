@@ -16,7 +16,7 @@ export default async function AllProject() {
       {project?.data?.map((prod, index) => (
         <article
           key={prod.id}
-          className={`relative z-0 flex break-inside-avoid flex-col gap-4 border-2 bg-orange-50 p-4 shadow-sm transition-all hover:shadow-xl md:mx-2 dark:bg-orange-50 ${
+          className={`relative z-0 flex break-inside-avoid flex-col gap-4 border-2 bg-orange-50 p-6 shadow-sm transition-all hover:shadow-xl md:mx-4 dark:bg-orange-50 ${
             index % 3 === 0
               ? 'md:rotate-2'
               : index % 3 === 1
