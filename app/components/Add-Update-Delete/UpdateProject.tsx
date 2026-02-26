@@ -35,6 +35,8 @@ export default function UpdateProjectForm({ product }: { product: Props }) {
   const [description, setDescription] = useState(product.description);
   const [liveUrl, setLiveUrl] = useState(product.liveUrl || '');
   const [repoUrl, setRepoUrl] = useState(product.repoUrl || '');
+  const [demoUsername, setdemoUsername] = useState('');
+  const [demoPassword, setdemoPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -49,6 +51,8 @@ export default function UpdateProjectForm({ product }: { product: Props }) {
         description,
         liveUrl,
         repoUrl,
+        demoUsername,
+        demoPassword,
       });
 
       if (result?.success) {
@@ -152,6 +156,27 @@ export default function UpdateProjectForm({ product }: { product: Props }) {
               value={repoUrl}
               onChange={(e) => setRepoUrl(e.target.value)}
               placeholder="GitHub Link"
+            />
+          </div>
+
+          <div className="grid gap-2">
+            <Label htmlFor="demoUsername">Demo Username</Label>
+            <Input
+              id="demoUsername"
+              placeholder="Username"
+              value={demoUsername}
+              onChange={(e) => setdemoUsername(e.target.value)}
+              disabled={loading}
+            />
+          </div>
+          <div className="grid gap-2">
+            <Label htmlFor="demoPassword">Demo Username</Label>
+            <Input
+              id="demoPassword"
+              placeholder="Password"
+              value={demoPassword}
+              onChange={(e) => setdemoPassword(e.target.value)}
+              disabled={loading}
             />
           </div>
 
