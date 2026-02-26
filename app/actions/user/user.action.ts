@@ -2,6 +2,7 @@
 
 import prisma from '@/app/lib/prisma';
 import { getKindeServerSession } from '@kinde-oss/kinde-auth-nextjs/server';
+import { redirect } from 'next/navigation';
 
 export async function getUserByKindeId(kindeId: string) {
   try {
@@ -25,12 +26,11 @@ export async function getDbUser() {
   const kindeUser = await getUser();
 
   if (!kindeUser?.id) {
-    throw new Error('Unauthorized: No Kinde user found');
+    redirect('/api/auth/login');
   }
 
-  // 🔐 SINGLE USER CHECK
   if (kindeUser.email !== process.env.OWNER_EMAIL) {
-    throw new Error('Unauthorized: Not allowed user');
+    return 'UNAUTHORIZED' as const;
   }
 
   let dbUser = await getUserByKindeId(kindeUser.id);
