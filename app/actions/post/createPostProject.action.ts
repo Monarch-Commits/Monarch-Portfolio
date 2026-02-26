@@ -28,10 +28,10 @@ export default async function createPost({
   repoUrl,
 }: AddProductParams) {
   try {
-    const userId = await getDbUser();
+    const user = await getDbUser();
 
-    if (!userId) {
-      redirect('/api/auth/login');
+    if (!user || user === 'UNAUTHORIZED') {
+      redirect('/');
     }
 
     if (!imageUrl || imageUrl.size === 0) {
@@ -64,7 +64,7 @@ export default async function createPost({
 
     const newProduct = await prisma.project.create({
       data: {
-        userId: userId.id,
+        userId: user.id,
         title,
         description,
         imageUrl: uploadResult.secure_url,

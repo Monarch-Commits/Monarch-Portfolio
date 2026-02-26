@@ -1,6 +1,7 @@
 'use server';
 import prisma from '@/app/lib/prisma';
 import { getDbUser } from '../user/user.action';
+import { redirect } from 'next/navigation';
 
 export default async function getProject() {
   try {
@@ -26,6 +27,10 @@ export default async function getProject() {
 export async function getPrivateProject() {
   try {
     const user = await getDbUser();
+
+    if (!user || user === 'UNAUTHORIZED') {
+      redirect('/');
+    }
 
     const projects = await prisma.project.findMany({
       where: { userId: user.id },
