@@ -28,6 +28,11 @@ export async function getDbUser() {
     throw new Error('Unauthorized: No Kinde user found');
   }
 
+  // 🔐 SINGLE USER CHECK
+  if (kindeUser.email !== process.env.OWNER_EMAIL) {
+    throw new Error('Unauthorized: Not allowed user');
+  }
+
   let dbUser = await getUserByKindeId(kindeUser.id);
 
   if (!dbUser) {
@@ -53,7 +58,9 @@ export async function getDbUser() {
 export async function getDbUserPublic() {
   const { getUser } = getKindeServerSession();
   const kindeUser = await getUser();
-  if (!kindeUser?.id) return null;
+  if (!kindeUser?.id || kindeUser.email !== process.env.OWNER_EMAIL) {
+    return null;
+  }
 
   return getUserByKindeId(kindeUser.id);
 }
