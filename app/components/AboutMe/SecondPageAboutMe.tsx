@@ -43,24 +43,21 @@ export default function SecondPageAboutMe() {
       variants={containerVariants}
       className="relative flex min-h-full w-full flex-col-reverse items-center justify-center gap-10 overflow-hidden p-6 pt-12 lg:flex-row"
     >
-      <motion.div
-        whileHover={{ scale: 1.02, rotate: -1, y: -10 }}
-        whileTap={{ scale: 0.98 }}
-        transition={smoothSpring}
-        className="border-12px relative z-10 flex aspect-square w-[clamp(250px,50vw,320px)] cursor-pointer items-end justify-center border-white bg-white shadow-md sm:shadow-lg"
-      >
-        <Image
-          src="https://res.cloudinary.com/db2x3itfk/image/upload/f_auto,q_auto/v1771628561/WITH_SOMEONE_S_WEDDING_PICTURIAL_zsd7tp.jpg"
-          alt="with my GF"
-          fill
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
-          className="object-cover p-1 pb-12"
-          priority={false}
-        />
+      <div className="group relative mt-10 flex aspect-square w-[clamp(250px,80vw,350px)] rotate-3 cursor-pointer items-end justify-center bg-white p-4 pb-12 shadow-xl transition-transform duration-300 hover:-translate-y-1 hover:scale-105 lg:mt-0">
+        <div className="relative h-full w-full">
+          <Image
+            src="https://res.cloudinary.com/db2x3itfk/image/upload/f_auto,q_auto/v1771628561/WITH_SOMEONE_S_WEDDING_PICTURIAL_zsd7tp.jpg"
+            alt="with my GF"
+            fill
+            loading="eager"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
+            className="object-cover p-1 pb-12"
+          />
 
-        <div className="absolute -right-8 bottom-4 h-6 w-24 rotate-140 bg-orange-200/40 shadow-sm backdrop-blur-sm" />
-        <div className="absolute -top-4 -left-8 h-6 w-24 -rotate-12 bg-orange-200/40 shadow-sm backdrop-blur-sm" />
-      </motion.div>
+          <div className="absolute -right-8 bottom-4 h-6 w-24 rotate-140 bg-orange-200/40 shadow-sm backdrop-blur-sm" />
+          <div className="absolute -top-4 -left-8 h-6 w-24 -rotate-12 bg-orange-200/40 shadow-sm backdrop-blur-sm" />
+        </div>
+      </div>
 
       <motion.div
         variants={itemVariants}
