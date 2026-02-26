@@ -16,11 +16,11 @@ export default async function AllProject() {
       {project?.data?.map((prod, index) => (
         <article
           key={prod.id}
-          className={`relative z-0 flex break-inside-avoid flex-col gap-4 border-2 bg-orange-50 p-6 shadow-sm transition-all hover:shadow-xl md:mx-2 dark:bg-orange-50 ${
+          className={`relative z-0 flex break-inside-avoid flex-col gap-2 border-2 bg-orange-50 p-6 shadow-sm transition-all hover:shadow-xl md:mx-2 ${
             index % 3 === 0
               ? 'md:rotate-2'
               : index % 3 === 1
-                ? 'md:-rotate-3'
+                ? 'md:-rotate-2'
                 : 'md:rotate-3'
           } `}
         >
@@ -34,7 +34,7 @@ export default async function AllProject() {
                   : 'top-0 -right-6 rotate-60'
             } `}
           />
-          <span className="absolute top-0 -left-6 z-50 h-5 w-20 -rotate-12 bg-orange-200/50 shadow-sm" />
+          <span className="absolute top-0 -left-6 z-50 h-5 w-20 -rotate-12 bg-orange-200/70 shadow-sm" />
 
           {/* USER */}
           <div className="flex items-center gap-2">
@@ -65,7 +65,7 @@ export default async function AllProject() {
 
           {/* DESCRIPTION */}
           <div className="group relative">
-            <p className="text-muted-foreground line-clamp-none text-sm whitespace-pre-wrap transition-all duration-500 group-hover:opacity-10 group-hover:blur-[1px] sm:line-clamp-4">
+            <p className="line-clamp-none text-sm whitespace-pre-wrap text-gray-600 transition-all duration-500 group-hover:opacity-10 group-hover:blur-[1px] sm:line-clamp-4">
               {prod.description}
             </p>
 

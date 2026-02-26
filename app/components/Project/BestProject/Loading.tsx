@@ -11,7 +11,7 @@ export default function ProjectSkeleton() {
       {fakeArray.map((_, index) => (
         <article
           key={index}
-          className={`relative z-0 flex break-inside-avoid flex-col gap-4 border-2 bg-orange-50 p-4 shadow-sm md:mx-2 dark:bg-orange-50 ${
+          className={`relative z-0 flex break-inside-avoid flex-col gap-4 border-2 bg-gray-300 p-4 shadow-sm md:mx-2 dark:bg-orange-50 ${
             index % 3 === 0
               ? 'md:rotate-2'
               : index % 3 === 1
