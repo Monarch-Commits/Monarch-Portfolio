@@ -43,19 +43,13 @@ export const pages: PageItem[] = [
 
 // data for about me personal info
 export const AboutMePersonalInfo = [
-  { label: 'Age', value: '20' },
-  { label: 'Location', value: 'Davao' },
+  { label: 'Name', value: 'Monarch Pagcas' },
+  { label: 'Location', value: 'Davao City, Philippines' },
   { label: 'Education', value: 'Information System' },
   {
     label: 'Interests',
     value: 'Web Development, Front-End Development',
   },
-  {
-    label: 'Email',
-    value: 'monarch5827@gmail.com',
-    break: true,
-  },
-  { label: 'Phone', value: '+63 927 654 5827' },
 ];
 
 // data for stack used in projects

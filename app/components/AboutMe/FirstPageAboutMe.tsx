@@ -28,9 +28,10 @@ export default function FirstPageAboutMe() {
           </div>
           <p className="leading-relaxed text-gray-700">
             Hello 👋 I’m{' '}
-            <span className="font-bold text-orange-700">Monarch</span>, a
-            Front-End Developer passionate about bringing designs to life with
-            clean code and smooth animations.
+            <span className="font-bold text-orange-700">Monarch</span>, a Web
+            Developer who enjoys building clean and functional websites. I work
+            with both frontend and backend, turning designs into responsive and
+            user-friendly web applications.
           </p>
         </div>
 
@@ -43,9 +44,9 @@ export default function FirstPageAboutMe() {
             </h2>
           </div>
           <p className="text-gray-700">
-            “I want to work on projects that challenge me, let me turn creative
-            designs into functional website, and make a positive impact on how
-            people use the web.”
+            “I’m looking for projects where I can grow my skills, solve real
+            problems, and help bring ideas to life through simple,
+            well-structured web solutions.”
           </p>
           <div className="mt-4 flex justify-end">
             <Sprout className="animate-pulse text-green-600" size={20} />

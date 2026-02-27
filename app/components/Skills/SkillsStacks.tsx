@@ -22,7 +22,7 @@ export default function SkillsStacks() {
           return (
             <div
               key={index}
-              className="group flex items-center justify-center gap-3 rounded-md border border-orange-300 bg-orange-50 p-2 px-4 text-orange-900 shadow-sm transition-all duration-300 hover:scale-105 hover:bg-orange-100 hover:shadow-md"
+              className="group flex items-center justify-center gap-3 rounded-md border border-orange-200 bg-orange-50 p-2 px-4 text-orange-900 shadow-sm transition-all duration-300 hover:scale-105 hover:bg-orange-100 hover:shadow-md"
             >
               <SkillIcon
                 className={`h-5 w-5 transition-transform group-hover:rotate-6 ${skill.color}`}
