@@ -1,4 +1,5 @@
 import AboutMe from './components/AboutMe/AboutMe';
+import ChatBox from './components/AiAssistant/AiAssistant';
 import BackgroundArt from './components/BackgroundArt/BackgroundArt';
 import Contact from './components/Contact/Contact';
 import Dashboard from './components/Dashboard/Dashboard';
@@ -20,6 +21,7 @@ export default function Home() {
       <SkillsSection />
       <Experience />
       <Contact />
+      <ChatBox />
     </main>
   );
 }
