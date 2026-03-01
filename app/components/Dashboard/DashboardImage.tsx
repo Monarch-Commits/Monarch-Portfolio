@@ -8,11 +8,9 @@ export default function DashboardImage() {
           src="https://res.cloudinary.com/db2x3itfk/image/upload/f_auto,q_auto/v1771628562/Gemini_Generated_Image_llpwv6llpwv6llpw_kbfel6.png"
           alt="profile"
           fill
-          sizes="(max-width: 640px) 180px,
-         (max-width: 1024px) 70vw,
-         320px"
-          priority
+          sizes="(max-width: 640px) 180px, 320px"
           className="border object-cover p-4 pb-8 shadow-2xl transition-transform duration-500 ease-out group-hover:scale-110"
+          priority
         />
 
         <div className="absolute top-0 -right-6 z-10 h-5 w-20 rotate-20 bg-orange-200/50 shadow-sm transition-transform duration-500 ease-out group-hover:scale-110 group-hover:rotate-6" />

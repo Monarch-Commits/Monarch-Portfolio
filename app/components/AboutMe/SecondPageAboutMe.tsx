@@ -50,7 +50,7 @@ export default function SecondPageAboutMe() {
             alt="with my GF"
             fill
             loading="eager"
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 320px"
+            sizes="(max-width: 640px) 80vw, 350px"
             className="object-cover p-1 pb-12"
           />
 

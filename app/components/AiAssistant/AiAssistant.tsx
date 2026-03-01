@@ -73,7 +73,7 @@ export default function ChatBox() {
     <Dialog>
       {/* Floating Button */}
       <DialogTrigger asChild>
-        <button className="fixed right-8 bottom-8 z-50 p-1">
+        <button className="fixed right-4 bottom-4 z-100 p-1 sm:right-8 sm:bottom-8">
           <div className="relative">
             <div className="absolute -top-1 -right-1 h-4 w-4 rounded-full border-2 border-white bg-green-500" />
             <Animabot width={70} height={70} />
@@ -81,7 +81,10 @@ export default function ChatBox() {
         </button>
       </DialogTrigger>
 
-      <DialogContent className="w-full max-w-[95vw] overflow-hidden border-none bg-transparent p-0 shadow-none md:max-w-2xl">
+      <DialogContent
+        aria-describedby={undefined}
+        className="w-full max-w-[95vw] overflow-hidden border-none bg-transparent p-0 shadow-none md:max-w-2xl"
+      >
         <div className="flex h-[80vh] flex-col overflow-hidden rounded-[2.5rem] border border-white/50 bg-white/80 backdrop-blur-2xl">
           {/* Header */}
           <DialogHeader className="flex flex-row items-center justify-between border-b border-black/5 bg-white/40 px-8 py-6">
