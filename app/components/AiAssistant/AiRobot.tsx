@@ -15,7 +15,7 @@ export default function Animabot({
   loop = true,
 }: AnimaBotProps) {
   return (
-    <div style={{ width, height }}>
+    <div style={{ width, height }} data-animabot="true">
       <Lottie animationData={animaBot} loop={loop} autoplay />
     </div>
   );

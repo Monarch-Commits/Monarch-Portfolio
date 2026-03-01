@@ -145,27 +145,28 @@ export default function FireflySwarm() {
     return () => clearTimeout(timer);
   }, []);
 
-  const findClosestImage = useCallback((x: number, y: number) => {
-    const images = Array.from(document.querySelectorAll('img')).filter(
-      (img) => {
-        const r = img.getBoundingClientRect();
-        return r.top < window.innerHeight && r.bottom > 0;
-      },
-    );
+  const findClosestBot = useCallback((x: number, y: number) => {
+    // Pinalitan ang selector para mag-target ng AnimaBot attribute
+    const bots = Array.from(
+      document.querySelectorAll('[data-animabot="true"]'),
+    ).filter((bot) => {
+      const r = bot.getBoundingClientRect();
+      return r.top < window.innerHeight && r.bottom > 0;
+    });
 
-    if (images.length === 0) {
+    if (bots.length === 0) {
       setMode('wander');
       return;
     }
 
-    let closest = images[0].getBoundingClientRect();
+    let closest = bots[0].getBoundingClientRect();
     let minDistance = Infinity;
 
-    images.forEach((img) => {
-      const r = img.getBoundingClientRect();
-      const imgX = r.left + r.width / 2;
-      const imgY = r.top + r.height / 2;
-      const d = Math.hypot(x - imgX, y - imgY);
+    bots.forEach((bot) => {
+      const r = bot.getBoundingClientRect();
+      const botX = r.left + r.width / 2;
+      const botY = r.top + r.height / 2;
+      const d = Math.hypot(x - botX, y - botY);
 
       if (d < minDistance) {
         minDistance = d;
@@ -187,7 +188,7 @@ export default function FireflySwarm() {
 
       if (idleTimerRef.current) clearTimeout(idleTimerRef.current);
       idleTimerRef.current = setTimeout(() => {
-        findClosestImage(e.clientX, e.clientY);
+        findClosestBot(e.clientX, e.clientY);
       }, 1500);
     };
 
@@ -196,7 +197,7 @@ export default function FireflySwarm() {
       window.removeEventListener('mousemove', handleMove);
       if (idleTimerRef.current) clearTimeout(idleTimerRef.current);
     };
-  }, [findClosestImage, mounted]);
+  }, [findClosestBot, mounted]);
 
   if (!mounted || fireflies.length === 0) return null;
 
