@@ -1,5 +1,9 @@
 import { LuHouse } from 'react-icons/lu';
-import { IoBriefcaseOutline, IoCodeSlash } from 'react-icons/io5';
+import {
+  IoBriefcaseOutline,
+  IoCodeSlash,
+  IoLogoJavascript,
+} from 'react-icons/io5';
 import { GoBriefcase } from 'react-icons/go';
 import type { IconType } from 'react-icons';
 import { FaReact } from 'react-icons/fa';
@@ -86,6 +90,11 @@ export const skills: { name: string; icons: IconType; color: string }[] = [
     name: 'TypeScript',
     icons: TbBrandTypescript,
     color: 'text-cyan-400',
+  },
+  {
+    name: 'JavaScript',
+    icons: IoLogoJavascript,
+    color: 'text-yellow-400',
   },
   {
     name: 'Tailwind CSS',
