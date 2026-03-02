@@ -1,6 +1,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
+import { Download } from 'lucide-react';
 import Link from 'next/link';
 
 export function LayoutTextFlipDemo() {
@@ -43,10 +44,11 @@ export function LayoutTextFlipDemo() {
               className="border-orange-300 text-orange-700 hover:bg-orange-100"
             >
               <a
-                href="https://drive.google.com/uc?export=download&id=1ABz_FfIb4758LuJbjY4177RfxUFKaN-C"
+                href="https://drive.google.com/uc?export=download&id=1dcYbDYiZQ6jSg0UePWpsgXZ3dYHrrSxx"
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                <Download className="h-4 w-4" />
                 Download CV
               </a>
             </Button>
