@@ -107,7 +107,7 @@ export default function ChatBox() {
                 </Avatar>
               </div>
 
-              <DialogTitle className="text-lg font-bold text-[#452829]">
+              <DialogTitle className="bg-linear-to-r from-slate-800 via-orange-700 to-blue-700 bg-clip-text text-lg font-bold text-transparent">
                 Monarch AI Assistant
               </DialogTitle>
             </div>
