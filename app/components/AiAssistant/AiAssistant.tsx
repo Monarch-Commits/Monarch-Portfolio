@@ -45,7 +45,7 @@ const MessageBubble = ({ msg }: { msg: ChatMessage }) => (
       {msg.content}
     </div>
     {msg.role === 'user' && (
-      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#452829]">
+      <div className="`wrap-break-words flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#452829] leading-relaxed whitespace-pre-wrap">
         <User className="h-4 w-4 text-[#F3E8DF]" />
       </div>
     )}
