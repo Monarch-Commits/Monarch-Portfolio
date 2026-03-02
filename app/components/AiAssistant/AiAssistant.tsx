@@ -36,7 +36,7 @@ const MessageBubble = ({ msg }: { msg: ChatMessage }) => (
       </Avatar>
     )}
     <div
-      className={`wrap-break-words max-w-[78%] rounded-[1.5rem] px-5 py-3 text-[13px] leading-relaxed whitespace-pre-wrap ${
+      className={`max-w-[80%] overflow-hidden rounded-[1.5rem] px-5 py-3 text-[13px] leading-relaxed break-all whitespace-pre-wrap ${
         msg.role === 'user'
           ? 'rounded-br-none bg-[#452829] text-[#F3E8DF]'
           : 'rounded-bl-none border border-black/5 bg-white text-[#452829]'
@@ -44,8 +44,10 @@ const MessageBubble = ({ msg }: { msg: ChatMessage }) => (
     >
       {msg.content}
     </div>
+
     {msg.role === 'user' && (
-      <div className="`wrap-break-words flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#452829] leading-relaxed whitespace-pre-wrap">
+      /* Inalis ang backtick (`) sa simula ng className dito */
+      <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#452829]">
         <User className="h-4 w-4 text-[#F3E8DF]" />
       </div>
     )}
