@@ -2,6 +2,7 @@
 
 import {
   Dialog,
+  DialogClose,
   DialogContent,
   DialogHeader,
   DialogTitle,
@@ -9,10 +10,13 @@ import {
 } from '@/components/ui/dialog';
 
 import { useState, useRef, useEffect } from 'react';
+import { SendHorizontal, User, XIcon } from 'lucide-react';
 
-import { SendHorizontal, Sparkles, User, Bot } from 'lucide-react';
 import { askGeminiAction } from '@/app/actions/Ai/ai.action';
 import Animabot from './AiRobot';
+
+import { Avatar } from '@/components/ui/avatar';
+import Image from 'next/image';
 
 type ChatMessage = {
   role: 'user' | 'ai';
@@ -26,18 +30,19 @@ export default function ChatBox() {
       content: "Hello! I'm your AI assistant. How can I help you today?",
     },
   ]);
+
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
+
   const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Auto scroll sa latest message
+  // Auto-scroll
   useEffect(() => {
     if (scrollRef.current) {
       scrollRef.current.scrollTop = scrollRef.current.scrollHeight;
     }
   }, [messages, loading]);
 
-  // Simplified send function
   const handleSend = async () => {
     if (!input.trim() || loading) return;
 
@@ -83,42 +88,60 @@ export default function ChatBox() {
 
       <DialogContent
         aria-describedby={undefined}
-        className="w-full max-w-[95vw] overflow-hidden border-none bg-transparent p-0 shadow-none md:max-w-2xl"
+        className="w-full max-w-[95vw] border-none bg-transparent p-0 shadow-none md:max-w-2xl"
       >
-        <div className="flex h-[80vh] flex-col overflow-hidden rounded-[2.5rem] border border-white/50 bg-white/80 backdrop-blur-2xl">
+        {/* Main Container */}
+        <div className="flex h-[80vh] flex-col overflow-hidden rounded-[2.5rem] border border-white/30 bg-white/50 shadow-xl shadow-black/10 backdrop-blur-md">
           {/* Header */}
-          <DialogHeader className="flex flex-row items-center justify-between border-b border-black/5 bg-white/40 px-8 py-6">
+          <DialogHeader className="flex flex-row items-center justify-between border-b border-black/5 bg-white/60 px-8 py-5 backdrop-blur-sm">
             <div className="flex items-center gap-3">
-              <div className="rounded-xl bg-[#452829] p-2">
-                <Sparkles className="h-5 w-5 text-[#F3E8DF]" />
+              <div className="hidden h-10 w-10 items-center justify-center rounded-full bg-amber-800 sm:flex">
+                <Avatar className="relative h-8 w-8 overflow-hidden">
+                  <Image
+                    src="/robot.png"
+                    alt="AI avatar"
+                    fill
+                    sizes="32px"
+                    className="object-contain"
+                  />
+                </Avatar>
               </div>
-              <div>
-                <DialogTitle className="text-lg font-bold text-[#452829]">
-                  Monarch AI Assistant
-                </DialogTitle>
-                <p className="flex items-center gap-1 text-[10px] text-[#452829]/60">
-                  <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
-                  ONLINE
-                </p>
-              </div>
+
+              <DialogTitle className="text-lg font-bold text-[#452829]">
+                Monarch AI Assistant
+              </DialogTitle>
             </div>
+            <DialogClose className="rounded-full p-2 transition-colors outline-none hover:bg-black/5">
+              <XIcon className="h-5 w-5 text-[#452829]/60" />
+              <span className="sr-only">Close</span>
+            </DialogClose>
           </DialogHeader>
 
           {/* Messages */}
-          <div ref={scrollRef} className="flex-1 space-y-6 overflow-y-auto p-6">
+          <div
+            ref={scrollRef}
+            className="scrollbar-thin scrollbar-thumb-black/10 flex-1 space-y-5 overflow-y-auto p-6"
+          >
             {messages.map((msg, i) => (
               <div
                 key={i}
-                className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} items-end gap-2`}
+                className={`flex items-end gap-2 ${
+                  msg.role === 'user' ? 'justify-end' : 'justify-start'
+                }`}
               >
                 {msg.role === 'ai' && (
-                  <div className="flex h-8 w-8 items-center justify-center rounded-full bg-[#EBD1C5]">
-                    <Bot className="h-4 w-4 text-[#452829]" />
-                  </div>
+                  <Avatar className="relative h-8 w-8 overflow-hidden">
+                    <Image
+                      src="/robot.png"
+                      alt="AI avatar"
+                      fill
+                      className="object-contain"
+                    />
+                  </Avatar>
                 )}
 
                 <div
-                  className={`whitespace- pre-wrap max-w-[80%] rounded-[1.5rem] px-5 py-3.5 text-sm leading-relaxed wrap-break-word ${
+                  className={`max-w-[78%] rounded-[1.5rem] px-5 py-3 text-[13px] leading-relaxed wrap-break-word whitespace-pre-wrap ${
                     msg.role === 'user'
                       ? 'rounded-br-none bg-[#452829] text-[#F3E8DF]'
                       : 'rounded-bl-none border border-black/5 bg-white text-[#452829]'
@@ -137,26 +160,35 @@ export default function ChatBox() {
 
             {loading && (
               <div className="flex items-center gap-2 text-xs text-[#452829]/50">
-                <Bot className="h-4 w-4" />
+                <Avatar className="relative h-8 w-8 overflow-hidden">
+                  <Image
+                    src="/robot.png"
+                    alt="AI avatar"
+                    fill
+                    sizes="32px"
+                    className="object-contain"
+                  />
+                </Avatar>
                 AI is typing...
               </div>
             )}
           </div>
 
           {/* Input */}
-          <div className="border-t border-black/5 bg-white/40 p-6">
+          <div className="border-t border-black/5 bg-white/50 p-6 backdrop-blur-sm">
             <div className="relative flex items-center">
               <input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                 placeholder="Type your message..."
-                className="w-full rounded-2xl border border-[#EBD1C5] bg-white py-4 pr-14 pl-6 text-sm focus:outline-none"
+                className="w-full rounded-2xl border border-[#EBD1C5]/70 bg-white/90 py-3.5 pr-14 pl-6 text-sm focus:ring-2 focus:ring-[#452829]/20 focus:outline-none"
               />
+
               <button
                 onClick={handleSend}
                 disabled={loading || !input.trim()}
-                className="absolute right-3 rounded-xl bg-[#452829] p-2.5 text-white disabled:opacity-30"
+                className="absolute right-3 rounded-xl bg-[#452829] p-2.5 text-white shadow-md transition hover:scale-105 active:scale-95 disabled:opacity-30"
               >
                 <SendHorizontal className="h-5 w-5" />
               </button>
