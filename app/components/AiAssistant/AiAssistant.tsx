@@ -3,6 +3,7 @@
 import {
   Dialog,
   DialogContent,
+  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
@@ -30,13 +31,14 @@ const MessageBubble = ({ msg }: { msg: ChatMessage }) => (
         <Image
           src="/robot.png"
           alt="AI avatar"
+          sizes="32px"
           fill
           className="object-contain"
         />
       </Avatar>
     )}
     <div
-      className={`max-w-[80%] overflow-hidden rounded-[1.5rem] px-5 py-3 text-[13px] leading-relaxed break-all whitespace-pre-wrap ${
+      className={`max-w-[80%] overflow-hidden rounded-[1.5rem] px-5 py-3 text-[13px] leading-relaxed wrap-anywhere [word-break:break-word] whitespace-pre-wrap ${
         msg.role === 'user'
           ? 'rounded-br-none bg-[#452829] text-[#F3E8DF]'
           : 'rounded-bl-none border border-black/5 bg-white text-[#452829]'
@@ -137,6 +139,10 @@ export default function ChatBox() {
               <DialogTitle className="bg-linear-to-r from-slate-800 via-orange-700 to-blue-700 bg-clip-text text-lg font-bold text-transparent">
                 Monarch AI Assistant
               </DialogTitle>
+              <DialogDescription className="sr-only">
+                Chat with Monarch &rsquo; s AI assistant for inquiries and
+                collaboration.
+              </DialogDescription>
             </div>
           </DialogHeader>
 
