@@ -15,10 +15,10 @@ import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator'; // Pang-buwag sa sections
 
 import toast from 'react-hot-toast';
-import { SyntheticEvent, useState } from 'react';
+import { SyntheticEvent, useEffect, useState } from 'react';
 import Image from 'next/image';
 import UpdateProduct from '@/app/actions/post/updateProject.action';
-import { Loader2, Pencil } from 'lucide-react'; // Icons para mas nindot
+import { ImageIcon, Loader2, Pencil } from 'lucide-react'; // Icons para mas nindot
 
 interface Props {
   id: string;
@@ -31,21 +31,37 @@ interface Props {
 
 export default function UpdateProjectForm({ product }: { product: Props }) {
   const [title, setTitle] = useState(product.title);
-  const [imageUrl, setImageUrl] = useState(product.imageUrl);
+  const [imageFile, setImageFile] = useState<File | null>(null);
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [description, setDescription] = useState(product.description);
   const [liveUrl, setLiveUrl] = useState(product.liveUrl || '');
   const [repoUrl, setRepoUrl] = useState(product.repoUrl || '');
   const [loading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
+  useEffect(() => {
+    if (imageFile) {
+      const url = URL.createObjectURL(imageFile);
+      setPreviewUrl(url);
+      return () => URL.revokeObjectURL(url);
+    }
+    setPreviewUrl(null);
+  }, [imageFile]);
+
   async function handleSubmit(e: SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
+
+    if (!imageFile) {
+      toast.error('Please select an image');
+      return;
+    }
     setLoading(true);
+
     try {
       const result = await UpdateProduct({
         id: product.id,
         title,
-        imageUrl,
+        imageUrl: imageFile,
         description,
         liveUrl,
         repoUrl,
@@ -83,18 +99,27 @@ export default function UpdateProjectForm({ product }: { product: Props }) {
           </DialogDescription>
         </DialogHeader>
 
-        <div className="bg-muted/30 flex flex-col items-center justify-center rounded-lg border border-dashed py-4">
-          <div className="group/image w-full overflow-hidden rounded-xl shadow-lg">
-            <Image
-              src={imageUrl || product.imageUrl}
-              alt="Preview"
-              width={800}
-              height={600}
-              priority
-              className="h-auto w-full object-cover transition-transform duration-500 group-hover/image:scale-105"
-            />
-          </div>
-          <p className="text-muted-foreground mt-2 text-[10px] font-semibold tracking-widest uppercase">
+        <div className="bg-muted/30 flex flex-col items-center justify-center rounded-lg border border-dashed py-6">
+          {previewUrl ? (
+            <div className="group/image w-full overflow-hidden rounded-xl shadow-lg">
+              <Image
+                src={previewUrl}
+                alt="Preview"
+                width={800}
+                height={600}
+                priority
+                className="h-auto w-full object-cover transition-transform duration-500 group-hover/image:scale-105"
+              />
+            </div>
+          ) : (
+            <div className="text-muted-foreground flex flex-col items-center">
+              <ImageIcon className="h-10 w-10 opacity-20" />
+              <p className="mt-2 text-xs font-medium italic">
+                No image selected
+              </p>
+            </div>
+          )}
+          <p className="text-muted-foreground mt-3 text-[10px] font-bold tracking-widest uppercase">
             Image Preview
           </p>
         </div>
@@ -126,12 +151,16 @@ export default function UpdateProjectForm({ product }: { product: Props }) {
           </div>
 
           <div className="grid gap-2">
-            <Label htmlFor="imageUrl">Thumbnail URL</Label>
+            <Label htmlFor="image">Thumbnail Image</Label>
             <Input
-              id="imageUrl"
-              value={imageUrl}
-              onChange={(e) => setImageUrl(e.target.value)}
-              placeholder="https://..."
+              id="image"
+              type="file"
+              accept="image/*"
+              onChange={(e) =>
+                setImageFile(e.target.files ? e.target.files[0] : null)
+              }
+              disabled={loading}
+              className="cursor-pointer"
               required
             />
           </div>
