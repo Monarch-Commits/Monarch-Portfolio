@@ -32,6 +32,7 @@ export default async function UpdateProduct({
       },
     });
     revalidatePath('/Create');
+    revalidatePath('/');
     return { success: true, data: update };
   } catch (error) {
     console.error('Update error:', error);
