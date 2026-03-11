@@ -13,7 +13,6 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator'; // Pang-buwag sa sections
-
 import toast from 'react-hot-toast';
 import { SyntheticEvent, useEffect, useState } from 'react';
 import Image from 'next/image';
@@ -51,17 +50,13 @@ export default function UpdateProjectForm({ product }: { product: Props }) {
   async function handleSubmit(e: SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
 
-    if (!imageFile) {
-      toast.error('Please select an image');
-      return;
-    }
     setLoading(true);
 
     try {
       const result = await UpdateProduct({
         id: product.id,
         title,
-        imageUrl: imageFile,
+        imageUrl: imageFile ?? undefined,
         description,
         liveUrl,
         repoUrl,
@@ -100,10 +95,10 @@ export default function UpdateProjectForm({ product }: { product: Props }) {
         </DialogHeader>
 
         <div className="bg-muted/30 flex flex-col items-center justify-center rounded-lg border border-dashed py-6">
-          {previewUrl ? (
+          {previewUrl || product.imageUrl ? (
             <div className="group/image w-full overflow-hidden rounded-xl shadow-lg">
               <Image
-                src={previewUrl}
+                src={previewUrl || product.imageUrl}
                 alt="Preview"
                 width={800}
                 height={600}
@@ -119,6 +114,7 @@ export default function UpdateProjectForm({ product }: { product: Props }) {
               </p>
             </div>
           )}
+
           <p className="text-muted-foreground mt-3 text-[10px] font-bold tracking-widest uppercase">
             Image Preview
           </p>
@@ -161,7 +157,6 @@ export default function UpdateProjectForm({ product }: { product: Props }) {
               }
               disabled={loading}
               className="cursor-pointer"
-              required
             />
           </div>
 
