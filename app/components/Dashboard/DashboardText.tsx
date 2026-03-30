@@ -71,7 +71,7 @@ export function LayoutTextFlipDemo() {
               className="border-orange-300 text-orange-700 transition hover:scale-105 hover:bg-orange-100"
             >
               <a
-                href="https://drive.google.com/uc?export=download&id=1iqEy9qzyZksnqokQvyPb5bYYdsbxF0Hd"
+                href="https://drive.google.com/uc?export=download&id=1UjYvPBYrjxWxXWJ-7oxIXcuNWEOp-upE"
                 target="_blank"
                 rel="noopener noreferrer"
               >
