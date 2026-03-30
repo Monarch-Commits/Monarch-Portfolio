@@ -39,7 +39,18 @@ export default function DesktopNavbar() {
     <div className="relative flex w-full items-center justify-between">
       <div>
         <Link href="/">
-          <Image src="/logo.png" width={140} height={60} alt="Logo" />
+          <Image
+            src="/mona.png"
+            width={80}
+            height={80}
+            alt="Logo"
+            priority
+            style={{
+              width: 'auto',
+              height: 'auto',
+              objectFit: 'contain',
+            }}
+          />
         </Link>
       </div>
 
