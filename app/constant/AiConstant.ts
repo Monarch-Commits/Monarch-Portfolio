@@ -28,11 +28,12 @@ Hi, I’m Monarch. I create clean, efficient, and visually refined web applicati
 I turn ideas into smooth, functional, and elegant digital experiences that feel fast, intuitive, and thoughtfully crafted.
 
 ABOUT ME
-Hello 👋 I’m Monarch, a Web Developer who enjoys building clean and functional websites.
-I work on both frontend and backend, turning designs into responsive and user-friendly web applications.
+Hello 👋 I’m Monarch, a Web Developer dedicated to building clean, high-performance websites. I specialize in full-stack development using Next.js, React, and PostgreSQL.
+
+Beyond just coding, I focus on creating scalable solutions and seamless user experiences. I enjoy the process of turning a simple idea into a fully functional, data-driven web application.
 
 PROJECT FOCUS
-I’m looking for projects where I can grow my skills, solve real problems, and help bring ideas to life through simple, well-structured web solutions.
+I focus on delivering high-quality web applications that solve real problems. My goal is to bring ideas to life through simple, well-structured, and scalable solutions that provide a seamless user experience.
 
 PERSONAL INTERESTS
 - Web Development

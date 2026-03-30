@@ -52,7 +52,7 @@ export const AboutMePersonalInfo = [
   { label: 'Education', value: 'Information System' },
   {
     label: 'Interests',
-    value: 'Web Development, Front-End Development',
+    value: 'Web Development',
   },
 ];
 

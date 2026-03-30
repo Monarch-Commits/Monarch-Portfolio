@@ -29,9 +29,16 @@ export default function FirstPageAboutMe() {
           <p className="leading-relaxed text-gray-700">
             Hello 👋 I’m{' '}
             <span className="font-bold text-orange-700">Monarch</span>, a Web
-            Developer who enjoys building clean and functional websites. I work
-            with both frontend and backend, turning designs into responsive and
-            user-friendly web applications.
+            Developer dedicated to building clean, high-performance websites. I
+            specialize in full-stack development using{' '}
+            <span className="font-semibold text-orange-700">Next.js</span>,{' '}
+            <span className="font-semibold text-orange-700">React</span>, and{' '}
+            <span className="font-semibold text-orange-700">PostgreSQL</span>.
+            <br />
+            <br />
+            Beyond just coding, I focus on creating scalable solutions and
+            seamless user experiences. I enjoy the process of turning a simple
+            idea into a fully functional, data-driven web application.
           </p>
         </div>
 
@@ -44,9 +51,10 @@ export default function FirstPageAboutMe() {
             </h2>
           </div>
           <p className="text-gray-700">
-            “I’m looking for projects where I can grow my skills, solve real
-            problems, and help bring ideas to life through simple,
-            well-structured web solutions.”
+            I focus on delivering high-quality web applications that solve real
+            problems. My goal is to bring ideas to life through simple,
+            well-structured, and scalable solutions that provide a seamless user
+            experience.
           </p>
           <div className="mt-4 flex justify-end">
             <Sprout className="animate-pulse text-green-600" size={20} />
