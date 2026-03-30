@@ -24,7 +24,7 @@ export default function DesktopNavbar() {
         });
       },
       {
-        threshold: 0.6,
+        threshold: 0.2,
       },
     );
 
