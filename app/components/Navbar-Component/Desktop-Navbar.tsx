@@ -40,7 +40,7 @@ export default function DesktopNavbar() {
       <div>
         <Link href="/">
           <Image
-            src="https://drive.google.com/uc?export=view&id=1czPtHOnb06NAo-awhCgsOgO_uHXNEUVU"
+            src="https://drive.google.com/uc?export=view&id=1vbrY2YcTLVOLO5WnH-cmcchYlFFwvc9Y"
             width={40}
             height={40}
             alt="Logo"

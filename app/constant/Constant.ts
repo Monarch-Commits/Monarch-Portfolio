@@ -171,7 +171,7 @@ export const experiences: ExperienceItem[] = [
     buttons: [
       {
         name: 'View Project',
-        href: 'https://student-recording-system-snowy.vercel.app/',
+        href: 'https://studentrecording.vercel.app/',
       },
       {
         name: 'View Certificate',
@@ -193,7 +193,7 @@ export const experiences: ExperienceItem[] = [
     buttons: [
       {
         name: 'View Project',
-        href: 'https://refined-library-holding.vercel.app/',
+        href: 'https://libraryholding.vercel.app/',
       },
       {
         name: 'View Documentation',
