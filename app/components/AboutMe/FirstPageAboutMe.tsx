@@ -27,12 +27,10 @@ export default function FirstPageAboutMe() {
             </h2>
           </div>
           <p className="leading-relaxed text-gray-700">
-            Hello 👋 I’m{' '}
-            <span className="font-bold text-orange-700">Monarch</span>, a Web
-            Developer dedicated to building clean, high-performance websites. I
-            specialize in full-stack development using{' '}
-            <span className="font-semibold text-orange-700">Next.js</span>,{' '}
-            <span className="font-semibold text-orange-700">React</span>, and{' '}
+            Hello 👋 I’m a Web Developer dedicated to building clean,
+            high-performance websites. I specialize in full-stack development
+            using <span className="font-semibold text-orange-700">Next.js</span>
+            , <span className="font-semibold text-orange-700">React</span>, and{' '}
             <span className="font-semibold text-orange-700">PostgreSQL</span>.
             <br />
             <br />

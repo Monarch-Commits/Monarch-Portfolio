@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'Monarch Portfolio',
   description: 'My Personal Portfolio Website',
   icons: {
-    icon: 'https://drive.google.com/uc?export=view&id=1v7qnTaffx5ftST6Z7fVd5hgJVGkws-iT',
+    icon: '/logo.png',
   },
 };
 

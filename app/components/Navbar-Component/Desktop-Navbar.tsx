@@ -39,12 +39,7 @@ export default function DesktopNavbar() {
     <div className="relative flex w-full items-center justify-between">
       <div>
         <Link href="/">
-          <Image
-            src="https://drive.google.com/uc?export=view&id=1vbrY2YcTLVOLO5WnH-cmcchYlFFwvc9Y"
-            width={40}
-            height={40}
-            alt="Logo"
-          />
+          <Image src="/logo.png" width={140} height={60} alt="Logo" />
         </Link>
       </div>
 
