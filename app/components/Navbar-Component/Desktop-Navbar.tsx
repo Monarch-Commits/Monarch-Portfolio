@@ -42,7 +42,7 @@ export default function DesktopNavbar() {
           <Image
             src="/mona.png"
             width={80}
-            height={80}
+            height={40}
             alt="Logo"
             priority
             style={{
