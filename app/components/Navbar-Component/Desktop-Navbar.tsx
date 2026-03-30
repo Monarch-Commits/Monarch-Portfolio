@@ -41,15 +41,11 @@ export default function DesktopNavbar() {
         <Link href="/">
           <Image
             src="/mona.png"
-            width={80}
-            height={40}
             alt="Logo"
             priority
-            style={{
-              width: 'auto',
-              height: 'auto',
-              objectFit: 'contain',
-            }}
+            width={80}
+            height={40}
+            className="h-auto w-16 object-contain md:w-20"
           />
         </Link>
       </div>
