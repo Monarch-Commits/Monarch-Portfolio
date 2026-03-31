@@ -40,11 +40,11 @@ export default function DesktopNavbar() {
       <div>
         <Link href="/">
           <Image
-            src="/mona.png"
+            src="/mon.png"
             alt="Logo"
             priority
-            width={80}
-            height={40}
+            width={50}
+            height={50}
             className="h-auto w-16 object-contain md:w-20"
           />
         </Link>
