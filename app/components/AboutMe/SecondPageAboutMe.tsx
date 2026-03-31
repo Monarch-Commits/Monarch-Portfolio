@@ -46,7 +46,7 @@ export default function SecondPageAboutMe() {
       <div className="group relative mt-10 flex aspect-square w-[clamp(250px,80vw,350px)] rotate-3 cursor-pointer items-end justify-center bg-white p-4 pb-12 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:scale-105 lg:mt-0">
         <div className="relative h-full w-full">
           <Image
-            src="https://res.cloudinary.com/db2x3itfk/image/upload/f_auto,q_auto/v1771628561/WITH_SOMEONE_S_WEDDING_PICTURIAL_zsd7tp.jpg"
+            src="https://res.cloudinary.com/db2x3itfk/image/upload/f_auto,q_auto/v1771628562/Gemini_Generated_Image_kiov1kkiov1kkiov_ri8xac.png"
             alt="with my GF"
             fill
             loading="eager"
