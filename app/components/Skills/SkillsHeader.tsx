@@ -2,7 +2,7 @@ export default function SkillsHeader() {
   return (
     <div className="mb-10 space-y-3 text-center">
       <h2
-        className="bg-linear-to-r from-slate-800 via-orange-700 to-blue-700 bg-clip-text text-4xl font-extrabold tracking-tight text-transparent sm:text-5xl"
+        className="bg-linear-to-r from-orange-700 via-orange-600 to-blue-900 bg-clip-text py-2 text-4xl font-extrabold tracking-tight text-transparent sm:text-5xl"
         style={{ fontFamily: 'var(--font-rounded), sans-serif' }}
       >
         Skills and Expertise

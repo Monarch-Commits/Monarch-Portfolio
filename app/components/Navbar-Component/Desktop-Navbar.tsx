@@ -45,7 +45,7 @@ export default function DesktopNavbar() {
             priority
             width={200} // Mas mataas na base width para sa scaling
             height={200}
-            quality={100} // Full quality
+            quality={75} // Full quality
             className="h-auto w-16 object-contain md:w-20"
           />
         </Link>

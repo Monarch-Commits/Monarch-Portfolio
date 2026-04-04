@@ -120,7 +120,7 @@ export default async function AllProject() {
               height={600}
               priority
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 800px"
-              className="h-auto w-full object-cover transition-transform duration-500 group-hover/image:scale-105"
+              className="h-auto w-full object-cover"
             />
           </div>
           {/* STACK ICONS */}

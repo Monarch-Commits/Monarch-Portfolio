@@ -1,5 +1,4 @@
 'use client';
-import { HiArrowTrendingDown } from 'react-icons/hi2';
 
 export default function ProjectHeader() {
   return (
@@ -15,15 +14,6 @@ export default function ProjectHeader() {
           Selected projects showcasing my work in building efficient,
           responsive, and innovative web applications
         </p>
-        <div
-          style={{ fontFamily: "'Momo Signature', cursive" }}
-          className="absolute right-2 bottom-1 hidden flex-col items-center justify-center font-semibold text-orange-500 md:flex"
-        >
-          <span>More</span>
-          <span>Comming</span>
-          <span>Soon!!</span>
-          <HiArrowTrendingDown className="h-7 w-7" />
-        </div>
       </div>
     </div>
   );

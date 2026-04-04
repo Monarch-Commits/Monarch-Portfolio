@@ -63,7 +63,7 @@ export default function SecondPageAboutMe() {
         variants={itemVariants}
         whileHover={{ y: -8 }}
         transition={smoothSpring}
-        className="relative w-full max-w-lg rounded-2xl bg-white/90 p-8 shadow-lg backdrop-blur-md dark:bg-orange-50/90 dark:text-gray-900"
+        className="relative w-full max-w-lg rounded-2xl bg-orange-50 p-8 shadow-lg backdrop-blur-md"
       >
         <div className="relative z-10">
           <div className="mb-4 flex items-center gap-2">

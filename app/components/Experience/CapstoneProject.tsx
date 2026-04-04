@@ -57,11 +57,11 @@ export default function ExperiencePage() {
                   >
                     <Button
                       size="sm"
-                      variant={i === 0 ? 'outline' : 'secondary'}
+                      variant={'outline'}
                       className={`shadow-sm ${
                         i === 0
                           ? 'border-orange-200 bg-orange-700 text-white hover:bg-orange-600 hover:text-white'
-                          : 'border-orange-200 bg-orange-100 text-orange-800 hover:bg-orange-200 hover:text-orange-900'
+                          : 'border-orange-300 text-orange-700 transition hover:scale-105 hover:bg-orange-100'
                       }`}
                     >
                       {button.name}

@@ -24,15 +24,15 @@ export function LayoutTextFlipDemo() {
 
           {/* Tagline */}
           <p className="text-foreground max-w-xl text-lg font-semibold sm:text-xl md:text-2xl">
-            I create <span className="text-amber-700">clean, efficient</span>,{' '}
-            and <span className="text-amber-700">visually refined</span> web
-            applications.
+            I enjoy building web apps that are
+            <span className="text-amber-700"> fast, smooth,</span> and{' '}
+            <span className="text-amber-700">easy to used.</span>
           </p>
 
           {/* Description */}
           <p className="max-w-md text-sm leading-relaxed text-gray-700 sm:text-base">
-            Turning ideas into smooth, functional, and elegant digital
-            experiences that feel fast, intuitive, and thoughtfully crafted.
+            I like taking ideas and turning them into something simple but
+            meaningful.
           </p>
 
           <div className="mt-2 flex items-center gap-4 text-gray-700 md:mt-3">

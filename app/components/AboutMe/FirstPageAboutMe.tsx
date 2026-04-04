@@ -8,7 +8,7 @@ export default function FirstPageAboutMe() {
     <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center gap-10 p-6 md:p-10 lg:flex-row">
       <div className="flex max-w-2xl flex-col items-center gap-8 md:items-end">
         {/* FIRST CARD */}
-        <div className="relative w-full max-w-lg cursor-default rounded-xl bg-orange-50 p-6 shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:scale-102 hover:shadow-xl dark:bg-orange-100">
+        <div className="relative w-full max-w-lg cursor-default rounded-xl bg-orange-50 p-6 shadow-lg transition-transform duration-300 hover:scale-101 hover:shadow-xl">
           {/* FLOATING LEAF */}
           <div className="pointer-events-none absolute -top-10 -left-6 z-10 h-24 w-24 md:-top-12 md:-left-12 md:h-32 md:w-32">
             <Image
@@ -27,35 +27,56 @@ export default function FirstPageAboutMe() {
             </h2>
           </div>
           <p className="leading-relaxed text-gray-700">
-            Hello 👋 I’m a Web Developer dedicated to building clean,
-            high-performance websites. I specialize in full-stack development
-            using <span className="font-semibold text-orange-700">Next.js</span>
-            , <span className="font-semibold text-orange-700">React</span>, and{' '}
-            <span className="font-semibold text-orange-700">PostgreSQL</span>.
+            Hello 👋 I’m a web developer. I work with{' '}
+            <span className="font-semibold text-orange-700">Next.js</span>,{' '}
+            <span className="font-semibold text-orange-700">React</span>, and{' '}
+            <span className="font-semibold text-orange-700">PostgreSQL</span> to
+            create{' '}
+            <span className="font-semibold text-orange-700">
+              full-stack applications
+            </span>
+            .
             <br />
-            <br />
-            Beyond just coding, I focus on creating scalable solutions and
-            seamless user experiences. I enjoy the process of turning a simple
-            idea into a fully functional, data-driven web application.
+            <br />I focus on creating web apps that are simple, fast, and easy
+            to use, with attention to how they perform and feel in real use.
           </p>
         </div>
 
         {/* SECOND CARD */}
-        <div className="w-full max-w-lg cursor-default self-center rounded-xl bg-orange-50 p-6 shadow-xl transition-transform duration-300 hover:-translate-y-2 hover:scale-102 hover:shadow-xl md:self-end dark:bg-orange-100">
-          <div className="mb-4 flex items-center gap-2">
-            <Target className="text-orange-600" size={24} />
-            <h2 className="text-2xl font-semibold text-gray-900 md:text-4xl">
-              Project-Focused
+        <div className="relative w-full max-w-lg cursor-default rounded-xl bg-orange-50 p-6 shadow-lg transition-transform duration-300 hover:scale-101 hover:shadow-xl">
+          {/* Header */}
+          <div className="mb-6 flex items-center gap-4">
+            <div className="rounded-lg bg-orange-100 p-2 dark:bg-orange-200/20">
+              <Target className="text-orange-600" size={22} />
+            </div>
+            <h2 className="text-2xl font-bold tracking-tight text-gray-900 md:text-3xl dark:text-white">
+              What I Can Do
             </h2>
           </div>
-          <p className="text-gray-700">
-            I focus on delivering high-quality web applications that solve real
-            problems. My goal is to bring ideas to life through simple,
-            well-structured, and scalable solutions that provide a seamless user
-            experience.
-          </p>
-          <div className="mt-4 flex justify-end">
-            <Sprout className="animate-pulse text-green-600" size={20} />
+
+          {/* List - Inayos ang spacing at tinanggal ang manual bullets */}
+          <ul className="space-y-4">
+            {[
+              'Build full-stack apps with Next.js & PostgreSQL',
+              'Create responsive, mobile-first interfaces',
+              'Write clean, maintainable & scalable code',
+              'Optimize performance and user experience',
+            ].map((text, i) => (
+              <li
+                key={i}
+                className="flex items-center gap-3 text-gray-600 dark:text-gray-400"
+              >
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-orange-500" />
+                <span className="text-[15px] leading-relaxed font-medium">
+                  {text}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          {/* Footer Icon */}
+          <div className="mt-6 flex justify-end opacity-70">
+            <Sprout className="animate-pulse text-green-500" size={18} />
           </div>
         </div>
       </div>
