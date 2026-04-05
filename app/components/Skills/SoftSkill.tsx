@@ -17,12 +17,20 @@ export default function SoftSkill() {
       {/* Skills Grid */}
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {SoftSkills.map((skill, index) => {
-          const rotations = ['md:rotate-8', 'md:-rotate-5', 'md:rotate-1'];
+          const rotations = [
+            'md:rotate-8',
+            'md:-rotate-5',
+            'md:rotate-1',
+            'md:-rotate-2',
+            'md:rotate-3',
+          ];
 
           const tapeStyles = [
             '-top-3 -left-4 -rotate-12',
             '-top-3 -right-4 rotate-12',
+
             '-top-3 -right-1 rotate-0',
+            '-top-3 -left-5 -rotate-12',
           ];
 
           return (

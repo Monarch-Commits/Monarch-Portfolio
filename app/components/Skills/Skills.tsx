@@ -1,7 +1,7 @@
 import SkillsHeader from './SkillsHeader';
 import SkillsStacks from './SkillsStacks';
 import SoftSkills from './SoftSkill';
-import TechnicalSkills from './TechnicalSkills';
+import DevelopmentApproach from './DevelopmentApproach';
 
 export default function SkillsSection() {
   return (
@@ -11,7 +11,7 @@ export default function SkillsSection() {
     >
       <SkillsHeader />
       <SkillsStacks />
-      <TechnicalSkills />
+      <DevelopmentApproach />
       <SoftSkills />
     </section>
   );

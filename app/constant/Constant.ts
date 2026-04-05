@@ -120,18 +120,34 @@ export const skills: { name: string; icons: IconType; color: string }[] = [
 
 export const creativeProcess = [
   {
-    title: 'Clean Coding',
-    description: 'Writing code that is easy to read, understand, and maintain.',
+    title: 'Plan',
+    description:
+      'This is where I figure out what the project is about. I define the goal, list the features, and understand who the users are.',
   },
   {
-    title: 'Responsive Design',
+    title: 'Design',
     description:
-      'Creating web applications that work seamlessly across all devices and screen sizes.',
+      'I plan how the website will look and feel. I make sure the layout is clean, simple, and easy to use. Nothing complicated, just user-friendly.',
   },
   {
-    title: 'User-Centered Approach',
+    title: 'Develop',
     description:
-      'Focusing on the needs and preferences of users to deliver optimal user experiences.',
+      'This is where I start coding. I build the components and make everything work. I try to keep my code clean and easy to understand.',
+  },
+  {
+    title: 'Test',
+    description:
+      'I check if everything is working properly. I click buttons, test forms, and look for errors. If something’s wrong, I fix it right away.',
+  },
+  {
+    title: 'Deploy',
+    description:
+      'I put the project online so others can see and use it. This is when it becomes a real, live website.',
+  },
+  {
+    title: 'Review',
+    description:
+      'I go back and improve the project.I fix small issues, improve the design, and sometimes ask for feedback.There’s always something to make better.',
   },
 ];
 
@@ -139,17 +155,32 @@ export const SoftSkills = [
   {
     title: 'Time Management',
     description:
-      'Efficiently organizing and prioritizing tasks to maximize productivity.',
+      'I organize my tasks and focus on what needs to be done first. This helps me stay on track and finish work on time without cramming.',
   },
   {
     title: 'Problem Solving',
     description:
-      'Analyzing challenges and finding effective solutions to overcome obstacles in projects and workflows.',
+      'When I run into problems, I take time to understand them and figure out simple ways to fix them. I don’t rush, I solve things step by step.',
   },
   {
     title: 'Adaptability & Learning',
     description:
-      'Quickly learning new tools and adjusting to changing project requirements to maintain high-quality results.',
+      'I’m open to learning new tools and trying different approaches. If something changes in the project, I adjust and keep going.',
+  },
+  {
+    title: 'Attention to Detail',
+    description:
+      'I pay attention to small details, especially in design and code. I like making sure everything looks clean and works properly.',
+  },
+  {
+    title: 'Communication',
+    description:
+      'I try to explain things clearly and keep everything easy to understand. I also listen to feedback and use it to improve my work.',
+  },
+  {
+    title: 'Responsibility',
+    description:
+      'I take my work seriously and make sure I finish what I start. Even when things get hard, I stay consistent and keep working on it.',
   },
 ];
 

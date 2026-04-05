@@ -20,8 +20,10 @@ export default function TechnicalSkills() {
 
             const tapeStyles = [
               '-top-2 left-10 -rotate-10',
-              '-top-3 left-15 rotate-0',
-              '-top-3 left-15 -rotate-12',
+              '-top-3 left-8 rotate-0',
+              '-top-3 -left-5 -rotate-12',
+              '-top-3 left-17 -rotate-8',
+              '-top-3 left-14 -rotate-10',
             ];
 
             return (
@@ -39,7 +41,7 @@ export default function TechnicalSkills() {
                 <h3 className="text-lg font-bold text-orange-900 dark:text-orange-400">
                   {skill.title}
                 </h3>
-                <p className="text-sm leading-relaxed text-gray-700 dark:text-zinc-400">
+                <p className="text-sm leading-relaxed text-gray-800 dark:text-zinc-400">
                   {skill.description}
                 </p>
               </div>
