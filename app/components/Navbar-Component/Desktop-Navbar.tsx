@@ -43,10 +43,10 @@ export default function DesktopNavbar() {
             src="/mon.png"
             alt="Logo"
             priority
-            width={200} // Mas mataas na base width para sa scaling
-            height={200}
-            quality={75} // Full quality
-            className="h-auto w-16 object-contain md:w-20"
+            width={80}
+            height={80}
+            quality={60}
+            className="h-auto w-16 md:w-20"
           />
         </Link>
       </div>

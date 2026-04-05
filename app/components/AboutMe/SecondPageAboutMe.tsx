@@ -44,19 +44,20 @@ export default function SecondPageAboutMe() {
       className="relative flex min-h-full w-full flex-col-reverse items-center justify-center gap-10 overflow-hidden p-6 pt-12 lg:flex-row"
     >
       <div className="group relative mt-10 flex aspect-square w-[clamp(250px,80vw,350px)] rotate-3 cursor-pointer items-end justify-center bg-white p-4 pb-12 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:scale-105 lg:mt-0">
-        <div className="relative h-full w-full">
+        <div className="relative h-full w-full p-1 pb-12">
           <Image
-            src="https://res.cloudinary.com/db2x3itfk/image/upload/f_auto,q_auto/v1771628562/Gemini_Generated_Image_kiov1kkiov1kkiov_ri8xac.png"
+            src="https://res.cloudinary.com/db2x3itfk/image/upload/f_auto,q_auto,w_600/v1771628562/Gemini_Generated_Image_kiov1kkiov1kkiov_ri8xac.png"
             alt="with my GF"
             fill
             loading="eager"
-            sizes="(max-width: 640px) 80vw, 350px"
-            className="object-cover p-1 pb-12"
+            sizes="(max-width: 640px) 80vw, (max-width: 1024px) 60vw, 512px"
+            className="object-cover"
           />
 
-          <div className="absolute -right-8 bottom-4 h-6 w-24 rotate-140 bg-orange-200/40 shadow-sm backdrop-blur-sm" />
           <div className="absolute -top-4 -left-8 h-6 w-24 -rotate-12 bg-orange-200/40 shadow-sm backdrop-blur-sm" />
         </div>
+
+        <div className="absolute -right-8 bottom-2 h-6 w-24 rotate-140 bg-orange-200/40 shadow-sm backdrop-blur-sm" />
       </div>
 
       <motion.div
@@ -95,6 +96,7 @@ export default function SecondPageAboutMe() {
               <span className="text-sm font-bold text-black opacity-60">
                 FAVORITE STACK:
               </span>
+
               <div className="flex gap-4">
                 {[
                   { Icon: TbBrandNextjs, color: 'hover:text-black' },
@@ -102,16 +104,10 @@ export default function SecondPageAboutMe() {
                   { Icon: SiPrisma, color: 'hover:text-blue-900' },
                   { Icon: SiPostgresql, color: 'hover:text-blue-600' },
                 ].map((Tech, i) => (
-                  <motion.div
+                  <Tech.Icon
                     key={i}
-                    whileHover={{ scale: 1.4, y: -5, rotate: 5 }}
-                    whileTap={{ scale: 0.9 }}
-                    transition={smoothSpring}
-                  >
-                    <Tech.Icon
-                      className={`h-7 w-7 transition-colors duration-300 ${Tech.color} cursor-pointer text-gray-400`}
-                    />
-                  </motion.div>
+                    className={`h-7 w-7 transform cursor-pointer text-gray-400 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-125 hover:rotate-6 ${Tech.color} `}
+                  />
                 ))}
               </div>
             </motion.div>
