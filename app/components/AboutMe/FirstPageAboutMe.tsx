@@ -27,15 +27,19 @@ export default function FirstPageAboutMe() {
             </h2>
           </div>
           <p className="leading-relaxed text-gray-700">
-            Hello 👋 I’m a web developer. I work with{' '}
-            <span className="font-semibold text-orange-700">Next.js</span>,{' '}
-            <span className="font-semibold text-orange-700">React</span>, and{' '}
-            <span className="font-semibold text-orange-700">PostgreSQL</span> to
-            create{' '}
+            Hello 👋 I’m a web developer. I’ve always been fascinated by how
+            technology can solve everyday problems, and that’s exactly what
+            drove me into coding. Right now, I specialize in building{' '}
             <span className="font-semibold text-orange-700">
               full-stack applications
-            </span>
-            .
+            </span>{' '}
+            using
+            <span className="font-semibold text-orange-700">
+              {' '}
+              Next.js
+            </span>,{' '}
+            <span className="font-semibold text-orange-700">React</span>, and{' '}
+            <span className="font-semibold text-orange-700">PostgreSQL</span>.
             <br />
             <br />I focus on creating web apps that are simple, fast, and easy
             to use, with attention to how they perform and feel in real use.

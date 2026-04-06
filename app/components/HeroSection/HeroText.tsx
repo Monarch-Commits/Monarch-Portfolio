@@ -23,10 +23,11 @@ export function LayoutTextFlipDemo() {
           </div>
 
           {/* Tagline */}
-          <p className="text-foreground max-w-xl text-lg font-semibold sm:text-xl md:text-2xl">
-            I enjoy building web apps that are
+          <p className="text-foreground md:text-1xl max-w-xl text-lg font-semibold sm:text-xl">
+            a <span className="text-amber-700"> full-stack web developer</span>{' '}
+            who enjoys building web apps that are
             <span className="text-amber-700"> fast, smooth,</span> and{' '}
-            <span className="text-amber-700">easy to used.</span>
+            <span className="text-amber-700">easy to use.</span>
           </p>
 
           {/* Description */}
