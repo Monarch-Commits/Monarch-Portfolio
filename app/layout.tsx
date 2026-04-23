@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'Monarch Portfolio',
   description: 'My Personal Portfolio Website',
   icons: {
-    icon: '/portfolioLogo.png',
+    icon: '/URLLogo.svg',
   },
 };
 
