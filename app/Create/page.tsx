@@ -1,13 +1,16 @@
 import { Suspense } from 'react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import Create from '../components/Add-Update-Delete/Create';
-import Project from '../components/Add-Update-Delete/GetProject/Project';
-import ProjectSkeleton from '../components/Project/BestProject/Loading';
+// import Create from '../components/Add-Update-Delete/Create';
+// import Project from '../components/Add-Update-Delete/GetProject/Project';
 import { LuHouse } from 'react-icons/lu';
 import { LoginLink, LogoutLink } from '@kinde-oss/kinde-auth-nextjs/server';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { getDbUser } from '../actions/user/user.action';
+import ProjectSkeleton from '@/components/Project/BestProject/Loading';
+
+import Create from '@/components/Add-Update-Delete/Create';
+import Project from '@/components/Add-Update-Delete/GetProject/Project';
 
 export default async function Page() {
   const result = await getDbUser();

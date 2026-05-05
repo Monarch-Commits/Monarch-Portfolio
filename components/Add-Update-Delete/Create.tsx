@@ -17,8 +17,9 @@ import { Separator } from '@/components/ui/separator';
 import { SyntheticEvent, useState, useEffect } from 'react';
 import toast from 'react-hot-toast';
 import Image from 'next/image';
-import postProject from '../../actions/post/createPostProject.action';
+// import postProject from '../../actions/post/createPostProject.action';
 import { Loader2, PlusCircle, Image as ImageIcon } from 'lucide-react';
+import createPost from '@/app/actions/post/createPostProject.action';
 
 export default function Create() {
   const [title, setTitle] = useState('');
@@ -51,7 +52,7 @@ export default function Create() {
 
     setLoading(true);
     try {
-      const result = await postProject({
+      const result = await createPost({
         title,
         description,
         imageUrl: imageFile,
