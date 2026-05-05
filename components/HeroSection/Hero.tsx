@@ -1,7 +1,7 @@
 import DashboardImage from './HeroImage';
 import { LayoutTextFlipDemo } from './HeroText';
 
-export default function Dashboard() {
+export default function HeroSection() {
   return (
     <section
       id="Home"

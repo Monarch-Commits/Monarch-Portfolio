@@ -1,4 +1,4 @@
-export default function UltraModernAbstractBackground() {
+export default function BackgroundArt() {
   return (
     <div className="fixed inset-0 -z-10 hidden overflow-hidden bg-[#fdfefe] sm:block">
       <div className="pointer-events-none absolute -right-[10%] -bottom-[20%] h-64 w-64 rounded-[50%] bg-[radial-gradient(circle_at_60%_40%,rgba(251,113,133,0.3),transparent_70%)] blur-[60px] will-change-transform sm:-right-[20%] sm:-bottom-[35%] sm:h-128 sm:w-3xl sm:bg-[radial-gradient(circle_at_60%_40%,rgba(251,113,133,0.35),rgba(253,186,200,0.15),transparent_70%)] sm:blur-[80px]" />

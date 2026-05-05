@@ -46,7 +46,7 @@ export default function DesktopNavbar() {
             width={100}
             height={50}
             quality={60}
-            className="h-auto w-20 md:w-30"
+            className="h-auto w-20 md:w-25"
           />
         </Link>
       </div>

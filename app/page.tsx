@@ -1,12 +1,12 @@
-import AboutMe from './components/AboutMe/AboutMe';
-import ChatBox from './components/AiAssistant/AiAssistant';
-import BackgroundArt from './components/BackgroundArt/BackgroundArt';
-import Contact from './components/Contact/Contact';
-import HeroSection from './components/HeroSection/Hero';
-import Experience from './components/Experience/Experience';
-import { Navigation } from './components/Navbar-Component/Navigation';
-import Project from './components/Project/Project';
-import SkillsSection from './components/Skills/Skills';
+import AboutMe from '@/components/AboutMe/AboutMe';
+import ChatBox from '@/components/AiAssistant/AiAssistant';
+import BackgroundArt from '@/components/BackgroundArt/BackgroundArt';
+import Contact from '@/components/Contact/Contact';
+import Experience from '@/components/Experience/Experience';
+import HeroSection from '@/components/HeroSection/Hero';
+import { Navigation } from '@/components/Navbar-Component/Navigation';
+import Project from '@/components/Project/Project';
+import SkillsSection from '@/components/Skills/Skills';
 
 export default function Home() {
   return (
