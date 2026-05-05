@@ -131,10 +131,7 @@ export default function ChatBox() {
 
       <DialogContent className="w-full max-w-[95vw] border-none bg-transparent p-0 shadow-none md:max-w-2xl">
         <div className="flex h-[80vh] flex-col overflow-hidden rounded-3xl bg-white/80 shadow-xl backdrop-blur-md">
-          <DialogHeader
-            showCloseButton={true}
-            className="flex shrink-0 flex-row items-center justify-between border-b border-black/5 bg-white/60 px-8 py-5 backdrop-blur-sm"
-          >
+          <DialogHeader className="flex shrink-0 flex-row items-center justify-between border-b border-black/5 bg-white/60 px-8 py-5 backdrop-blur-sm">
             <div className="flex items-center gap-3">
               <DialogTitle className="bg-linear-to-r from-slate-800 via-orange-700 to-blue-700 bg-clip-text text-lg font-bold text-transparent">
                 Monarch AI Assistant
