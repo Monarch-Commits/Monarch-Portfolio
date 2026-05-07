@@ -29,10 +29,10 @@ const MessageBubble = ({ msg }: { msg: ChatMessage }) => (
     {msg.role === 'ai' && (
       <Avatar className="relative h-8 w-8 shrink-0 overflow-hidden">
         <Image
-          src="/robot.png"
+          src="/AiAssistant.svg"
           alt="AI avatar"
-          sizes="32px"
           fill
+          priority
           className="object-contain"
         />
       </Avatar>
@@ -153,6 +153,15 @@ export default function ChatBox() {
 
             {loading && (
               <div className="flex animate-pulse items-center gap-2 text-xs text-[#452829]/50">
+                <Avatar className="relative h-8 w-8 shrink-0 overflow-hidden">
+                  <Image
+                    src="/AiAssistant.svg"
+                    alt="AI avatar"
+                    fill
+                    priority
+                    className="object-contain"
+                  />
+                </Avatar>
                 <Loader2 className="h-3 w-3 animate-spin" />
                 AI is processing...
               </div>
