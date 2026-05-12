@@ -9,7 +9,7 @@ import type { IconType } from 'react-icons';
 import { FaReact } from 'react-icons/fa';
 import { TbBrandNextjs, TbBrandTypescript } from 'react-icons/tb';
 import { RiTailwindCssFill } from 'react-icons/ri';
-import { SiPostgresql, SiPrisma } from 'react-icons/si';
+import { SiAuth0, SiPostgresql, SiPrisma } from 'react-icons/si';
 import {
   SiJavascript,
   SiTailwindcss,
@@ -241,11 +241,14 @@ export const techIcons: Record<string, { icon: IconType; color: string }> = {
   Firebase: { icon: SiFirebase, color: 'text-orange-500' },
   Nextjs: { icon: SiNextdotjs, color: 'text-gray-900' },
   'Chakra UI': { icon: SiChakraui, color: 'text-cyan-400' },
+  Prisma: { icon: SiPrisma, color: 'text-indigo-400' },
+  PostgreSQL: { icon: SiPostgresql, color: 'text-blue-500' },
+  // Kinde: { icon: SiAuth0, color: 'text-purple-400' },
 };
 
 // Tech stacks per project
 export const stacksByProject = [
-  ['Javascript', 'Firebase', 'Tailwind'], //  0
-  ['Javascript', 'Firebase', 'Tailwind'], //  1
-  ['Nextjs', 'Chakra UI'], //  2
+  ['Javascript', 'Firebase', 'Tailwind'],
+  ['Javascript', 'Firebase', 'Tailwind'],
+  ['Nextjs', 'Tailwind', 'Prisma', 'PostgreSQL'],
 ];
